@@ -8,6 +8,8 @@ class test_class {
     }
 }
 
+$fileserver = "testvm-0"
+
 class basepackage {
     package {
         ["sysstat"]:
@@ -17,8 +19,6 @@ class basepackage {
     }
     service {
         ["ssh"]:
-        ensure => running;
-        ["httpd"]:
         ensure => running;
         ["snmpd"]:
         ensure => running;
@@ -31,6 +31,7 @@ class basepackage {
 # this block should be exist, if you want step 11 to success
 node testvm-1 {
     include basepackage
+    include html1
 }
 node testvm-2 {
     include basepackage
@@ -38,7 +39,16 @@ node testvm-2 {
 node testvm-3 {
     include basepackage
 }
+node testvm-4 {
+    include basepackage
+}
+node testvm-5 {
+    include basepackage
+}
 node default {
     include test_class
 }
+
+import "modules.pp"
+#import "nodes/*.pp"
 

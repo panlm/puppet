@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Built-In Modem</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Network Connections"
+HREF="mobile-guide-p2c1s15-network-connections.html"><LINK
+REL="NEXT"
+TITLE="GPRS"
+HREF="mobile-guide-p2c1s17-gprs.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s15-network-connections.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s17-gprs.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s16-modem"
+></A
+>12.26. Built-In Modem</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3192"
+></A
+>12.26.1. Modem Types</H2
+><P
+>&#13;   There are three kinds of modems available: internal,
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> card or external serial port modems. But
+   some internal modems will not work with Linux these modems are usually
+   called WinModem. This is caused by non-standard hardware. So you have to use either a
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> card modem or an external modem (serial or USB). The 
+   <A
+HREF="http://walbran.org/sean/linux/linmodem-howto.html"
+TARGET="_top"
+>LinModem-HOWTO</A
+>
+   by Sean Walbran provides a detailed instruction how to deal 
+   with these kind of modems. My pages about 
+   <A
+HREF="http://tuxmobil.org/modem_linux.html"
+TARGET="_top"
+>Internal Modems in Laptops</A
+> 
+   and 
+   <A
+HREF="http://tuxmobil.org/minipci_linux.html"
+TARGET="_top"
+>miniPCI Devices in Laptops</A
+>
+   provide a survey about the modem controllers used in different laptops.
+</P
+><P
+>&#13;   Quotation from the Kernel-FAQ: "9.Why aren't WinModems supported? (REG,
+   quoting Edward S. Marshall) The problem is the lack of specifications
+   for this hardware. Most companies producing so-called
+   <EM
+>WinModems</EM
+> refuse to provide specifications which
+   would allow non-Microsoft operating systems to use them. The basic
+   issue is that they don't work like a traditional modem; they don't
+   have a DSP, and make the CPU do all the work. Hence, you can't talk
+   to them like a traditional modem, and you -need- to run the modem
+   driver as a realtime task, or you'll have serious data loss issues
+   under any kind of load. They're simply a poor design."
+</P
+><P
+>&#13;   "<EM
+>Win</EM
+> modems are lobotomized modems which expect
+   Windows to do some of their thinking for them. If you do not have
+   Windows, you do not have a connection. "
+</P
+><P
+>&#13;   Anyway, I have set up a page collecting information on laptops with internal modems at 
+   <A
+HREF="http://tuxmobil.org/hardware.html"
+TARGET="_top"
+>TuxMobil - Hardware</A
+>
+   . Maybe it's possible to run such modems with MS-Windows9x/NT 
+   emulators like <B
+CLASS="command"
+>wine</B
+> or <B
+CLASS="command"
+>VMware</B
+>, but I don't know it.
+</P
+><P
+>&#13;   The 
+   <A
+HREF="http://linmodems.org"
+TARGET="_top"
+>Linux WinModem Support</A
+>
+   and 
+   <A
+HREF="http://www.xmodem.org/"
+TARGET="_top"
+>the Xmodem.org (former Gromit Winmodem) page</A
+>
+   are more or less the standard as to whether a modem is
+   real or not, and also contain directions to getting drivers for the few
+   winmodems that do have Linux drivers.
+</P
+><P
+>&#13;   There is a driver for Lucent WinModems  available. 
+   LucentPCI (binary only) driver, for PCI driven internal modems, see 
+   <A
+HREF="http://linmodems.org"
+TARGET="_top"
+>Linux WinModem Support</A
+>
+   and the 
+   <A
+HREF="http://www.close.u-net.com/ltmodem.html"
+TARGET="_top"
+>LTModem diagnostic tool</A
+>.
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3214"
+></A
+>12.26.2. Caveats</H2
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   Pay attention to the different kinds of phone lines: analog and ISDN.
+   You can't connect an analog modem to an ISDN port and vice versa. Though
+   there might be hybrid modems available. Connecting to the wrong port may
+   even destroy your modem. Trick: If you are looking for an analog phone
+   port in an office building which is usually wired with ISDN, take a look
+   at the fax lines, they are often analog lines.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   If your machine features an internal modem as well as an internal
+   ethernet card, pay also attention to plug the right cable into the plug.
+   Otherwise you may damage your hardware easily. It may even cause a fire.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>&#13;   For tracking the packets on PPP you may use <B
+CLASS="command"
+>pppstats</B
+>.
+   Or <B
+CLASS="command"
+>pload</B
+> this provides a graphical view of the traffic
+   (in and out) of the PPP connection. It is based on athena widgets hence
+   is very portable. It also uses very little CPU time.
+   
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s15-network-connections.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s17-gprs.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Network Connections</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>GPRS</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

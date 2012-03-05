@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Connection to Global Positioning System (GPS)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Solutions with Mobile Computers"
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"><LINK
+REL="PREVIOUS"
+TITLE="Connection to Cellular Phone"
+HREF="mobile-guide-p5c2s10-cellular-phone.html"><LINK
+REL="NEXT"
+TITLE="Connection via Amateur Radio (HAM)"
+HREF="mobile-guide-p5c2s12-ham.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c2s10-cellular-phone.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Solutions with Mobile Computers</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c2s12-ham.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c2s11-gps"
+></A
+>16.11. Connection to Global Positioning System (GPS)</H1
+><P
+>&#13;   From the 
+   <A
+HREF="http://tldp.org/HOWTO/Hardware-HOWTO/"
+TARGET="_top"
+>Hardware-HOWTO</A
+>
+   I know there is <EM
+>Trimble Mobile GPS</EM
+> available for Linux.
+   You may also connect a GPS via a serial port. Most GPS receivers have 
+   a data port and can connect to a PC with a special serial cable.
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   Differential GPS is a technique to apply a correction factor from a
+   known location to a GPS signal. This can substantially reduce the
+   uncertainity in the GPS location. Normally the correction signal is
+   acquired using a special radio receiver: <B
+CLASS="command"
+>dgpsip</B
+>
+   allows you to receive a DGPS signal via TCP/IP, and send it to the GPS
+   connected to your serial port.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.wombat.ie/gps/"
+TARGET="_top"
+>DGPS</A
+>
+   is a project to put together a low cost hardware and software solution
+   for Differential GPS (in both real time mode using RTCM correction
+   format and in post processed mode).
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.mayko.com/gpsd.html"
+TARGET="_top"
+>gpsd</A
+>
+   is a daemon that listens to a GPS or Loran receiver and translates
+   the positional data to simplified format that can be more easily
+   used by other programs, like chart plotters. The package comes with
+   a sample client that plots the location of the currently visible
+   GPS satellites (if available) and a speedometer. Added support for
+   the DeLame EarthMate as well as a new 'speedometer' mini client.
+</P
+></LI
+><LI
+><P
+>&#13;   The 
+   <A
+HREF="http://www.gbdirect.co.uk/"
+TARGET="_top"
+>QtGPS</A
+>
+   package contains a piece of software for
+   <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+>/Linux/X and a GPS receiver. It performs
+   logging and replaying of a journey, supporting a moving-map
+   display. QtGPS works with Lat/Long and British OSGB (Ornance
+   Survey) co-ordinate systems.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.geog.uni-hannover.de/grass/index.php"
+TARGET="_top"
+>GRASS</A
+>
+   (Geographic Resources Analysis Support System) is a free
+   software raster and vector based GIS, image processing system,
+   graphics production system, and spatial modeling system.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.eazy.net/users/fgiannan/xaprs/"
+TARGET="_top"
+>XASTIR</A
+>
+   is a free APRS (Automatic Position Reporting System) program.
+   APRS(tm) was developed to track mobile GPS stations with
+   two-way radio to convey position reports, messaging, weather
+   and more. XASTIR plots this information on a map on your
+   screen where you can see the entire world or zoom down to
+   street level.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.amphibious.org/gps.html"
+TARGET="_top"
+>as-gps</A
+>
+   contains a basic support library for accessing the
+   inexpensive ($20) Aisin-Seiki GPS Module previously
+   available at mavin.com. The package also includes several
+   simple console utilities for dumping satellite status,
+   location, and time and for synchronizing the system clock.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://academy.cas.cz/~gis/"
+TARGET="_top"
+>gmap</A
+>
+   is a map viewer with emphasis on temporal data. It hopes
+   to evolve into a free and powerful Geographical
+   Information System.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.mgix.com/gps3d/"
+TARGET="_top"
+>gps3d</A
+>
+   is a set of utilities that lets you manipulate your GPS
+   from your Linux box. One nice feature is the ability to
+   view GPS data (track, waypoints, fix, etc.) on an
+   OpenGL, 3D texture-mapped model of earth.
+</P
+></LI
+></UL
+>
+
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2s10-cellular-phone.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2s12-ham.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Connection to Cellular Phone</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Connection via Amateur Radio (HAM)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

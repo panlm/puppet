@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Common Problems During Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Installation"
+HREF="mobile-guide-p1c3-installation.html"><LINK
+REL="PREVIOUS"
+TITLE="Laptop Installation Methods"
+HREF="mobile-guide-p1c3s4-installation-methods.html"><LINK
+REL="NEXT"
+TITLE="Handheld Devices - Personal Digital Assistants (PDAs)"
+HREF="mobile-guide-p3-handheld-devices-pdas.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s4-installation-methods.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p3-handheld-devices-pdas.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c3s15-common-problems-installation"
+></A
+>3.5. Common Problems During Installation</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1079"
+></A
+>3.5.1. Display Problems (Missing Lines, Thick Borders)</H2
+><P
+>&#13;A common problem during Linux installation (or afterwards) on laptops are missing
+lines at the bottom of the text console display, so the last command lines or the login prompt
+are not shown on the screen. Depending on the problem it might help:
+
+<P
+></P
+><UL
+><LI
+><P
+>&#13;  Either using FrameBuffer, e.g. using a Kernel with framebuffer
+  support and a boot option like <B
+CLASS="command"
+>vga=791</B
+>, for details see the 
+  <A
+HREF="http://tldp.org/HOWTO/Framebuffer-HOWTO.html"
+TARGET="_top"
+>FrameBuffer-HOWTO</A
+>.
+</P
+></LI
+><LI
+><P
+>&#13;  Or disabling FrameBuffer, e.g. using a boot option like
+  <B
+CLASS="command"
+>vga=normal</B
+> or another resolution
+  Also, you could try passing <B
+CLASS="command"
+>video=vga16:off</B
+> 
+  on the installer boot prompt.
+</P
+></LI
+><LI
+><P
+>&#13;  As a workaround often it is possible to switch to a second console
+  e.g. &#60;ALT&#62;+&#60;F2&#62; , because this effect is often only related
+  to the first console.
+</P
+></LI
+><LI
+><P
+>&#13;  Check if there are VGA and video boot options configured in
+  the bootloader (e.g. grub, lilo). Try
+  to disable them at least partly, look for options like 
+  <B
+CLASS="command"
+>ywrap</B
+>, etc.
+</P
+></LI
+><LI
+><P
+>&#13;  Check the BIOS for display settings, often (older) Toshiba laptops
+  behave like this.
+</P
+></LI
+><LI
+><P
+>&#13;  Issue the command  <B
+CLASS="command"
+>resize</B
+> to get the correct screen size
+  into the system.
+</P
+></LI
+><LI
+><P
+>&#13;  If none of the above helps, you may try to run a start-up-script, which
+  has to run at the end of the boot process.
+  The script has to contain the <B
+CLASS="command"
+>clear</B
+> command and/or
+  the <B
+CLASS="command"
+>reset</B
+>.
+</P
+></LI
+></UL
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s4-installation-methods.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p3-handheld-devices-pdas.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Laptop Installation Methods</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3-installation.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Handheld Devices - Personal Digital Assistants (PDAs)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

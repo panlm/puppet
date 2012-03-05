@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Centrino(tm), Centrino-Duo(tm)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="CPU"
+HREF="mobile-guide-p2c1s1-cpu.html"><LINK
+REL="NEXT"
+TITLE="PCMCIA Controller"
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s1-cpu.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s1-centrino"
+></A
+>12.4. Centrino(tm), Centrino-Duo(tm)</H1
+><P
+>&#13;   Intels Centrino(TM) technology consists of three parts: a Pentium M processor, 
+   a chipset, and a wireless module. Let's see
+   how these parts are supported under Linux so far.
+</P
+><P
+>&#13;   Here you may find current information about
+   <A
+HREF="http://tuxmobil.org/centrino.html"
+TARGET="_top"
+>Linux on Centrino laptops and notebooks</A
+>.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1819"
+></A
+>12.4.1. CPU: Pentium-M</H2
+><P
+>&#13;   Robert Freund has written a concise 
+   <A
+HREF="http://rffr.de/acpi"
+TARGET="_top"
+>HOWTO</A
+>
+   about controlling ACPI Centrino(TM) features via
+   software in Linux. He describes how to control CPU frequency and other
+   energy saving modes, as well as how to get information about the battery state.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1823"
+></A
+>12.4.2. Chipset: 855/915</H2
+><P
+>&#13;   The Intel 855/915 chipset families are designed to deliver better
+   performance at lower power. The chipsets are available as discrete memory
+   controller hub (e.g. Intel 855PM).  Or as an integrated graphics and
+   memory controller hub (e.g. Intel 855GM). Intel provides the Extreme
+   Graphics driver for Linux, which includes AGP GART and DRM kernel modules
+   as a binary files. I have no experience with this drivers, because
+   the chipsets work with XFree86/X.org drivers, too.
+   The Pentium-M CPU may come accompanied with other
+   graphics chipsets too, e.g. from ATI, nVIDIA or Trident.
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1826"
+></A
+>12.4.3. Wireless LAN: PRO/wireless 2100/2200 LAN Mini-PCI Adapter</H2
+><P
+>&#13;   There are different solutions to get these cards running with Linux:
+   drivers from Intel, NDIS wrapper and Linuxant driverloader (commercial).
+</P
+><P
+>&#13;   <A
+HREF="http://ipw2100.sourceforge.net/"
+TARGET="_top"
+>ipw2100</A
+>,
+   Intel's Open Source driver with included firmware, for the first
+   Centrino generation (incl. WEP and WPA together with HostAP).
+   
+   For the second generation of Intel's miniPCI modules: PRO/Wireless
+   2200BG (802.11g/802.11i), the 
+   <A
+HREF="http://ipw2200.sourceforge.net/"
+TARGET="_top"
+>ipw2200</A
+>
+   project provides a driver.
+   
+   Third generation PRO/Wireless 2915ABG (IEEE 802.11b, 802.11g und
+   802.11a) miniPCI cards will be supported by the
+   <A
+HREF="http://ipw2200.sourceforge.net/"
+TARGET="_top"
+>ipw2200</A
+>
+   project, too.
+</P
+><P
+>&#13;   Intel didn't provide drivers, when the begun to sell their Centrino
+   technology. During this time there have been other solutions:
+
+   Some vendors refuse to release technical specifications or even a binary Linux driver
+   for their WLAN cards. NDIS wrapper tries to solve this by making a kernel
+   module that can load NDIS (Microsoft-Windows Network Driver Interface
+   Specification) drivers. Currently there are two implementations available.
+   The commercial
+   <A
+HREF="http://www.linuxant.com/driverloader/"
+TARGET="_top"
+>Linuxant Driverloader</A
+>
+   supports a broad range of chipsets including Intel's PRO/Wireless 2100 LAN
+   Mini-PCI Adapter. There is also 
+   <A
+HREF="http://ndiswrapper.sourceforge.net/"
+TARGET="_top"
+>ndiswrapper</A
+>
+   an Open Source solution by Pontus Fuchs.
+</P
+><P
+>&#13;   As another workaround was the usage of a Linux-supported
+   <A
+HREF="http://tuxmobil.org/minipci_linux.html"
+TARGET="_top"
+>miniPCI WLAN card</A
+>.
+   These cards are difficult to get, but some desktop WLAN PCI cards contain miniPCI cards. Often it is a tedious task to
+   build them into a laptop. Kernel maintainer Theodore Tytso has written a 
+   <A
+HREF="http://www.thunk.org/tytso/linux/t40.html"
+TARGET="_top"
+>manual</A
+> about achieving this task. You may also
+   use a wireless PCMCIA or CF card
+   instead. This solution may provide more flexibility, because you may use a PCMCIA or
+   CF card in different devices and choose the Linux driver of your choice. You may also extend the wireless range by
+   adding antennas to some cards. For Linux compatibility there is the 
+   <A
+HREF="http://tuxmobil.org/pcmcia_linux.html"
+TARGET="_top"
+>TuxMobil PCMCIA/CF Card Survey</A
+>.
+   In the future, manufacturers will probably offer alternative miniPCI solutions. DELL is already doing so for their
+   Latitude D series.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1840"
+></A
+>12.4.4. Conclusion</H2
+><P
+>&#13;   Though Linux support is not yet complete, some features of the Centrino(TM) technology already make it worthwhile to
+   take into account when buying your next laptop. Though the new CPUs are named so similarly to existing ones that some
+   people mix them up, they are completely different inside. Compared to the Pentium-4 Mobile CPU, the Pentium-M will
+   allow a smaller form factor for laptops, making them more portable and lighter. Because of their higher clockspeed,
+   the Pentium-4 CPUs have produced too much heat to build them into slimline notebook cases. Therefore, very flat
+   notebooks have only been available from Apple or with a Pentium III Mobile CPU. Also, the battery power the Pentium-M
+   consumes for a given level of performance will decrease, but I do not have a benchmark about how much the savings
+   actually are yet. PENN Computing offers a nice 
+   <A
+HREF="http://www.upenn.edu/computing/provider/docs/centrinoprovider.html"
+TARGET="_top"
+>comparison of Pentium-M and Pentium-4 Mobile</A
+>.
+   Note: The character M in Pentium-M suggests "mobile". Therefore some people mix
+   this kind of CPU with the mobile versions of the Pentium-III/Pentium-4 CPU.
+</P
+><P
+>&#13;   Laptops based on the Centrino(TM) features are already
+   very popular in the Linux community. 
+   <A
+HREF="http://tuxmobil.org/centrino.html"
+TARGET="_top"
+>Installation reports</A
+>
+   for almost all Centrino based laptops available at TuxMobil.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s1-cpu.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>CPU</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Controller</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

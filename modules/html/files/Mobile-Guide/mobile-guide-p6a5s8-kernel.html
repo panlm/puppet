@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Kernel</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Dealing with Limited Resources or Tuning the System"
+HREF="mobile-guide-a5-limited-resources.html"><LINK
+REL="PREVIOUS"
+TITLE="Power Saving Techniques"
+HREF="mobile-guide-p6a5s7-power-saving-techniques.html"><LINK
+REL="NEXT"
+TITLE="Tiny Applications and Distributions"
+HREF="mobile-guide-p6a5s9-tiny-applications.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s7-power-saving-techniques.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix E. Dealing with Limited Resources or Tuning the System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s9-tiny-applications.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p6a5s8-kernel"
+></A
+>E.8. Kernel</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5398"
+></A
+>E.8.1. Related Documentation</H2
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Kernel-HOWTO/"
+TARGET="_top"
+>Kernel-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/BootPrompt-HOWTO.html"
+TARGET="_top"
+>BootPrompt-HOWTO</A
+>
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;   Many kernel features are related to laptops. For instance APM,
+   <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg;,
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> and some options for certain laptops, e.g.
+   <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482; ThinkPads. In some distributions they are not
+   included by default. And the kernel is usually bigger than necessary. So it's
+   seems a good idea to customize the kernel. Though this task might seem
+   difficult for the beginner it is highly recommended. Since this
+   involves dangerous operations you need to be careful. But, if you can
+   install a better kernel successfully, you've earned your intermediate
+   Linux sysadmin merit badge. - I will not handle this here,
+   because this topic is already covered in other documents.
+</P
+><P
+>&#13;   Compile a modular kernel with modules for CDROM, floppy,
+   pcmcia, sound and any other peripherals. It will allow to delay
+   loading of these modules until these devices are actually used,
+   and it may help recover the system after a hardware failure,
+   e.g. a bad CDROM, because a module can be removed and
+   re-inserted without restarting the system.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s7-power-saving-techniques.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s9-tiny-applications.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Power Saving Techniques</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-a5-limited-resources.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Tiny Applications and Distributions</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

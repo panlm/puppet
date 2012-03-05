@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>PCMCIA Cards</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Accessories: PCMCIA, USB and Other External Extensions"
+HREF="mobile-guide-p2c2-accessories.html"><LINK
+REL="PREVIOUS"
+TITLE="Accessories: PCMCIA, USB and Other External Extensions"
+HREF="mobile-guide-p2c2-accessories.html"><LINK
+REL="NEXT"
+TITLE="ExpressCards"
+HREF="mobile-guide-p2c2s2-expresscards.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c2-accessories.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. Accessories: PCMCIA, USB and Other External Extensions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c2s2-expresscards.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c2s1-pcmcia-cards"
+></A
+>13.1. <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Cards</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3576"
+></A
+>13.1.1. Card Families</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Ethernet adapter
+</P
+></LI
+><LI
+><P
+>&#13;   Token Ring adapter
+</P
+></LI
+><LI
+><P
+>&#13;   Ethernet + Modem / GSM
+</P
+></LI
+><LI
+><P
+>&#13;   Fax-Modem / GSM adapter
+</P
+></LI
+><LI
+><P
+>&#13;   SCSI adapter
+</P
+></LI
+><LI
+><P
+>&#13;   I/O cards: RS232, LPT, RS422, RS485, GamePort, 
+   <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg;, Radio, Video
+</P
+></LI
+><LI
+><P
+>&#13;   Memory cards
+</P
+></LI
+><LI
+><P
+>&#13;   harddisks
+</P
+></LI
+><LI
+><P
+>&#13;   2.5" harddisk adapters
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   For desktops there are <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> slots for ISA and PCI
+   bus available.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3601"
+></A
+>13.1.2. Linux Compatibility Check</H2
+><P
+>&#13;   With the command <B
+CLASS="command"
+>cardctl ident</B
+> you may get information
+   about your card.
+   If your card is not mentioned in <TT
+CLASS="filename"
+>/etc/pcmcia/config</TT
+>,
+   create a file <TT
+CLASS="filename"
+>/etc/pcmcia/&#60;MYCARD&#62;.conf</TT
+> appropriately.
+   Take an entry in the first file as a model. You may try every driver, just in
+   case it might work, for instance the <B
+CLASS="command"
+>pcnet_cs</B
+>
+   supports many NE2000 compatible <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> network cards.
+   Note: it is a bad practice to edit <TT
+CLASS="filename"
+>/etc/pcmcia/config</TT
+>
+   directly, because all changes will be lost with the next update. 
+   After creating  <TT
+CLASS="filename"
+>/etc/pcmcia/&#60;MYCARD&#62;.conf</TT
+>
+   restart the PCMCIA services.
+
+
+   
+   This may not be enough to get the card to work, but works sometimes for no-name
+   network cards or modem cards. If you get a card to work or have written a
+   new driver please don't forget to announce this to 
+   <A
+HREF="http://pcmcia-cs.sourceforge.net/"
+TARGET="_top"
+>the developer of the <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-CS package David Hinds</A
+>.
+   Look at the current issue of 
+   <A
+HREF="http://pcmcia-cs.sourceforge.net/ftp/SUPPORTED.CARDS"
+TARGET="_top"
+>SUPPORTED.CARDS</A
+>
+   to get information about supported cards.  
+</P
+><P
+>&#13;   Since not all cards are mentioned there, I have set up a 
+   <A
+HREF="http://tuxmobil.org/pcmcia_linux.html"
+TARGET="_top"
+>Survey of <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>/CardBus/CF Cards Supported by Linux</A
+>.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2-accessories.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2s2-expresscards.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Accessories: PCMCIA, USB and Other External Extensions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2-accessories.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>ExpressCards</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

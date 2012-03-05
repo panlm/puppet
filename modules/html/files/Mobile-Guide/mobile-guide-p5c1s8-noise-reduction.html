@@ -1,0 +1,661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Noise Reduction</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Different Environments"
+HREF="mobile-guide-p5c1-different-environments.html"><LINK
+REL="PREVIOUS"
+TITLE="Mobile Printing"
+HREF="mobile-guide-p5c1s8-mobile-printing.html"><LINK
+REL="NEXT"
+TITLE="Solutions with Mobile Computers"
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s8-mobile-printing.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Different Environments</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c1s8-noise-reduction"
+></A
+>15.11. Noise Reduction</H1
+><P
+>&#13;   Due to the proliferation of cellular phones and walkmans it's not quite
+   common in our days to take care of a quiet environment. Anyway I want to
+   give some recommendations for the polite ones.
+</P
+><P
+>&#13;   Computer noises are caused by hardware (fan, optical drive, hard disk)
+   and applications.
+   
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4489"
+></A
+>15.11.1. Console (Shell) and X11</H2
+><P
+>&#13;   The beeping of X11 windows can be
+   configured to a shorter and lower pitched tone or even to a
+   blunt "thump" with <B
+CLASS="command"
+>xset b ...</B
+> options (a lower pitched tone
+   is usually less annoying and distracting). Independently of
+   that, most xterm-compatible windows and shells can be
+   configured to make "visual bell" instead of "audio bell".
+   For the console <B
+CLASS="command"
+>setterm -blength 0</B
+> and for X11
+   <B
+CLASS="command"
+>xset b off</B
+> turns the bell off. See also the
+   <A
+HREF="http://pcmcia-cs.sourceforge.net/ftp/doc/PCMCIA-HOWTO.html"
+TARGET="_top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-HOWTO</A
+>
+   and much more details in the
+   <A
+HREF="http://tldp.org/HOWTO/Visual-Bell.html"
+TARGET="_top"
+>Visible-Bell-Howto</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4498"
+></A
+>15.11.2. <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+></H2
+><P
+>&#13;   When starting your laptop with <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-CS
+   configured correctly, this will be shown by two high beeps. If you
+   want to avoid this put <B
+CLASS="command"
+>CARDMGR_OPTS="-q"</B
+> into the
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> configuration file, e.g.
+   <TT
+CLASS="filename"
+>/etc/default/pcmcia</TT
+> for Debian/GNU Linux.
+
+</P
+><P
+>&#13;   To avoid the dialtones during the modem dialing add
+</P
+><P
+>&#13;
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;module "serial_cs" opts "do_sound=0"
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+><P
+>&#13;   to <TT
+CLASS="filename"
+>/etc/pcmcia/config.opts</TT
+> (from <B
+CLASS="command"
+>man
+   serial_cs</B
+>). This will disable speaker output completely,
+   but the <B
+CLASS="command"
+>AT M</B
+> command should let you selectively
+   control when the speaker is active, e.g. <B
+CLASS="command"
+>AT M0</B
+>
+   turns off the modem's speaker.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4514"
+></A
+>15.11.3. <SPAN
+CLASS="acronym"
+>USB</SPAN
+></H2
+><P
+>&#13;   <B
+CLASS="command"
+>usbmgr</B
+> configuration file <TT
+CLASS="filename"
+>/etc/usbmgr.conf</TT
+>.
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;### BEEP
+# beep off
+# beep on
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4521"
+></A
+>15.11.4. Hotplug</H2
+><P
+>&#13;   Add an entry into the configuration file <TT
+CLASS="filename"
+>/etc/sysconfig/hotplug</TT
+>.
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;HOTPLUG_BEEP="no"
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4526"
+></A
+>15.11.5. Fan</H2
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   Please make sure what you are doing, when configuring the fan. Your
+   laptop may overheat and die, in case you have done something wrong.
+   Just in case you want to check the fan try to cause a heavy
+   CPU load, for example by issueing <B
+CLASS="command"
+>md5sum /dev/urandom</B
+>.
+   Now <B
+CLASS="command"
+>top</B
+> will show an increased CPU load and
+   the fan should began to run eventually. Note: usually you need
+   to have been connected to power, otherwise the CPU might reduce
+   load by itself. Also watch for the CPU temperature
+   <B
+CLASS="command"
+>acpi -bt</B
+> or 
+   <B
+CLASS="command"
+>cat /proc/acpi/thermal_zone/*</B
+>.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>&#13;   For some laptop series there are
+   Linux utilities available to control the fan and other
+   features.  
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="http://www.buzzard.me.uk/toshiba/index.html"
+TARGET="_top"
+>Toshutils</A
+>
+   by Jonathan Buzzard for some Toshiba models.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tpctl.sourceforge.net"
+TARGET="_top"
+>tpctl</A
+>
+   IBM ThinkPad configuration tools for Linux by Thomas Hood.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://people.debian.org/~dz/i8k/"
+TARGET="_top"
+>i8k</A
+>
+   utils for DELL laptops.
+</P
+></LI
+></UL
+>
+
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN4546"
+></A
+>15.11.5.1. Known Problems</H3
+><P
+>&#13;   With some laptops the fan is always on or at least very often. Here
+   are some remedies.
+</P
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN4549"
+></A
+>15.11.5.1.1. Reduction of CPU Frequency</H4
+><P
+>&#13;   In some cases the fan is always on because the CPU is working with
+   highest frequency. You may use either
+   <A
+HREF="http://sourceforge.net/projects/cpufreqd"
+TARGET="_top"
+>cpufreqd</A
+>
+   or
+   <A
+HREF="http://mnm.uib.es/~gallir/cpudyn/"
+TARGET="_top"
+>cpudyn</A
+>
+   to cure this.
+</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN4554"
+></A
+>15.11.5.1.2. IRQ Problems with ParPort Module</H4
+><P
+>&#13;   Sometimes the <TT
+CLASS="filename"
+>parport</TT
+> causes the fan to be
+   always on. You may edit the <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>
+   to cure this:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13; alias parport_lowlevel parport_pc
+ options parport_pc io=378 irq=7
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   The IO address and the IRQ number depend on the hardware settings
+   or the BIOS configuration. Often the IRQ does not need to be given.
+   The problem and its solution was discussed in the
+   
+   <A
+HREF="http://lists.opensuse.org/opensuse-mobile-de/2002-11/msg00174.html"
+TARGET="_top"
+>SuSE Laptop Mailing List (in German)</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN4561"
+></A
+>15.11.5.1.3. ACPI</H4
+><P
+>&#13;   Sometimes a setting in the <TT
+CLASS="filename"
+>/proc/acpi/</TT
+> might
+   also help.
+</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN4565"
+></A
+>15.11.5.1.4. Miscellaneous</H4
+><P
+>&#13;   Pressing the Fn+z key kombination tells the BIOS to recheck the sensors and stops the fan,
+   for DELL laptops.
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4568"
+></A
+>15.11.6. Harddisk</H2
+><P
+>&#13;   To avoid unnecessary hard disk noise you may use the same
+   techniques as described in the power saving chapter above.
+   Modern laptop and notebook hard drives come with a so-called
+   "Acoustic Management", just have a look into the manual
+   to get an overview about the possible settings.
+</P
+><P
+>&#13;   Some hard disk manufacturers offer dedicated tools, e.g.
+   Hitachi's
+   <A
+HREF="http://www.hitachigst.com/hdd/support/download.htm"
+TARGET="_top"
+>Feature Tool</A
+>
+   allows to change the drive Automatic Acoustic Management settings to the
+   Lowest acoustic emanation setting (Quiet Seek Mode), or
+   Maximum performance level (Normal Seek Mode). Also
+   <B
+CLASS="command"
+>hdparm -M</B
+> offers some Acoustic Management options.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4574"
+></A
+>15.11.7. Miscellaneous Applications</H2
+><P
+>&#13;   You may configure <B
+CLASS="command"
+>vi</B
+> with the
+   <B
+CLASS="command"
+>flash</B
+> option, so it will use a flash in case
+   of an error, instead of a bell. So just put this line into your
+   <TT
+CLASS="filename"
+>.vimrc</TT
+> or at the <B
+CLASS="command"
+>vim</B
+> prompt:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;set flash
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+or try
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;set visualbell
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s8-mobile-printing.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Mobile Printing</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-different-environments.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Solutions with Mobile Computers</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

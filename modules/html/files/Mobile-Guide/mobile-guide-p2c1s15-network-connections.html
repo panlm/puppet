@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Network Connections</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Docking Station / Port Replicator"
+HREF="mobile-guide-p2c1s14-docking-station-port-replicator.html"><LINK
+REL="NEXT"
+TITLE="Built-In Modem"
+HREF="mobile-guide-p2c1s16-modem.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s14-docking-station-port-replicator.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s16-modem.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s15-network-connections"
+></A
+>12.25. Network Connections</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3147"
+></A
+>12.25.1. Related Documentation</H2
+><P
+>&#13;<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/PLIP.html"
+TARGET="_top"
+>PLIP-mini-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/NET3-4-HOWTO.html"
+TARGET="_top"
+>Networking-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Ethernet-HOWTO.html"
+TARGET="_top"
+>Ethernet-HOWTO</A
+>
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3160"
+></A
+>12.25.2. Connection Methods</H2
+><P
+>&#13;   Almost all recent laptops are equipped with a built-in network card.
+   This chapter shows some methods to connect older laptops without
+   internal network cards.
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3163"
+></A
+>12.25.2.1. <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Network Card</H3
+><P
+>&#13;   If your laptop supports <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> this is the easiest
+   and fastest way to get network support. Make sure your card is supported
+   before buying one.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3168"
+></A
+>12.25.2.2. Serial Null Modem Cable</H3
+><P
+>&#13;   Probably the cheapest way to connect your laptop to another computer,
+   but quite slow. You may use PPP or SLIP to start the connection.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3171"
+></A
+>12.25.2.3. Parallel Port NIC (Pocket Adaptor)</H3
+><P
+>&#13;   <A
+HREF="http://www.unix-ag.uni-siegen.de/~nils/accton_linux.html"
+TARGET="_top"
+>Accton Pocket Ethernet and Linux</A
+>
+   This ethernet adaptor uses a parallel port and delivers approximately 110k Bytes/s 
+   throughput for those notebooks that do not have <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> slots.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3176"
+></A
+>12.25.2.4. Parallel "Null" Modem Cable</H3
+><P
+>&#13;   Offers more speed than a serial connection. Some laptops use chipsets
+   that will not work with PLIP. Please see  
+   <A
+HREF="http://tldp.org/HOWTO/PLIP.html"
+TARGET="_top"
+>PLIP-HOWTO</A
+>
+   for details.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3180"
+></A
+>12.25.2.5. Docking Station NIC</H3
+><P
+>&#13;   I don't have experience with a NIC in a docking station yet.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3183"
+></A
+>12.25.3. Wake-On-LAN</H2
+><P
+>&#13;   Wake-On-LAN works with some laptops equipped with built-in network cards.
+   <A
+HREF="http://www.scyld.com/wakeonlan.html"
+TARGET="_top"
+>Wake-On-LAN</A
+>
+   is the generic name for the AMD "Magic Packet" technology. It's
+   very similar to the PCMCIA modem "wake on ring" signal line. The basic idea is
+   that the network adapter has a very-low-power mode to monitor the network for
+   special packet data that will wake up the machine. 
+   The 
+   <A
+HREF="http://www.scyld.com/wakeonlan.html"
+TARGET="_top"
+>etherwake</A
+>
+   package as well as the
+   <A
+HREF="http://gsd.di.uminho.pt/jpo/software/wakeonlan/"
+TARGET="_top"
+>Wakeonlan</A
+> Perl script
+   are able to send 'magic packets' to wake-on-LAN enabled
+   ethernet adapters and motherboards, in order to switch on remote computers.
+   You may use <B
+CLASS="command"
+>ethtool</B
+> to configure some
+   special Wake-On-LAN settings.
+
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s14-docking-station-port-replicator.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s16-modem.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Docking Station / Port Replicator</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Built-In Modem</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

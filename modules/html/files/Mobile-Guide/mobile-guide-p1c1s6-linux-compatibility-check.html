@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Linux Compatibility Check</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Which Laptop to Buy?"
+HREF="mobile-guide-p1c1-which-laptop-to-buy.html"><LINK
+REL="PREVIOUS"
+TITLE="Sources of More Information"
+HREF="mobile-guide-p1c1s5-sources-of-more-information.html"><LINK
+REL="NEXT"
+TITLE="Writing a Device Driver"
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c1s5-sources-of-more-information.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Which Laptop to Buy?</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c1s6-linux-compatibility-check"
+></A
+>1.6. Linux Compatibility Check</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN388"
+></A
+>1.6.1. Related Documentation</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Hardware-HOWTO/"
+TARGET="_top"
+>Hardware-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Kernel-HOWTO/"
+TARGET="_top"
+>Kernel-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://pcmcia-cs.sourceforge.net/ftp/doc/PCMCIA-HOWTO.html"
+TARGET="_top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/PCI-HOWTO.html"
+TARGET="_top"
+>PCI-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Plug-and-Play-HOWTO.html"
+TARGET="_top"
+>Plug-and-Play-HOWTO</A
+>
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN408"
+></A
+>1.6.2. Check Methods in General</H2
+><P
+>&#13;   If you can't find the necessary information through the above mentioned
+   sources, you are on your own. Luckily, Linux provides many means to
+   help. For details see the section
+   <A
+HREF="mobile-guide-p2-mobile-hardware.html"
+>Part V in <I
+>Linux on the Road</I
+></A
+> Hardware In Detail
+   below. In general you may use:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   First of all the kernel itself. Look up what kind of hardware is
+   detected by the kernel. You get this information during boot time or
+   by <B
+CLASS="command"
+>dmesg</B
+> or by looking into
+   <TT
+CLASS="filename"
+>/var/log/messages</TT
+>. For the very first boot messages
+   check <TT
+CLASS="filename"
+>/var/log/boot</TT
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   If your kernel supports the <TT
+CLASS="filename"
+>/proc</TT
+> file system you
+   may get detailed information about PCI devices by 
+   <B
+CLASS="command"
+>cat /proc/pci</B
+> Please read the kernel documentation
+   <TT
+CLASS="filename"
+>pci.txt</TT
+>. You may get further information about
+   unknown PCI devices at the 
+   <A
+HREF="http://pciids.sf.net/"
+TARGET="_top"
+>Linux PCI ID Repository</A
+>,
+   the home of the pci.ids file. From 2.1.82 kernels on you may use the 
+   <B
+CLASS="command"
+>lspci</B
+> command from the <B
+CLASS="command"
+>pci-utils</B
+> package.
+</P
+></LI
+><LI
+><P
+> 
+   To retrieve information about Plug-and-Play (PNP) devices use
+   <B
+CLASS="command"
+>isapnp-tools</B
+> .  
+</P
+></LI
+><LI
+><P
+>&#13;   Use <B
+CLASS="command"
+>scsi_info</B
+> by David Hinds for SCSI devices or
+   <B
+CLASS="command"
+>scsiinfo</B
+>.  
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   If you don't want to install a complete Linux you may retrieve this
+   information by using a micro Linux ( see  
+   <A
+HREF="mobile-guide-a1-other-operating-systems.html"
+>Appendix A</A
+> Appendix A).
+   The package <B
+CLASS="command"
+>muLinux</B
+> provides even a small
+   <B
+CLASS="command"
+>systest</B
+> program and <B
+CLASS="command"
+>TomsRtBt</B
+> comes
+   with <B
+CLASS="command"
+>memtest</B
+>. To use <B
+CLASS="command"
+>memtest</B
+> you
+   have to copy it on a floppy 
+   <B
+CLASS="command"
+>dd if=/usr/lib/memtest of=/dev/fd0</B
+>
+   and to reboot from this floppy.
+</P
+><P
+>&#13;   If your laptop came with Windows, you may determine a lot of hardware
+   settings from the installation. Boot into DOS or Windows to get the
+   information you need.
+</P
+><P
+>&#13;   Using Windows9x/NT to get hardware settings, basically boot Windows,
+   then <B
+CLASS="command"
+>Start -&#62; Settings -&#62; Control Panel -&#62; System
+   -&#62; Device Manager</B
+> and write down everything, or make a
+   hardcopy from the display using the <B
+CLASS="command"
+>&#60;PRINT&#62;</B
+>
+   key, plus keep a log of settings, hardware, memory, etc.
+</P
+><P
+>&#13;   Using MS-DOS and Windows3.1x you can use the command
+   <B
+CLASS="command"
+>msd</B
+>, which is an akronym for MicroSoft Diagnostics.
+   Or you might try one of the numerous DOS shareware utilities:
+   <B
+CLASS="command"
+>CHECK-IT</B
+>, <B
+CLASS="command"
+>DR.HARD</B
+> and others.
+</P
+><P
+>&#13;   Sometimes it's difficult to know what manufacturer 
+   has built the machine or parts of it actually. The 
+   <A
+HREF="http://www.fcc.gov/oet/fccid/help.html"
+TARGET="_top"
+>FCC</A
+>
+   "Federal Communications Commission On-line Equipment Authorization
+   Database may be used, if you are having problems identifying the
+   manufacturer of a laptop or notebook computer (or other electronic
+   device,) this site lets you search the FCC database based on the FCC ID
+   number you can usually find on the equipment if it was marketed in the
+   United States of America."
+</P
+><P
+>&#13;   Many laptops are no more compatible with Windows than Linux. David
+   Hinds, author of the <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> drivers, points out that
+   Toshiba notebooks use a proprietary Toshiba <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   bridge chip that exhibits the same bugs under Windows as under Linux.
+   <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482; Thinkpads have serious
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> problems that affect delivery of events to the
+   power management daemon <B
+CLASS="command"
+>apmd</B
+>. These bugs also affect
+   MS-Windows, and are listed in <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482;'s documentation
+   as <EM
+>considerations</EM
+>.
+</P
+><P
+>&#13;   Some incompatibilities are temporary, for instance laptops that have
+   Intel's <SPAN
+CLASS="acronym"
+>USB</SPAN
+> chip will probably get full
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> support, eventually.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1s5-sources-of-more-information.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Sources of More Information</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1-which-laptop-to-buy.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Writing a Device Driver</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

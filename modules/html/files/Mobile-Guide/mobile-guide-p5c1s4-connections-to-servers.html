@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Connections to Servers</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Different Environments"
+HREF="mobile-guide-p5c1-different-environments.html"><LINK
+REL="PREVIOUS"
+TITLE="Backup"
+HREF="mobile-guide-p5c1s4-backups.html"><LINK
+REL="NEXT"
+TITLE="Security in Different Environments"
+HREF="mobile-guide-p5c1s5-security-in-different-environments.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s4-backups.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Different Environments</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s5-security-in-different-environments.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c1s4-connections-to-servers"
+></A
+>15.6. Connections to Servers</H1
+><P
+>&#13;   From Dirk Janssen &#60;dirkj_AT_u.arizona.edu&#62;: Here are several good
+   ways of working on your laptop from your desktop machine. If you have a
+   separate desktop machine at work, you might want to use that as a
+   terminal server to your laptop. This means you get the larger screen and
+   the better keyboard, without having to worry about syncing files. The
+   easiest way to do this is to install ssh on both sides, and ssh from
+   your desktop (running X) to the laptop. Ssh will provide a secure
+   connection and, crucially, a secure X connection between the two
+   machines. If you type, for example, <B
+CLASS="command"
+>emacs &#38;</B
+> in
+   the ssh shell, emacs will start a window on your desktop machine while
+   running on your laptop. 
+</P
+><P
+>&#13;   There are various ways in which you can make this situation more
+   productive/complicated. Emacs, for one thing, can open windows (called
+   frames by emacs) on separate displays by using
+   <B
+CLASS="command"
+>make-frame-on-display</B
+>. This way, you can have the
+   same emacs displaying on your desktop and your laptop: A dual headed
+   system is born. 
+</P
+><P
+>&#13;   For other programs, you usually have to decide at startup time on which
+   screen you want them. To run them on the laptop screen, start them as
+   usual. To run them on the desktop screen, start them from the ssh shell
+   on the desktop or redirect their screens using the DISPLAY variable.
+   Some programs also accept a <B
+CLASS="command"
+>-display</B
+> option. Read the
+   documentation on <B
+CLASS="command"
+>xauth</B
+> on how to set this up. An easy
+   way out is to find out which pseudo display ssh has created for you by
+   typing <B
+CLASS="command"
+>echo $DISPLAY</B
+> in the ssh shell. Assuming your
+   desktop is called <B
+CLASS="command"
+>olli</B
+> and your laptop
+   <B
+CLASS="command"
+>stan</B
+>, this will usually produce something like
+   <B
+CLASS="command"
+>stan:10</B
+>. This means that processes on stan (the
+   laptop) display on what they think is the 10th screen of stan, which by
+   some ssh magic is actually relayed (in a secure way) to the screen of
+   olli.
+</P
+><P
+>&#13;   There are some ways in which you can dynamically move windows from one
+   machine to another. A very interesting approach is taken by
+   <B
+CLASS="command"
+>xmove</B
+>, but this program lacks a good user interface
+   (any volunteers?). Xmove creates a pseudo screen (similar to the stan:10
+   that ssh creates) and windows that have their DISPLAY set to this pseudo
+   screen can be moved back and forth between real screens (provided all
+   screens use the same color depth).
+</P
+><P
+>&#13;   Alternatively, you can run an one of the several programs that open a
+   <B
+CLASS="command"
+>virtual root window</B
+>: A window on your desktop that
+   contains other windows. It looks a lot like running an emulator. With
+   these programs, you can start your processes on stan, then move all
+   their windows to olli, then work for a while, and then move them back so
+   you can continue working on stan. Hibernate your laptop and repeat ad
+   infinitum. Check out xmx and VNC for this. 
+</P
+><P
+>&#13;   If this is all too complicated for you, but you like to use the two
+   screens at the same time, consider at least installing x2x. This little
+   tool makes it possible to move your mouse from one screen to the other,
+   and the keyboard focus goes with it. To run it, you need another ssh
+   going from stan (the laptop) to olli (the desktop): ie. type
+   <B
+CLASS="command"
+>ssh olli</B
+> in a stan xterm. Keep this shell running and
+   find out which pseudo screen was created with <B
+CLASS="command"
+>echo
+   $DISPLAY</B
+>. This will return something like
+   <B
+CLASS="command"
+>olli:10</B
+> (see above for explanation). Now, type this
+   in any shell on olli: <B
+CLASS="command"
+>x2x -west -to olli:10</B
+> (and I
+   mean, in a shell that runs on olli and displays on olli, not an ssh
+   shell) This creates a little black band to on the left (west) side of
+   your desktop's screen. Whenever you move the mouse over this, the mouse
+   on screen olli:10 will move. Because olli:10 is just an ssh-created
+   alias for the screen of stan, the mouse on your laptop will move and you
+   can type there by only moving your head, not your hands.
+</P
+><P
+>&#13;   A note on X-security: Playing around with various screen programs is
+   much easier if you issue an <B
+CLASS="command"
+>xhost +</B
+> on either
+   computer. But this is extremely unsafe. Do this only when you are not
+   connected to any larger network. If you have everything working, spend
+   some time on getting xauth to work. If you use xdm, it is usually easy.
+   Otherwise, consider starting your Xserver with the same magic cookie all
+   the time. This is less safe, but still pretty safe, and it means that
+   you have to copy the cookies only once. Check the startup scripts
+   (.xserverrc, .xinitrc, .xsession, etc) for something like
+   <B
+CLASS="command"
+>cookie="MIT-MAGIC-COOKIE-1 `keygen`"</B
+> and change that
+   into (invent your own cookie here): <B
+CLASS="command"
+>cookie="MIT-MAGIC-COOKIE-1
+   12345678901234567890abcdefabcdef"</B
+>
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s4-backups.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s5-security-in-different-environments.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Backup</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-different-environments.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Security in Different Environments</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Optical Drives (CD/DVD)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Floppy Drive"
+HREF="mobile-guide-p2c1s20-floppy-drive.html"><LINK
+REL="NEXT"
+TITLE="Hard Disk"
+HREF="mobile-guide-p2c1s23-harddisk.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s20-floppy-drive.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s23-harddisk.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s21-cd-drive"
+></A
+>12.32. Optical Drives (CD/DVD)</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3282"
+></A
+>12.32.1. CD-ROM</H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3284"
+></A
+>12.32.1.1. Related Documentation</H3
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/CDROM-HOWTO/"
+TARGET="_top"
+>CDROM-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/CD-Writing-HOWTO.html"
+TARGET="_top"
+>CD-Writing-HOWTO</A
+>
+</P
+></LI
+></UL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3294"
+></A
+>12.32.1.2. Introduction</H3
+><P
+>&#13;   Most notebooks today come with CD drives. If floppy and CD drive are
+   swappable they are usually mutually exclusive, however many vendors (HP,
+   Dell) provide cables which allow the floppy module to be connected to
+   the parallel port.  Sometimes the CD drives comes as external
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> device (e.g. SONY), or as SCSI device (e.g. HP
+   OmniBook 800), USB device (e.g. SONY), or as Firewire (e.g. SONY VAIO
+   VX71P).  Such an external devices might bear problems to install Linux
+   from it.
+</P
+><P
+>&#13;   As far as I know there are SONY DiscMans available which have a port to
+   connect them to a computer or even a SCSI port. I found an article
+   published by Ziff-Davis Publishing Company (September 1996 issue, but
+   missed to note the URL) written by Mitt Jones: "Portable PC Card CD-ROM
+   drives transform laptops into mobile multimedia machines", which listed:
+   Altec Lansing AMC2000 Portable Multimedia CD-ROM Center; Axonix ProMedia
+   6XR; CMS PlatinumPortable; EXP CDS420 Multimedia Kit; H45
+   Quick<SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> CD; Liberty 115CD; Panasonic KXL-D740;
+   Sony PRD-250WN CD-ROM Discman.
+</P
+><P
+>&#13;   To here music from internal CD drives usually works without problems.
+   But note:
+</P
+><DIV
+CLASS="tip"
+><P
+></P
+><TABLE
+CLASS="tip"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+> 
+   Some notebooks come with an external CD drive, you need an extra cable
+   to connect the sound output of the drive to the sound input of the
+   notebook.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3303"
+></A
+>12.32.2. CD-RW</H2
+><P
+>&#13;   Most notebooks today even come with internal or external CD writers.
+   The internal usually work, see 
+   <A
+HREF="http://tldp.org/HOWTO/CD-Writing-HOWTO.html"
+TARGET="_top"
+>CD-Writing-HOWTO</A
+>
+   for details.  But with   the different external (PCMCIA, Firewire, USB) drives you probably need
+   some tweaking.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3307"
+></A
+>12.32.3. DVD Drive</H2
+><P
+>&#13;   <A
+HREF="http://linvdr.org/projects/regionset/"
+TARGET="_top"
+>regionset</A
+>
+   adjusts and shows the region code of DVD drives.
+</P
+><P
+>&#13;   <A
+HREF="http://www.trylinux.com/projects/udf/index.html"
+TARGET="_top"
+>Universal Disk Format (UDF) Driver</A
+>
+   : "UDF is a newer CDROM filesystem standard that's required for
+   <SPAN
+CLASS="acronym"
+>DVD</SPAN
+> roms. It's meant to be a replacement for the
+   ISO9660 filesystem used on today's CDROMs, but the immediate impact for
+   most will be DVD. <SPAN
+CLASS="acronym"
+>DVD</SPAN
+> multimedia cdroms use the UDF
+   filesystem to contain MPEG audio and video streams.   To access
+   <SPAN
+CLASS="acronym"
+>DVD</SPAN
+> cdroms you would need a <SPAN
+CLASS="acronym"
+>DVD</SPAN
+>
+   cdrom drive, the kernel driver for the cdrom drive, some kind of MPEG
+   video support, and a UDF filesystem driver (like this one). Some
+   <SPAN
+CLASS="acronym"
+>DVD</SPAN
+> cdroms may contain both UDF filesystems and
+   ISO9660 filesystems. In that case, you could get by without UDF
+   support."
+</P
+><P
+>&#13;   <A
+HREF="http://www.linuxvideo.org/"
+TARGET="_top"
+>DVD Video</A
+>
+</P
+><P
+>&#13;   DVD formats:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;Digital Versatile Disc
+DVD-5  4.4GB 1side 1 coat ~ 2h video
+DVD-9  8.5GB 1side 2 coat ~ 4h video
+DVD-10 9.4GB 2side 1 coat ~ 4.5h video
+DVD-18 17 GB 2side 2 coat ~ 8h video
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s20-floppy-drive.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s23-harddisk.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Floppy Drive</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Hard Disk</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

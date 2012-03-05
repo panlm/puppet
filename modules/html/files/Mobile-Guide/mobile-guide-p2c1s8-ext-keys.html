@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Extra Keys / Hot Keys</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Keyboard"
+HREF="mobile-guide-p2c1s6-keyboard.html"><LINK
+REL="NEXT"
+TITLE="Function Key"
+HREF="mobile-guide-p2c1s8-func-keys.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s6-keyboard.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s8-func-keys.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s8-ext-keys"
+></A
+>12.12. Extra Keys / Hot Keys</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2264"
+></A
+>12.12.1. Related Documentation</H2
+><P
+>&#13;<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html"
+TARGET="_top"
+>Keyboard-and-Console-HOWTO</A
+>
+</P
+></LI
+></OL
+>
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2271"
+></A
+>12.12.2. Utilities</H2
+><P
+>&#13;   Some laptops offer extra buttons, e.g. - internet, mail keys, or
+   zone keys. If the Linux kernel and XFree86/X.org generate key codes for
+   them, <B
+CLASS="command"
+>hotkeys</B
+> or just plain
+   <B
+CLASS="command"
+>xmodmap</B
+> (see the man page of this X11 programm
+   for details) may be helpful. If Linux doesn't know
+   about the keys, you'll have to patch the kernel first.
+
+   Though I'm not quite sure some tools don't seem 
+   to require this, I don't understand how it works yet.
+
+
+
+   You may also use
+   <A
+HREF="http://www.geocities.com/wmalms/"
+TARGET="_top"
+>xhkeys</A
+>
+   . This tool allows you to assign an
+   action to any key that is otherwise unused in X (such as the
+   "menu" key on a 105 key keyboard, extra keys on some keyboard
+   models, or odd keys on laptops). The action assigned to a key
+   or key combination (key and modifiers) can be a builtin
+   operation, a call to an external application, the sending of a
+   key event (simulating a key press/release), or the sending of a
+   mouse button event (simulating a button press/release). 
+
+</P
+><DIV
+CLASS="tip"
+><P
+></P
+><TABLE
+CLASS="tip"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   To get information about unknown keyboard or mouse events you
+   may use <B
+CLASS="command"
+>showkey</B
+> and <B
+CLASS="command"
+>mev</B
+> (the last
+   one is from the <B
+CLASS="command"
+>gpm</B
+> package) on a console screen.
+   But some of the extra keys are not found with these tools.
+
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>&#13;   <A
+HREF="http://keytouch.sourceforge.net/"
+TARGET="_top"
+>keyTouch</A
+>
+   makes it possible to easily configure the extra function
+   keys of a keyboard (like multimedia keys). It allows the user to define
+   which program will be executed when a key is pressed.
+   By using keyTouch-editor the user can
+   easily create a keyboard file for his or her laptop to get the laptop
+   supported.
+</P
+><P
+>&#13;   <B
+CLASS="command"
+>akdaemon</B
+> is a userland daemon to invoke
+   "the fun keys" by accessing a dev node offered by the
+   complementary 
+   <A
+HREF="http://sourceforge.net/projects/akdaemon/"
+TARGET="_top"
+>kernel patch</A
+>
+   or the
+   <A
+HREF="http://home.zonnet.nl/vanrein/linux/funkey/"
+TARGET="_top"
+>funkey programm</A
+>
+   .
+</P
+><P
+>&#13;   The
+   <A
+HREF="http://ypwong.org/hotkeys/"
+TARGET="_top"
+>hotkeys</A
+> 
+   package is supposed to listen for those multimedia keys. 
+
+
+
+</P
+><P
+>&#13;   Special ("easy access") buttons are supported by
+   <A
+HREF="http://lineak.sourceforge.net"
+TARGET="_top"
+>LinEAK</A
+>
+   .
+   Here is an example
+   <TT
+CLASS="filename"
+>lineakd.conf</TT
+> file:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;# LinEAK Configuration file for Compaq Easy Access Key 2800 (6 keys)
+
+# Global settings
+KeyboardType            = CIKP800
+CdromDevice             = /dev/cdrom
+MixerDevice             = /dev/mixer
+
+# Specific keys of your keyboard
+internet        = xosview
+search          = kfind
+mail            = kmail
+multimedia      = "artsdsp xmms"
+voldown         = "aumix -v -2"
+volup           = "aumix -v +2"
+
+# end lineakd.conf
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+</P
+><P
+>&#13;   <A
+HREF="http://hocwp.free.fr/xbindkeys/xbindkeys.html"
+TARGET="_top"
+>xbindkeys</A
+>
+   is a program that associates keys or mouse
+   buttons to shell commands under X. After a little
+   configuration, it can start many commands with the
+   keyboard (e.g. control+alt+x starts an xterm) or with
+   the mouse buttons.
+</P
+><P
+>&#13;   <A
+HREF="http://www.hadess.net/misc-code.php3"
+TARGET="_top"
+>ACME</A
+>
+   is a small GNOME tool to make use of the multimedia
+   buttons present on most laptops and Internet keyboards:
+   Volume, Brightness, Power, Eject, My Home, Search, E-Mail,
+   Sleep, Screensaver, Finance, WWW, Calculator, Record, Close
+   Window, Shade Window, Play, Stop, Pause, Previous, Next,
+   Groups, Media, Refresh, and Help buttons. It works on all the
+   platforms GNOME supports (laptops and PCs). It uses either
+   OSS or ALSA for Volume control.
+</P
+><P
+>&#13;   For some laptop series there are
+   Linux utilities available to control special hotkeys and other
+   features.
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="http://www.buzzard.me.uk/toshiba/index.html"
+TARGET="_top"
+>toshutils</A
+>
+   by Jonathan Buzzard for some Toshiba models.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://sourceforge.net/projects/tclkeymon/"
+TARGET="_top"
+>Tclkeymon</A
+>
+   is a daemon for Toshiba laptops that use ACPI and the
+   Toshiba ACPI extensions. It monitors function keys and Toshiba-specific
+   buttons (including the CD player buttons and the state of the laptop lid)
+   and responds appropriately.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tpctl.sourceforge.net"
+TARGET="_top"
+>tpctl</A
+>
+   IBM ThinkPad configuration tools for Linux by Thomas Hood.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://savannah.nongnu.org/projects/tpb/"
+TARGET="_top"
+>ThinkPad Buttons</A
+>
+   enables the special keys that are found on the keyboard of an IBM
+   ThinkPad. It is possible to bind a program to each of the buttons. It
+   has an on-screen display (OSD) to show volume, mute, LCD brightness,
+   and some other things.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://rsim.cs.uiuc.edu/~sachs/tp-scroll/"
+TARGET="_top"
+>IBM ThinkPad Scroll Daemon</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://people.debian.org/~dz/i8k/"
+TARGET="_top"
+>i8k</A
+>
+   utils for DELL laptops.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.cakey.de/acerhk/"
+TARGET="_top"
+>hotkey Linux driver</A
+> 
+   for ACER laptops.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.blinkenlights.ch/cgi-bin/fm.pl?get=osle"
+TARGET="_top"
+>OSL</A
+>
+   is a simple pbbuttonsd (used on Apple laptops to access
+   the 'special keys' like volume, eject, etc.) client. It
+   uses the xosd-lib to display the current values which makes
+   it look a lot more like OSX than other pbbuttonsd-clients.
+
+
+
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://pbbuttons.berlios.de/"
+TARGET="_top"
+>PBButtons</A
+>
+   enables hotkeys on Apple iBook/PowerBook/TiBook. I have heard it works well
+   on x86 architectures, too.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.dreamind.de/ikeyd.shtml"
+TARGET="_top"
+>ikeyd</A
+>
+   is a simple daemon which sets the volume or ejects a CDROM
+   when hotkeys are pressed on an iBook/TiBook. 
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://perso.wanadoo.fr/pascal.brisset/vaio/"
+TARGET="_top"
+>jogdiald</A
+> 
+   for the Jog-Dial on SONY laptops offers support for extra keys, too.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://sourceforge.net/projects/omke/"
+TARGET="_top"
+>omke</A
+> 
+   is a set of small programs and patches to configure some advanced
+   features of your HP OmniBook (usually things that HP has not documented) such as
+   enabling/disabling the extra onetouch/multimedia keys. This tool
+   works also for some Toshiba notebooks.
+</P
+></LI
+></UL
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s6-keyboard.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s8-func-keys.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Keyboard</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Function Key</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

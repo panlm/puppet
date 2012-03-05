@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Requirements</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Laptop Distributions"
+HREF="mobile-guide-p1c2-laptop-distribution.html"><LINK
+REL="PREVIOUS"
+TITLE="Laptop Distributions"
+HREF="mobile-guide-p1c2-laptop-distribution.html"><LINK
+REL="NEXT"
+TITLE="Recommendation"
+HREF="mobile-guide-p1c2s2-recommendation.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c2-laptop-distribution.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. Laptop Distributions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c2s2-recommendation.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c2s1-requirements"
+></A
+>2.1. Requirements</H1
+><P
+>&#13;   From the
+   <A
+HREF="http://tldp.org/HOWTO/Battery-Powered/"
+TARGET="_top"
+>Battery-Powered-HOWTO</A
+>
+   I got this recommendation (modified by WH):
+</P
+><P
+>&#13;   A Message to Linux Distributors:
+   If you happen to be a Linux distributor, thank you for reading all this.
+   Laptops are becoming more and more popular, but still most Linux
+   distributions are not very well prepared for portable computing. Please
+   make this section of this document obsolete, and make a few changes in
+   your distribution.
+</P
+><P
+>&#13;   The installation routine should include a configuration, optimized for
+   laptops. The <EM
+>minimal install</EM
+> is often not lean
+   enough. There are a lot of things that a laptop user does not need on
+   the road. Just a few examples. There is no need for three different
+   versions of <B
+CLASS="command"
+>vi</B
+>. Some portable systems do not
+   need printing support.
+</P
+><P
+>&#13;   Don't forget to describe <EM
+>laptop-specific installation
+   problems</EM
+>, e. g. how to install your distribution without a
+   CD/DVD-ROM drive.
+</P
+><P
+>&#13;   Add better <EM
+>power management</EM
+> and seamless
+   <EM
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> support</EM
+> to your
+   distribution. Add a recompiled kernel and an alternative set of
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> drivers with <EM
+>apm support</EM
+>
+   that the user can install on demand. Include a precompiled
+   <EM
+>apmd package</EM
+> with your distribution. Also include
+   <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg; infrared support and
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> support.
+</P
+><P
+>&#13;   Add support for dynamically <EM
+>switching network
+   configurations</EM
+>. Most Linux laptops travel between locations
+   with different network settings (e. g. the network at home, the network
+   at the office and the network at the university) and have to change the
+   network ID very often.
+</P
+><P
+>&#13;   Add a <EM
+>convenient PPP dialer</EM
+> with an address book,
+   that does not try to start multiple copies of the PPP daemon if you click
+   on the button twice (e.g., the RedHat <B
+CLASS="command"
+>usernet</B
+> tool).
+   It would be nice to have the PPP dialer also display the connection speed
+   and some statistics. One nice command line dialer that autodetects modems
+   and PPP services is <B
+CLASS="command"
+>wvdial</B
+> from 
+   <A
+HREF="http://open.nit.ca/"
+TARGET="_top"
+>OpenSourceInNitix</A
+>.
+</P
+><P
+>&#13;   At TuxMobil you may find a huge number of links to 
+   <A
+HREF="http://tuxmobil.org/mylaptops.html"
+TARGET="_top"
+>laptop and notebook Linux installation reports</A
+>.
+   They are ordered by manufacturer and Linux distribution. Special categories
+   are available for:
+
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/debian_linux.html"
+TARGET="_top"
+>Debian</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/gentoo_mobile.html"
+TARGET="_top"
+>Gentoo</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/distribution_linux_laptop_redhat.html"
+TARGET="_top"
+>RedHat</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/distribution_linux_laptop_suse.html"
+TARGET="_top"
+>SuSE</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/distribution_linux_laptop_ubuntu.html"
+TARGET="_top"
+>Ubuntu</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/distribution_linux_laptop_slackware.html"
+TARGET="_top"
+>SlackWare</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/distribution_linux_laptop_mandrake.html"
+TARGET="_top"
+>Mandrake (Mandriva)</A
+>,
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/mobile_minix.html"
+TARGET="_top"
+>Minix</A
+>
+   and 
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tuxmobil.org/mobile_bsd.html"
+TARGET="_top"
+>different kinds of BSD flavors</A
+>.
+</P
+></LI
+></UL
+>
+
+   Some resources are available in
+   <A
+HREF="http://tuxmobil.org/lang.html"
+TARGET="_top"
+>different languages</A
+>, e.g.
+
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   in German <A
+HREF="http://tuxmobil.de/"
+TARGET="_top"
+>TuxMobil(DE): Linux on Mobile Computers</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   in Russian <A
+HREF="http://tuxmobil.ru/"
+TARGET="_top"
+>TuxMobil(RU): Linux on Mobile Computers</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   and in Chinese <A
+HREF="http://tuxmobil.cn/"
+TARGET="_top"
+>TuxMobil(CN): Linux on Mobile Computers</A
+>.
+</P
+></LI
+></UL
+>
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c2-laptop-distribution.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c2s2-recommendation.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Laptop Distributions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c2-laptop-distribution.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Recommendation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Textmode 100x37</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="NeoMagic Graphics Chipset Series NM20xx"
+HREF="mobile-guide-a6-neomagic-chip.html"><LINK
+REL="PREVIOUS"
+TITLE="Introduction"
+HREF="mobile-guide-p6a6s1-introduction.html"><LINK
+REL="NEXT"
+TITLE="Annotated Bibliography: Books For Linux Nomads"
+HREF="mobile-guide-a7-annotated-bibliography.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a6s1-introduction.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix G. NeoMagic Graphics Chipset Series NM20xx</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-a7-annotated-bibliography.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p6a6s2-textmode-100-37"
+></A
+>G.2. Textmode 100x37</H1
+><P
+>&#13;   This chapter is a courtesy of Cedric Adjih 
+ 
+   , though I have changed some minor parts. Please note: Another method to
+   achieve a better resolution in text mode is the use of the framebuffer
+   driver (as explained in the X-Windows chapter above). This method
+   requires kernel reconfiguration (some Linux distributions include an
+   appropriate kernel already) and a new entry (vga=NNN) in
+   <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+>. In text mode it works even with
+   VESA BIOSes before version 2.0, at least on the models I could test it.
+   Though the SVGATextMode method could be faster (couldn't check this
+   yet).
+</P
+><P
+>&#13;   An apparently little known fact about the Neomagic chipset NM20xx is
+   that you can run text mode in 100x37 (i.e. 800x600). This text mode is
+   very nice (as opposed to the 80x25 which is ugly). I tried this with a
+   HP OmniBook 800 and suppose it might work with other laptops using the
+   NeoMagic chip, too.
+</P
+><P
+>&#13;   The main problem is that is a bit difficult to set up, and if you're
+   going wrong with the commands <B
+CLASS="command"
+>SVGATextMode</B
+>
+   or <B
+CLASS="command"
+>restoretextmode</B
+> some results on the
+   <SPAN
+CLASS="acronym"
+>LCD</SPAN
+> might be frightening. Although I didn't manage to
+   break my <SPAN
+CLASS="acronym"
+>LCD</SPAN
+> with many attempts going wrong,
+   DISCLAMER: THIS MIGHT DAMAGE YOUR HARDWARE. YOU HAVE BEEN WARNED. FOLLOW
+   THE FOLLOWING INSTRUCTIONS AT YOUR OWN RISKS. I'M NOT RESPONSIBLE IF
+   SOMETHING BAD HAPPENS.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5506"
+></A
+>G.2.1. Survey</H2
+><P
+>&#13;   You need to do <EM
+>three</EM
+> main steps:
+
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Enable Linux to boot in 800x600 textmode. The problem is that you won't
+   see any text before the following two steps aren't done.
+</P
+></LI
+><LI
+><P
+>&#13;   Automatically run <B
+CLASS="command"
+>restoretextmode</B
+> with correct register data.
+</P
+></LI
+><LI
+><P
+>&#13;   Automatically run <B
+CLASS="command"
+>SVGATextMode</B
+>.
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5519"
+></A
+>G.2.2. More Details</H2
+><P
+>&#13;   All the files I have modified, are available for now on
+   <A
+HREF="http://starship.python.net/crew/adjih/data/cda-omni-trick.tar.gz"
+TARGET="_top"
+>my pages</A
+>
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN5523"
+></A
+>G.2.2.1. Enabling Linux to Boot in 800x600</H3
+><P
+>&#13;   Recent kernels (2.2.x) need to be compiled with CONFIG_VIDEO_GFX_HACK
+   defined. Default is off. (look in
+   <TT
+CLASS="filename"
+>/usr/src/linux-2.2.x/arch/i386/boot/video.S</TT
+>)
+</P
+><P
+>&#13;   This is done by passing the parameter <B
+CLASS="command"
+>vga=770</B
+> to
+   older kernels or <B
+CLASS="command"
+>vga=7</B
+> to 2.2.x kernels. Example with
+   <TT
+CLASS="filename"
+>lilo.conf</TT
+>:
+</P
+><P
+>&#13;
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;image=/boot/bzImage-modif
+label=22
+append="svgatextmode=100x37x8_SVGA" #explained later
+vga=7
+read-only
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN5533"
+></A
+>G.2.2.2. Running restoretextmode and SVGATextMode at Boot Time</H3
+><P
+>&#13;   Running <B
+CLASS="command"
+>restoretextmode</B
+> and
+   <B
+CLASS="command"
+>SVGATextMode</B
+> at Boot Time. You must arrange to run
+   <B
+CLASS="command"
+>restoretextmode &#60;name of some textreg.dat file&#62;</B
+>
+   and <B
+CLASS="command"
+>SVGATextMode 100x37x8_SVGA</B
+> at boot time.
+</P
+><P
+>&#13;   An example <TT
+CLASS="filename"
+>textreg.dat</TT
+> for restoretextmode
+   (obtained using <B
+CLASS="command"
+>savetextmode</B
+>) is in my tar archive in
+   <TT
+CLASS="filename"
+>tmp/</TT
+>, and an example
+   <TT
+CLASS="filename"
+>/etc/TextConfig</TT
+>.
+</P
+><P
+>&#13;   Since I'm lazy, I've simply put <B
+CLASS="command"
+>SVGATextMode</B
+> and
+   <B
+CLASS="command"
+>restoretextmode</B
+> in the
+   <TT
+CLASS="filename"
+>/etc/rc.boot/kbd</TT
+> file from my Debian/GNU Linux
+   which get executed at boot time (also available in the tar archive).
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN5549"
+></A
+>G.2.2.3. Now the Key Point</H3
+><P
+>&#13;   Annoying things will be displayed if you don't use the right
+   SVGATextMode in the right video text mode: this is why I also pass the
+   environmental variable <B
+CLASS="command"
+>"svgatextmode=100x37x8_SVGA"</B
+>
+   (arbitrary name) to the kernel (using append=xxx in lilo.conf) when I
+   also set <B
+CLASS="command"
+>vga=7</B
+>: the script
+   <TT
+CLASS="filename"
+>/etc/rc.boot/kbd</TT
+> tests this variable and calls
+   <B
+CLASS="command"
+>restoretextmode</B
+> and <B
+CLASS="command"
+>SVGATextMode</B
+>
+   IF AND ONLY IF.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5557"
+></A
+>G.2.3. Road Map</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Recompile the kernel 2.2.x with CONFIG_VIDEO_GFX_HACK
+</P
+></LI
+><LI
+><P
+>&#13;   Insert the restoretextmode with the correct parameter in the
+   initialisation script, with no other changes.
+</P
+></LI
+><LI
+><P
+>&#13;   Boot with normal text mode (80x25) but restoretextmode: you should see
+   the screen going to 100x37, but with only 80x25 usable. Don't use
+   SVGATextMode yet.
+</P
+></LI
+><LI
+><P
+>&#13;   It is much better to conditionnalize your initialize code as I did, to
+   keep the possibility of booting in both modes: you may test this now
+   with some reboots (starting restoretextmode or not).
+</P
+></LI
+><LI
+><P
+>&#13;   Boot with 100x37 text mode using parameter <B
+CLASS="command"
+>vga=7</B
+>
+   (lilo.conf), you should see white background at some point, but the
+   characters will be black on black. This is ok. You'll have to reboot
+   blindly now.
+</P
+></LI
+><LI
+><P
+>&#13;   Insert the &#60;path&#62;/SVGATextMode 100x37x8_SVGA after the
+   restoretextmode in initialization scripts.
+</P
+></LI
+><LI
+><P
+>&#13;   Reboot with <B
+CLASS="command"
+>vga=7</B
+> (lilo.conf)
+</P
+></LI
+><LI
+><P
+>&#13;   Should be OK now. Enjoy.
+</P
+></LI
+></OL
+>
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a6s1-introduction.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-a7-annotated-bibliography.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Introduction</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-a6-neomagic-chip.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Annotated Bibliography: Books For Linux Nomads</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

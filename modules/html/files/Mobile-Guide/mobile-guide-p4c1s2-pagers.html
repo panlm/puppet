@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Pagers - SMS Messages</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Mobile (Cellular) Phones, Pagers"
+HREF="mobile-guide-p4c1-cell-phones.html"><LINK
+REL="PREVIOUS"
+TITLE="Mobile (Cellular) Phones"
+HREF="mobile-guide-p4c1s1-cellular-phones.html"><LINK
+REL="NEXT"
+TITLE="Calculators, Digital Cameras, Wearable Computing"
+HREF="mobile-guide-p4c1-wearables.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p4c1s1-cellular-phones.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Mobile (Cellular) Phones, Pagers</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p4c1-wearables.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p4c1s2-pagers"
+></A
+>10.2. Pagers - SMS Messages</H1
+><P
+>&#13;   <A
+HREF="http://www.qpage.org/"
+TARGET="_top"
+>QuickPage</A
+>
+   is a client/server software package that enables you to send messages
+   to an alphanumeric pager. The client accepts a message from the user
+   and forwards it to a server using SNPP. The server uses a modem to
+   transmit the message to the recipient's paging service using the TAP
+   protocol (also known as the IXO protocol).
+</P
+><P
+>&#13;   <A
+HREF="http://daniel.haxx.se/projects/mail2sms/"
+TARGET="_top"
+>mail2sms</A
+>
+   converts a (MIME) mail to a short message, allowing search/replace,
+   conditional rules, date/time dependent actions, customizing the
+   output format, etc. The output defaults to 160 characters, which is
+   perfectly suitable for sending the text to a GSM telephone as an
+   SMS message. This software does not include any code for actually
+   sending the text to anything else but another program or stdout.
+</P
+><P
+>&#13;   <A
+HREF="http://www.new.ox.ac.uk/~adam/computing/email2sms/"
+TARGET="_top"
+>email2sms</A
+>
+   is a filter written in Perl which converts an e-mail into a form
+   suitable for sending as an SMS message. Its main advantage over
+   the alternatives is that it uses the CPAN module
+   <EM
+>Lingua::EN::Squeeze</EM
+> to compress the text
+   down to as little as 40% of its original size, so you can
+   get much more of your e-mail into the 160 character limit imposed
+   by SMS. It is fully MIME compatible, and has many configurable
+   options, including removal of quoted text. Ideal for use with
+   procmail. A Perl script for sending the output to a typical
+   e-mail to SMS web gateway is included.
+</P
+><P
+>&#13;   <A
+HREF="http://smslink.sourceforge.net/"
+TARGET="_top"
+>SMSLink</A
+>
+   implements a client/server gateway to the SMS protocol.
+   It requires the use of dedicated hardware though (a
+   serial GSM module). Both SMS emission and reception are supported. The
+   server only runs under Linux at the present time and also supports
+   interactive mode via <B
+CLASS="command"
+>telnet</B
+>. The command-line client
+   already exists for Linux, Solaris and HP-UX. A basic web interface is
+   provided. A Win32 client is in the works.
+</P
+><P
+>&#13;   <A
+HREF="http://lide.pruvodce.cz/~wayne/"
+TARGET="_top"
+>nmsms</A
+>
+   is a very simple program to announce incoming email to an SMS
+   address (email address) defined at compile time. The original
+   <EM
+>From:</EM
+> and <EM
+>Subject:</EM
+>
+   header are included in each mail announced.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p4c1s1-cellular-phones.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p4c1-wearables.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Mobile (Cellular) Phones</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p4c1-cell-phones.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Calculators, Digital Cameras, Wearable Computing</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

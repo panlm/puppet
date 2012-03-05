@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Buying a Second Hand Laptop</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Which Laptop to Buy?"
+HREF="mobile-guide-p1c1-which-laptop-to-buy.html"><LINK
+REL="PREVIOUS"
+TITLE="Writing a Device Driver"
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"><LINK
+REL="NEXT"
+TITLE="No Hardware Recommendations"
+HREF="mobile-guide-p1c1s9-no-hardware-recommendations.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Which Laptop to Buy?</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c1s9-no-hardware-recommendations.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c1s8-buying-a-second-hand-laptop"
+></A
+>1.8. Buying a Second Hand Laptop</H1
+><P
+>&#13;   Some recommendations to check a used laptop, before buying it:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Review the surface of the case for visible damages.  
+</P
+></LI
+><LI
+><P
+>&#13;   Check the display for pixel faults. Maybe it's useful to take a
+   magnifying glass therefore. By the way: There is a standard for pixel
+   faults etc. ISO 13406-2.
+</P
+></LI
+><LI
+><P
+>&#13;   Do an IO stress-test, .e.g. with the tool <B
+CLASS="command"
+>bonnie</B
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   You may use <B
+CLASS="command"
+>memtest</B
+> and <B
+CLASS="command"
+>crashme</B
+> to
+   achieve a memory test.
+</P
+></LI
+><LI
+><P
+>&#13;   Do a CPU stress test, e.g. with the command <B
+CLASS="command"
+>md5sum /dev/urandom</B
+> or by
+   compiling a kernel.
+</P
+></LI
+><LI
+><P
+>&#13;   Check the floppy drive by formatting a floppy.
+</P
+></LI
+><LI
+><P
+>&#13;   Check the CD/DVD drive by reading and writing a CD/DVD.
+</P
+></LI
+><LI
+><P
+>&#13;   To check the battery seems difficult, because it needs some time: one
+   charge and one work cycle.  You may use <B
+CLASS="command"
+>battery-stats</B
+>
+   to do so, but note this tool only offer APM support, it 
+   is not available with ACPI support yet.
+</P
+></LI
+><LI
+><P
+>&#13;   To check the surface of the harddisk you may take
+   <B
+CLASS="command"
+>e2fsck</B
+>. There is also a Linux tool
+   <B
+CLASS="command"
+>dosfsck</B
+> or the other <B
+CLASS="command"
+>fsck</B
+> tools.
+</P
+></LI
+><LI
+><P
+>&#13;   To test the entire disk (non-destructively), time it for performance,
+   and determine its size, as root do: 
+   <B
+CLASS="command"
+>time dd if=/dev/hda of=/dev/null bs=1024k</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Check whether the machine seems to be stolen. I have provided a 
+   <A
+HREF="http://tuxmobil.org/stolen_laptops.html"
+TARGET="_top"
+>survey of databases for stolen laptops</A
+>.
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   AFAIK there is no Linux tool like the DOS tools CHECK-IT, 
+   DR. HARD, SYSDIAG and others. These tools include many of the 
+   tests in one integrated suite. One of the best in my humble 
+   opinion is the tool 
+   <A
+HREF="http://members.datafast.net.au/~dft0802/"
+TARGET="_top"
+>PC Diagnostics 95</A
+> 
+   made by Craig Hart. Despite the 95 in its name it's plain DOS, tiny (
+   76KB program and 199KB data) reliable and free. Unfortunately it 
+   contains no check for the <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg; port.
+</P
+><P
+>&#13;   Please note this quotation from the disclaimer: "This program is written
+   with the target audience being a trained, experienced technician. It is
+   NOT designed to be used by those ignorant of computer servicing.
+   Displays are not <EM
+>pretty</EM
+> but functional. Information
+   is not explained since we are not trying to educate. This software
+   should be considered to be just like any other tool in a tech's toolbox.
+   It is to be applied with care, in the right situation, in order to find
+   answers to specific problems. If you are an end user who is less than
+   confident of dealing with computer hardware, this is probably not a
+   program for you."
+</P
+><P
+>&#13;   Laptop computers, unlike desktop machines, really do get used up.
+   <EM
+>Lithium batteries</EM
+> are good for no more than 400
+   recharge cycles, sometimes much fewer. <EM
+>Keyboards</EM
+>
+   wear out. <EM
+><SPAN
+CLASS="acronym"
+>LCD</SPAN
+> screen
+   backlighting</EM
+> grows dim. <EM
+>Mouse buttons</EM
+>
+   fail. Worst of all, <EM
+>connectors</EM
+> get loose as a
+   result of vibration, causing intermittent failures (e.g. only when you
+   hit the &#60;Enter&#62; key). We have heard of a machine used on the table
+   in a train being shaken to unusability in one trip.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1s7-writing-a-device-driver.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1s9-no-hardware-recommendations.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Writing a Device Driver</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c1-which-laptop-to-buy.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>No Hardware Recommendations</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
