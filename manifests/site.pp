@@ -17,6 +17,14 @@ class basepackage {
     }
 }
 
+class base_node_class {
+    include basepackage
+    include snmp
+    include ssh
+    include http
+    include sysctl
+}
+
 # tell puppet on which client to run the class
 # this block should be exist, if you want step 11 to success
 node default {
@@ -28,9 +36,16 @@ node vm1 {
     include snmp
     include ssh
     include http
+    include sysctl
+}
+node vm2 {
+    include base_node_class
+}
+node vm3 {
+    include base_node_class
 }
 node vm4 {
-    include basepackage
-    include snmp
-    include ssh
+    include base_node_class
 }
+
+#import "modules.pp"
