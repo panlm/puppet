@@ -1,0 +1,28 @@
+<VirtualHost <%= hostname %>:80>
+    #ServerAdmin webmaster@dummy-host.example.com
+    #DocumentRoot /var/www/html
+    #ServerName dummy-host.example.com
+    #ErrorLog logs/dummy-host.example.com-error_log
+    CustomLog /dev/null combined
+
+    Alias /html "/var/www/html/sample"
+    <Directory "/var/www/html/sample">
+        AllowOverride None
+        Order allow,deny
+        Allow from all
+        <IfModule mod_rewrite.c>
+            # Turn on URL rewriting
+            RewriteEngine On
+            Options FollowSymLinks
+            # Installation directory
+            RewriteBase /pnp4nagios/
+            # Protect application and system files from being viewed
+            RewriteRule ^(application|modules|system) - [F,L]
+            # Allow any files or directories that exist to be displayed directly
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            # Rewrite all other URLs to index.php/URL
+            RewriteRule .* index.php/$0 [PT,L]
+        </IfModule>
+    </Directory>
+</VirtualHost>

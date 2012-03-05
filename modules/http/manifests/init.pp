@@ -8,7 +8,8 @@ class http {
     file {
         "/etc/httpd/conf.d/html.conf":
         require => Package["httpd"],
-        source => "puppet://$fileserver/http/html.conf";
+        #source => "puppet://$fileserver/http/html.conf",
+        content => template("http/html.conf.erb");
     }
 
 #    file {
@@ -25,7 +26,7 @@ class http {
 
     # Mirror directory
     file {
-        "/var/www/html/html":
+        "/var/www/html/sample":
         ensure => directory,
         require => Package["httpd"],
         source => "puppet://$fileserver/http/sample",
