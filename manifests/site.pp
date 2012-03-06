@@ -45,14 +45,14 @@ node vm1 {
     include sysctl
     include nginx
 }
-node vm2 {
-    include base_node_class
-}
-node vm3 {
-    include base_node_class
-}
-node vm4 {
-    include base_node_class
-}
+node vm2 { include base_node_class }
+node vm3 { include base_node_class }
+node vm4 { include base_node_class }
+node vm5 { include base_node_class }
+node vm6 { include base_node_class }
+node vm7 { include base_node_class }
+node vm8 { include base_node_class }
+node vm9 { include base_node_class }
+node vm10 { include base_node_class }
 
 #import "modules.pp"
