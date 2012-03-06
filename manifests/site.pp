@@ -12,6 +12,8 @@ $fileserver = "vm0"
 
 class basepackage {
     package {
+        ["siege"]:
+        ensure => installed;
         ["NetworkManager", "bluez-*"]:
         ensure => purged;
     }
@@ -31,6 +33,12 @@ node default {
     include test_class
 }
 
+node vm0 {
+    include basepackage
+    include snmp
+    include ssh
+    include sysctl
+}
 node vm1 {
     include basepackage
     include snmp
