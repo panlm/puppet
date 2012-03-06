@@ -6,10 +6,13 @@ class http {
     }
 
     file {
-        "/etc/httpd/conf.d/html.conf":
+        "/etc/httpd/conf/httpd.conf":
         require => Package["httpd"],
-        #source => "puppet://$fileserver/http/html.conf",
-        content => template("http/html.conf.erb");
+        content => template("http/httpd.conf.erb");
+    }
+    file {
+        "/etc/httpd/conf.d/html.conf":
+        ensure => absent,
     }
 
 #    file {
@@ -46,7 +49,7 @@ class http {
     service {
         ["httpd"]:
         require => Package["httpd"],
-        subscribe => File["/etc/httpd/conf.d/html.conf"],
+        subscribe => File["/etc/httpd/conf/httpd.conf"],
         hasrestart => true,
         hasstatus => true,
         ensure => running;

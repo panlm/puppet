@@ -1,5 +1,9 @@
 class sysctl {
     file {
+        "/etc/security/limits.conf":
+        source => "puppet://$fileserver/sysctl/limits.conf";
+    }
+    file {
         "/etc/sysctl.conf":
         source => "puppet://$fileserver/sysctl/sysctl.conf";
     }

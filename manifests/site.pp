@@ -25,6 +25,7 @@ class base_node_class {
     include ssh
     include http
     include sysctl
+    include nginx
 }
 
 # tell puppet on which client to run the class
@@ -34,10 +35,7 @@ node default {
 }
 
 node vm0 {
-    include basepackage
-    include snmp
-    include ssh
-    include sysctl
+    include base_node_class
 }
 node vm1 {
     include basepackage
@@ -45,6 +43,7 @@ node vm1 {
     include ssh
     include http
     include sysctl
+    include nginx
 }
 node vm2 {
     include base_node_class
