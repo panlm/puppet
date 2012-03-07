@@ -23,17 +23,17 @@ ulimit -HSn 65535
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-CONFFILE="/etc/nginx/nginx.conf"
+CONFFILE="/usr/local/nginx/conf/nginx.conf"
 
-if [ -f /etc/sysconfig/nginx ]; then
-    . /etc/sysconfig/nginx
-fi
+#if [ -f /etc/sysconfig/nginx ]; then
+#    . /etc/sysconfig/nginx
+#fi
 
 prog=nginx
-nginx=${NGINX-/usr/sbin/nginx}
-conffile=${CONFFILE-/etc/nginx/nginx.conf}
+nginx=${NGINX-/usr/local/nginx/sbin/nginx}
+conffile=${CONFFILE-/usr/local/nginx/conf/nginx.conf}
 lockfile=${LOCKFILE-/var/lock/subsys/nginx}
-pidfile=${PIDFILE-/var/run/nginx.pid}
+pidfile=${PIDFILE-/usr/local/nginx/logs/nginx.pid}
 SLEEPMSEC=100000
 RETVAL=0
 
