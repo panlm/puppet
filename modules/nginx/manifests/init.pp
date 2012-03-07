@@ -1,41 +1,17 @@
-class nginx {
+class base {
     package {
-        "nginx-release-rhel-5-0.el5.ngx":
+        "rpmforge-release-0.3.6-1.el5.rf":
         ensure => present,
         provider => rpm,
-        source => "http://nginx.org/packages/rhel/5/noarch/RPMS/nginx-release-rhel-5-0.el5.ngx.noarch.rpm";
+        source => "http://apt.sw.be/redhat/el5/en/i386/rpmforge/RPMS/rpmforge-release-0.3.6-1.el5.rf.i386.rpm";
     }
     package {
-        "nginx":
-        require => Package["nginx-release-rhel-5-0.el5.ngx"],
-        name => "nginx-1.0.12-1.el5.ngx",
+        "siege":
+        require => Package["rpmforge-release-0.3.6-1.el5.rf"],
         ensure => installed;
     }
-
-    file {
-        "/etc/nginx/nginx.conf":
-        require => Package["nginx"],
-        source => "puppet://$fileserver/nginx/nginx.conf";
+    package {
+        ["NetworkManager", "bluez-*"]:
+        ensure => purged;
     }
-    file {
-        "/etc/nginx/conf.d/default.conf":
-        require => Package["nginx"],
-        source => "puppet://$fileserver/nginx/conf.d/default.conf";
-    }
-    file {
-        "/etc/init.d/nginx":
-        require => Package["nginx"],
-        mode => 755,
-        source => "puppet://$fileserver/nginx/init.d/nginx";
-    }
-
-    service {
-        ["nginx"]:
-        require => Package["nginx"],
-        subscribe => File["/etc/nginx/nginx.conf","/etc/nginx/conf.d/default.conf","/etc/init.d/nginx"],
-        hasrestart => true,
-        hasstatus => true,
-        ensure => running;
-    }
-
 }
