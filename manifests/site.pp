@@ -10,22 +10,13 @@ class test_class {
 
 $fileserver = "vm0"
 
-class basepackage {
-    package {
-        ["siege"]:
-        ensure => installed;
-        ["NetworkManager", "bluez-*"]:
-        ensure => purged;
-    }
-}
-
 class base_node_class {
-    include basepackage
+    include base
     include snmp
     include ssh
     include http
     include sysctl
-    include nginx
+    include nginx_compile
 }
 
 # tell puppet on which client to run the class
@@ -36,12 +27,12 @@ node default {
 
 node vm0 { include base_node_class }
 node vm1 {
-    include basepackage
+    include base
     include snmp
     include ssh
     include http
     include sysctl
-    include nginx
+    include nginx_compile
 }
 node vm2 { include base_node_class }
 node vm3 { include base_node_class }
