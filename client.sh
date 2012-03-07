@@ -29,6 +29,6 @@ sed -i "/^yinji\.com\.cn/d" /etc/hosts
 sed -i "/^search/d" /etc/resolv.conf
 echo "    server = vm0" >> /etc/puppet/puppet.conf
 puppet agent --test
-service puppet start
+#service puppet start
 chkconfig puppet on
 
