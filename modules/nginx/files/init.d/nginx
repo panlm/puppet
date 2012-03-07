@@ -18,22 +18,20 @@
 # Short-Description: start and stop nginx
 ### END INIT INFO
 
-ulimit -HSn 65535
-
 # Source function library.
 . /etc/rc.d/init.d/functions
 
-CONFFILE="/usr/local/nginx/conf/nginx.conf"
+CONFFILE="/etc/nginx/nginx.conf"
 
-#if [ -f /etc/sysconfig/nginx ]; then
-#    . /etc/sysconfig/nginx
-#fi
+if [ -f /etc/sysconfig/nginx ]; then
+    . /etc/sysconfig/nginx
+fi
 
 prog=nginx
-nginx=${NGINX-/usr/local/nginx/sbin/nginx}
-conffile=${CONFFILE-/usr/local/nginx/conf/nginx.conf}
+nginx=${NGINX-/usr/sbin/nginx}
+conffile=${CONFFILE-/etc/nginx/nginx.conf}
 lockfile=${LOCKFILE-/var/lock/subsys/nginx}
-pidfile=${PIDFILE-/usr/local/nginx/logs/nginx.pid}
+pidfile=${PIDFILE-/var/run/nginx.pid}
 SLEEPMSEC=100000
 RETVAL=0
 
