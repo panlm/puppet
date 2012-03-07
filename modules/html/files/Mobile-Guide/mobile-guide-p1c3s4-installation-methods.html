@@ -1,0 +1,1705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Laptop Installation Methods</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Installation"
+HREF="mobile-guide-p1c3-installation.html"><LINK
+REL="PREVIOUS"
+TITLE="Linux Tools to Repartition a Hard Disk"
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"><LINK
+REL="NEXT"
+TITLE="Common Problems During Installation"
+HREF="mobile-guide-p1c3s15-common-problems-installation.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s15-common-problems-installation.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c3s4-installation-methods"
+></A
+>3.4. Laptop Installation Methods</H1
+><TABLE
+BORDER="0"
+WIDTH="100%"
+CELLSPACING="0"
+CELLPADDING="0"
+CLASS="EPIGRAPH"
+><TR
+><TD
+WIDTH="45%"
+>&nbsp;</TD
+><TD
+WIDTH="45%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><I
+><P
+><I
+>There's More Than One Way To Do It - TMTOWTDI</I
+></P
+></I
+></TD
+></TR
+><TR
+><TD
+WIDTH="45%"
+>&nbsp;</TD
+><TD
+WIDTH="45%"
+ALIGN="RIGHT"
+VALIGN="TOP"
+><I
+><SPAN
+CLASS="attribution"
+>&#13;   Larry Wall, Tom Christiansen &#38; Randal L. Schwartz: Programming Perl, Sec. Ed. 1996 p. 10
+</SPAN
+></I
+></TD
+></TR
+></TABLE
+><P
+>&#13;   From the 
+   <A
+HREF="http://tldp.org/HOWTO/Battery-Powered/"
+TARGET="_top"
+>Battery-Powered-HOWTO</A
+>
+   : "Installing and using Linux on a laptop is
+   usually no problem at all, so go ahead and give it a try. Unlike some
+   other operating systems, Linux still supports and runs well on even very
+   old hardware, so you might give your outdated portable a new purpose in
+   life by installing Linux on it." 
+</P
+><P
+>&#13;   One of the great benefits of Linux are its numerous and flexible
+   installation features, which I don't want to describe in detail. Instead
+   I try to focus on <EM
+>laptop specific methods</EM
+>, which
+   are necessary only in certain circumstances.
+</P
+><P
+>&#13;   Most current distributions support installation methods which are useful
+   for laptops, including installation from CD-ROM/DVD, via
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> and NFS (or maybe SMB). Please see the
+   documents which are provided with these distributions for further
+   details or take a look at the above mentioned manuals and HOWTOs.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN736"
+></A
+>3.4.1. From a Boot Floppy plus CD/DVD-ROM - The Traditional Way</H2
+><P
+>&#13;   With modern laptops, the traditional Linux installation 
+   method (from one boot floppy, one support
+   floppy and a package of CD-ROMs or one DVD) should be no problem, if there
+   is a floppy drive and a CD-ROM drive available. Though with certain laptops
+   you might get trouble, if you can not use
+   <EM
+>the floppy drive and the CD/DVD-ROM drive </EM
+> simultaneously,
+   or if the floppy drive is <EM
+>only available as a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   device</EM
+>, as with the Toshiba Libretto 100. Some laptops
+   support also booting and therefore installation completely from a CD
+   drive, as reported for the SONY VAIO in the 
+   <A
+HREF="http://tldp.org/HOWTO/VAIO+Linux.html"
+TARGET="_top"
+>VAIO+Linux-HOWTO</A
+>
+   . Note: Check the
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> for the CD boot option and make sure your Linux
+   distribution comes on a bootable CD.
+</P
+><P
+>&#13;   Certain laptops will only boot <EM
+>zImage</EM
+> kernels.
+   <EM
+>bzImage</EM
+> kernels won't work. This is a known problem
+   with the <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482; Thinkpad 600 and Toshiba Tecra
+   series, for instance. Some distributions provide certain boot floppies
+   for these machines or for machines with limited memory resources, 
+   <A
+HREF="http://www.debian.org"
+TARGET="_top"
+>Debian/GNU Linux</A
+>
+   for instance.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN749"
+></A
+>3.4.2. From a CD/DVD-ROM - The Usual Way</H2
+><P
+>&#13;   Newer laptops are able to boot a Linux distribution from a 
+   bootable CD/DVD-ROM. This allows installation 
+   without a floppy disk drive. 
+
+   If the CD/DVD drive is <EM
+>only available as a
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> device</EM
+>, as with the SONY VAIO
+   PCG-Z600TEK, see the chapter about installing from PCMCIA devices
+   below.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN754"
+></A
+>3.4.3. From a DOS or Windows Partition on the same Machine</H2
+><P
+>&#13;   This is a short description of how to install from a CD-ROM under DOS
+   without using boot or supplemental floppy diskettes. This is especially
+   useful for notebooks with <EM
+>swappable floppy and CD-ROM
+   components</EM
+> (if both are mutually exclusive) or if they are
+   <EM
+>only available as PCMCIA devices</EM
+>. 
+   I have taken this method from 
+   <A
+HREF="http://www.us.debian.org/releases/stable/installmanual"
+TARGET="_top"
+>Installing Debian GNU/Linux 2.1 For Intel x86 - Chapter 5 Methods for Installing Debian</A
+>
+   :
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Get the following files from your nearest Debian FTP mirror and put them
+   into a directory on your DOS partition: <B
+CLASS="command"
+>resc1440.bin
+   drv1440.bin base2_1.tgz root.bin linux install.bat</B
+> and
+   <B
+CLASS="command"
+>loadlin.exe</B
+>. 
+</P
+></LI
+><LI
+><P
+>&#13;   Boot into DOS (not Windows) without any drivers being loaded. To do
+   this, you have to press &#60;<B
+CLASS="command"
+>F8</B
+>&#62; at exactly the
+   right moment during boot.
+</P
+></LI
+><LI
+><P
+>&#13;   Execute <B
+CLASS="command"
+>install.bat</B
+> from the directory where you have
+   put the downloaded files.
+</P
+></LI
+><LI
+><P
+>&#13;   Reboot the system and install the rest of the distribution, you may now
+   use all the advanced features such as <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>, PPP and
+   others. 
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   This should work for other distributions as well. Maybe you have to do
+   some appropriate changes. 
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN776"
+></A
+>3.4.4. From a Second Machine With a Micro Linux On a Floppy</H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN778"
+></A
+>3.4.4.1. Introduction</H3
+><P
+>&#13;   Because of their small or nonexistent footprint, micro-Linuxes are
+   especially suited to run on laptops, particularly if you use a
+   company-provided laptop running Windows9x/NT. Or for installation
+   purposes using another non Linux machine. There are several
+   <EM
+>micro</EM
+> Linux distributions out there that boot from
+   one or two floppies and run off a ramdisk. See 
+   <A
+HREF="mobile-guide-a1-other-operating-systems.html"
+>Appendix A</A
+> Appendix A
+   for a listing of distributions.
+</P
+><P
+>&#13;   I tried the following with <B
+CLASS="command"
+>muLinux</B
+> ( available at 
+   <A
+HREF="http://sunsite.auc.dk/mulinux"
+TARGET="_top"
+>muLinux</A
+>
+   ) to clone my HP OmniBook 800 to a COMPAQ Armada 1592DT. 
+   Thanks to Michele Andreoli, maintainer of muLinux for his support. 
+   Since <B
+CLASS="command"
+>muLinux</B
+> doesn't support 
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> yet, you may use <B
+CLASS="command"
+>TomsRtBt</B
+> 
+   instead. In turn <B
+CLASS="command"
+>TomsRtBt</B
+> doesn't support 
+   <B
+CLASS="command"
+>PPP</B
+> but provides <B
+CLASS="command"
+>slip</B
+>. 
+   Note: Since version 7.0 <B
+CLASS="command"
+>muLinux</B
+> 
+   provides an Add-On with <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> support.
+</P
+><P
+>&#13;   I have described how to copy an already existing partition, but it might
+   also be possible to achieve a customized installation. Note: Usually you
+   would try to achieve an installation via NFS, which is supported by many
+   distributions. Or if your sources are not at a Linux machine you might
+   try the SMB protocol with SAMBA, which is also supported by
+   <B
+CLASS="command"
+>muLinux</B
+> .
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN796"
+></A
+>3.4.4.2. Prerequisites</H3
+><P
+>&#13;   You need two machines equipped with Linux. With the laptop
+   (client/destination) on which you want to install Linux use the muLinux
+   floppy. The other machine (server/source) may be a usual Linux box or
+   also using muLinux. Though its low transfer rate I use a serial null
+   modem cable because its cheap. You may apply the appropriate method
+   using a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> network card and a crossover network
+   cable or a HUB, or a parallel "null modem" cable and PLIP. As the basic
+   protocol I used PPP, but you may also use SLIP. For the data-transfer I
+   used <B
+CLASS="command"
+>nc</B
+>. Note: this is an abbrevation for
+   <B
+CLASS="command"
+>netcat</B
+>, some distributions use this as the program
+   name. You may use <B
+CLASS="command"
+>ftp</B
+>, <B
+CLASS="command"
+>tftp</B
+>,
+   <B
+CLASS="command"
+>rsh</B
+>, <B
+CLASS="command"
+>ssh</B
+>, <B
+CLASS="command"
+>dd</B
+>,
+   <B
+CLASS="command"
+>rcp</B
+>, <B
+CLASS="command"
+>kermit</B
+>,
+   <B
+CLASS="command"
+>NFS</B
+>, <B
+CLASS="command"
+>SMB</B
+> and other programs
+   instead.
+   If you prefer encrypted connections there is 
+   <A
+HREF="http://sourceforge.net/projects/cryptcat/"
+TARGET="_top"
+>Cryptcat</A
+>
+   a lightweight version of netcat with integrated transport encryption capabilities.
+</P
+><P
+>&#13;   Basic requirements are:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   A good knowledge about using Linux. You have to know exactly what you
+   are doing, if not you might end destroying former installations.
+</P
+></LI
+><LI
+><P
+>&#13;   A null modem serial cable.
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN819"
+></A
+>3.4.4.3. Source Machine</H3
+><P
+>&#13;   At your <EM
+>source</EM
+> machine issue the following commands
+   (attention: IP address, port number, partition and tty are just
+   examples!):
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Edit <TT
+CLASS="filename"
+>/etc/ppp/options</TT
+>, it should contain only:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;/dev/ttyS0
+115200
+passive
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></LI
+><LI
+><P
+>&#13;   With muLinux versions 3.x you may even use the convenient command
+   <B
+CLASS="command"
+>setup -f ppp</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Start PPP: <B
+CLASS="command"
+>pppd</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Configure the PPP network device: <B
+CLASS="command"
+>ifconfig ppp0 192.168.0.1</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Add the default route: <B
+CLASS="command"
+>route add default gw 192.168.0.1</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Check the network connection: <B
+CLASS="command"
+>ping 192.168.0.2</B
+>,
+   though the destination machine isn't up yet.
+</P
+></LI
+><LI
+><P
+>&#13;   Start the transfer from another console, remember
+   <B
+CLASS="command"
+>&#60;LEFT-ALT&#62;&#60;Fx&#62;</B
+>: 
+   <B
+CLASS="command"
+>cat /dev/hda2 | gzip -c | nc -l -p 5555</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   After the transfer (there are no more harddisk writings) stop the ping:
+   <B
+CLASS="command"
+>killall ping</B
+> .
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN851"
+></A
+>3.4.4.4. Destination Machine</H3
+><P
+>&#13;   At the <EM
+>destination</EM
+> machine issue:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Edit <TT
+CLASS="filename"
+>/etc/ppp/options</TT
+>, it should contain only:
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;/dev/ttyS0
+115200
+passive
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></LI
+><LI
+><P
+>&#13;   With muLinux versions &#62;= 3.x you may even use the convenient command
+   <B
+CLASS="command"
+>setup -f ppp</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Start PPP: <B
+CLASS="command"
+>pppd</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Configure the PPP network device: 
+   <B
+CLASS="command"
+>ifconfig ppp0 192.168.0.2</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Add the default route: 
+   <B
+CLASS="command"
+>route add default gw 192.168.0.2</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Check the network connection, by pinging to the source machine:
+   <B
+CLASS="command"
+>ping 192.168.0.1</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Change to another console and get the data from the server: <B
+CLASS="command"
+>nc
+   192.168.0.1 5555 | gzip -dc &#62;/dev/hda4</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   400 MB may take app. 6 hours, but your mileage may vary.
+</P
+></LI
+><LI
+><P
+>&#13;   Stop the transfer, when it is finished with:
+   <B
+CLASS="command"
+>&#60;CTL&#62;&#60;C&#62;</B
+> . This can probably be avoided
+   (but I didn't test it) by adding a timeout of 3 seconds using the
+   <B
+CLASS="command"
+>-w 3</B
+> parameter for <B
+CLASS="command"
+>nc</B
+> at the
+   destination machine <B
+CLASS="command"
+>nc -w 3 192.168.0.1 5555 | gzip -dc
+   &#62;/dev/hda4</B
+>
+</P
+></LI
+><LI
+><P
+>&#13;   After the transfer is completed, stop the ping: <B
+CLASS="command"
+>killall ping</B
+> .
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN890"
+></A
+>3.4.4.5. Configuration of the Destination Machine after the Transfer</H3
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Edit <TT
+CLASS="filename"
+>/etc/fstab</TT
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Edit <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> and 
+   <TT
+CLASS="filename"
+>/etc/lilo.msg</TT
+> and start <B
+CLASS="command"
+>lilo</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Set the new root device to the kernel: <B
+CLASS="command"
+>rdev image root_device</B
+> .
+   
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN905"
+></A
+>3.4.4.6. Miscellaneous</H3
+><P
+>&#13;<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   You may use <B
+CLASS="command"
+>bzip2</B
+> the same way as <B
+CLASS="command"
+>gzip</B
+> (untested).
+</P
+></LI
+><LI
+><P
+>&#13;   Since <B
+CLASS="command"
+>rshd</B
+>, <B
+CLASS="command"
+>sshd</B
+>,
+   <B
+CLASS="command"
+>ftpd</B
+> daemons are not available with muLinux, you have
+   to build your own file transfer mechanism with <B
+CLASS="command"
+>nc</B
+> also known as
+   <B
+CLASS="command"
+>netcat</B
+>, as described above.
+</P
+></LI
+><LI
+><P
+>&#13;   I had to set up both PPP sides very quickly or the connection broke, I
+   don't know why.
+</P
+></LI
+><LI
+><P
+>&#13;   Speed optimization has to be done. Maybe these PPP options will help:
+   <B
+CLASS="command"
+>asyncmap 0</B
+> or <B
+CLASS="command"
+>local</B
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   I checked this only with a destination partition greater than the source
+   partition. Please check <B
+CLASS="command"
+>dd</B
+> instead of
+   <B
+CLASS="command"
+>cat</B
+> therefore.
+</P
+><P
+>&#13;   Or do the following (untested): At the destination machine
+   <B
+CLASS="command"
+>cd</B
+> into the root directory <TT
+CLASS="filename"
+>/</TT
+> and
+   do <B
+CLASS="command"
+>nc -l -p 5555 | bzip2 -dc | tar xvf -</B
+>. At the
+   source machine <B
+CLASS="command"
+>cd</B
+> into the root directory
+   <TT
+CLASS="filename"
+>/</TT
+> and do 
+   <B
+CLASS="command"
+>tar cvf - . | bzip2 | nc -w 3 192.168.0.2 5555</B
+>. 
+   This should shorten the time needed for
+   the operation, too. Because only the allocated blocks need to be
+   transfered.
+
+
+
+</P
+></LI
+><LI
+><P
+>&#13;   Don't <B
+CLASS="command"
+>mount</B
+> the destination partition.
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN940"
+></A
+>3.4.5. From a Second (Desktop) Machine With a Hard Disk Adapter</H2
+><P
+>&#13;   From Adam Sulmicki &#60;adam_AT_cfar.unc.edu&#62; I got this hint: Most but not
+   all harddisks in laptops are removable, but this might be not an easy
+   task. You could just buy one of those cheap 2.5" IDE converters/adapters
+   which allow you to connect this harddisk temporarily to a desktop PC with IDE
+   subsystem, and install Linux as usual using that PC. You may do so using
+   the harddisk as the first IDE drive or besides as the second IDE drive.
+   But then you need to be sure that the bootloader (e.g.
+   <B
+CLASS="command"
+>lilo</B
+>)
+   writes to the right partition.
+   Also you have to make sure that you use the same translation style as
+   your laptop is going to use (i.e. LBA vs. LARGE vs. CHS ). 
+   You will find additional information in the 
+   <A
+HREF="http://tldp.org/HOWTO/Hard-Disk-Upgrade/index.html"
+TARGET="_top"
+>Hard-Disk-Upgrade-HOWTO</A
+>. 
+   You might copy an existing partition, but it is also possible to achieve a
+   customized installation. Instead of a desktop PC you may use a
+   second laptop, which may offer better features like a CD/DVD, to put the harddisk in.
+</P
+><P
+>&#13;   The most common adapter formats are 2.5" IDE adapters (Parallel ATA - PATA). As
+   far as I know Serial ATA (SATA) harddisks are not available for laptops
+   yet. But they could be attached to Serial ATA interfaces in a desktop PC
+   even without an adapter (at least I guess, but I will verify this as soon
+   as I have SATA equipment available). Some small subnotebooks feature
+   1.8" harddisks with ZIF connectors. These connectors are ATA compatible,
+   and IDE adaptors for them are available also.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN946"
+></A
+>3.4.6. From a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Device</H2
+><P
+>&#13;   Since I don't have a laptop which comes with a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   <EM
+>floppy drive</EM
+> (for instance Toshiba Libretto 100), I
+   couldn't check this method. Please see the chapter Booting from a
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Device in the
+   <A
+HREF="http://pcmcia-cs.sourceforge.net/ftp/doc/PCMCIA-HOWTO.html"
+TARGET="_top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-HOWTO</A
+>.
+   Also I couldn't check whether booting from a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   <EM
+>harddisk</EM
+> is possible.
+</P
+><P
+>&#13;   Anyway, when you are able to boot from a floppy and the laptop provides
+   a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> slot, it should be possible to use different
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> cards to connect to another machine, to an
+   external SCSI device, different external CD and ZIP drives and others.
+   Usually these methods are described in the documentation which is
+   provided with the distribution.
+</P
+><P
+>&#13;   The Sony Vaio (PCG-Z600) comes with an external USB-Floppy and an
+   external CD-ROM (PCMCIA). You can boot from the CD-ROM, but afterwards
+   Linux doesn't recognize the same drive anymore so that you can't install
+   from it. You'll have to add the bootparameter 
+   <B
+CLASS="command"
+>linux ide2=0x180,0x360</B
+> (or 0x180,0x386?) at the LILO boot prompt if
+   you want Linux to recognize a PCMCIA CDROM after the kernel has booted.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="mobile-guide-p1c3s10-from-a-parallel-port-zip-drive"
+></A
+>3.4.7. From a Parallel Port ZIP Drive</H2
+><P
+>&#13;   I couldn't check this method by myself, because I don't have such a
+   device. Please check the appropriate 
+   <A
+HREF="http://tldp.org/HOWTO/Install-From-ZIP.html"
+TARGET="_top"
+>Install-From-Zip-HOWTO</A
+>
+   
+   . Also I don't know how much these installation methods are supported by the
+   Linux distributions or the micro Linuxes. I suppose you have to fiddle
+   around a bit to get this working.
+</P
+><P
+>&#13;   From Jeremy Impson &#60;jdimpson_AT_acm.org&#62;: I installed Red Hat 6.1
+   on a Libretto 50CT. It only has a PCMCIA floppy drive. (Which BTW isn't
+   well supported by the default PCMCIA floppy driver. I needed to download
+   a patch from some Linux on Libretto web site.)
+</P
+><P
+>&#13;   Linux will boot off the PCMCIA floppy drive, however. It just can't go
+   back to the floppy after loading the kernel. My Libretto (the 50CT) only
+   has one PCMCIA slot (later models had two slots, or I could have gotten
+   the enhanced port replicator, which gave it another slot). So I couldn't
+   boot off a floppy and then mount a remote filesystem.
+</P
+><P
+>&#13;   So I downloaded ZipSlack (Slackware designed for running from a ZIP
+   disk) and used another PC to load it onto a ZIP disk. I attached the ZIP
+   drive to the Libretto (via the parallel port on the regular port
+   replicator that comes with it) and booted from the Slackware boot disk
+   in the PCMCIA floppy drive. When booted, I removed the floppy drive and
+   inserted and configured a network PCMCIA card. At this point the kernel
+   is in memory and it is using the filesystem on the ZIP disk.
+</P
+><P
+>&#13;   I partitioned and formatted the Libretto's harddrive and then ftp'd Red
+   Hat 6.1 installation source onto one of the new partitions (the
+   partition that would become <TT
+CLASS="filename"
+>/home</TT
+> when everything
+   gets done). This is the key: if you don't have enough disk space to have
+   the installation files plus enough to actually install the OS on to,
+   this method won't work.
+</P
+><P
+>&#13;   I shut down the ZipSlack kernel and rebooted it using a RedHat install
+   disk in the floppy drive. I pointed it at the RH6.1 installation media
+   already on the harddrive and started the install.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN972"
+></A
+>3.4.8. From a Parallel Port CD Drive (MicroSolutions BackPack)</H2
+><P
+>&#13;   I had tried myself to install Linux using the MicroSolutions BackPack
+   parallel CD-ROM drive. It is fully supported by Linux and I haven't had
+   any major problem running it. Until version 2.0.36 it is supported by
+   its own module (<B
+CLASS="command"
+>bpck</B
+>) while in later versions it
+   has been merged in the more general parallel port ide adaptors (the
+   <B
+CLASS="command"
+>paride</B
+> module that relays then of course on more
+   specific low level drivers, which in the BackPack case is still called
+   <B
+CLASS="command"
+>bpck</B
+>). 
+</P
+><P
+>&#13;   In RedHat 5.x based installations the <B
+CLASS="command"
+>bpck</B
+> module is
+   available already at installation stage so you'll just have to select
+   the BackPack cdrom from the <EM
+>Other CD-ROMs</EM
+> at the
+   installation stage and then give it some more options (but
+   <B
+CLASS="command"
+>autoprobe</B
+> should work just fine).
+</P
+><P
+>&#13;   In RedHat 6.x (which uses 2.2.x kernels and should then use 
+   <B
+CLASS="command"
+>paride</B
+>), the BackPack support was dropped. So to
+   install the distribution from such a device, you will have to customize the
+   bootdisk (adding the necessary modules) and the installation will be
+   done without any problem.
+</P
+><P
+>&#13;   Federico Pellegrin has customized a RedHat bootdisk that includes all the
+   parallel CDROM devices that are supported by the distribution Linux
+   kernel version (2.2.12) that should then work on all the supported
+   parallel CDROM devices (even if he only tested it on his MicroSolutions
+   BackPack since he doesn't have other similar hardware). You can find
+   <A
+HREF="http://web.archive.org/web/*/http://sole.infis.univ.trieste.it/~drzeus/rh_pcd.html"
+TARGET="_top"
+>some information on it and the bootdisk image</A
+>.
+</P
+><P
+>&#13;   As from RedHat 6.2 a supplementary driver disk was included in the
+   distribution to support the paride devices. You'll just have to create
+   the driver disk (the image file is <B
+CLASS="command"
+>paride.img</B
+> and can
+   be found in the <TT
+CLASS="filename"
+>images/drivers</TT
+> directory) in the
+   usual way and insert it when the installer will ask for it.
+</P
+><P
+>&#13;   Of course I suppose there isn't any problem in installing any other
+   Linux distribution using such a device as long as you can add and
+   configure the appropriate modules at the very beginning of the
+   installation stage, but I haven't tested any.
+</P
+><P
+>&#13;   You should take care of the mode the parallel port uses (ECP, EPP,
+   Output only, PS/2) since some of them may cause your laptop to suddenly
+   freeze or cause serious data corruption. On the other side some modes
+   make the communication dramatically slow (I found the best choice on my
+   laptop the PS/2, but you should make some tests).
+</P
+><P
+>&#13;   This chapter is a courtesy of Federico Pellegrin. Please check also the
+   <A
+HREF="http://tldp.org/HOWTO/CDROM-HOWTO/"
+TARGET="_top"
+>CDROM-HOWTO</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN993"
+></A
+>3.4.9. From a Parallel Port Using a Second Machine</H2
+><FONT
+COLOR="RED"
+>PLIP Network Install</FONT
+><P
+>&#13;   I got this courtesy by Nathan Myers &#60;ncm_AT_cantrip.org&#62;: "Many
+   distributions support installing via a network, using FTP, HTTP, or
+   NFS. It is increasingly common for laptops to have only a single
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> slot, already occupied by the boot floppy
+   drive. Usually the boot floppy image has drivers for neither the
+   floppy drive itself, nor the <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> subsystem.
+   Thus, the only network interface available may be the parallel port.
+</P
+><P
+>&#13;   Installation via the parallel port using the PLIP protocol has been
+   demonstrated on, at least, Red Hat. All you need is a
+   <EM
+>Laplink</EM
+> parallel cable, cheap at any computer
+   store. See the 
+   <A
+HREF="http://tldp.org/HOWTO/PLIP.html"
+TARGET="_top"
+>PLIP-HOWTO</A
+>
+   for details on setting up the
+   connection. Note that (uniquely) the RedHat installation requires that
+   the other end of the PLIP connection be configured to use ARP
+   (apparently because RedHat uses the DOS driver in their installer). On
+   the host, either <B
+CLASS="command"
+>export</B
+> your CD file system on NFS,
+   or <B
+CLASS="command"
+>mount</B
+> it where the ftp or web daemon can find it,
+   as needed for the installation." 
+</P
+><P
+>&#13;   The 
+   <A
+HREF="http://www.tldp.org/HOWTO/PLIP-Install-HOWTO.html"
+TARGET="_top"
+>PLIP Install HOWTO</A
+>
+   by Gilles Lamiral describes how to install a Linux distribution on a
+   computer without ethernet card, nor CD drive, but just a local floppy
+   drive and a remote NFS server attached by a nullmodem parallel cable.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1006"
+></A
+>3.4.10. From a USB Storage Device (Stick, CD, DVD, Floppy)</H2
+><P
+>&#13;   If booting from an USB device is supported from the BIOS, it is possible
+   to install Linux from this drive. Besides some old laptops,
+   almost all laptops equipped with USB ports support this feature.
+</P
+><P
+>&#13;   First you have to configure the BIOS to boot from an USB device. Sometimes
+   it is possible to use a certain key combination (e.g. &#60;ESC&#62;) during the boot
+   process to select the boot device.
+</P
+><P
+>&#13;   Second you have to install Linux on the boot medium (let's say
+   an USB-Stick) and make it bootable. There are some special
+   Linux distributions available, which are dedicated for
+   such purposes, e.g.:
+</P
+><P
+>&#13;   <A
+HREF="http://featherlinux.berlios.de/about.htm"
+TARGET="_top"
+>Feather Linux</A
+>
+   is a Linux distribution which runs completely off a CD or a
+   USB pendrive and takes up under 64Mb of space. It is a Knoppix remastered
+   (based on Debian/GNU Linux), and tries to include software which most people would use
+   every day on their desktop.  See these
+   <A
+HREF="http://featherlinux.berlios.de/usb-instructions.htm"
+TARGET="_top"
+>instructions about installing Feather Linux on an USB drive</A
+>. 
+</P
+><P
+>&#13;   <A
+HREF="http://www003.upp.so-net.ne.jp/tshiono/partboot-usb/"
+TARGET="_top"
+>Partboot</A
+>
+   is dedictated to USB floppy drives and tailored for Linux laptop and
+   notebook installations (you may find tools to resize your partitions as
+   well as PCMCIA support and more).
+</P
+><P
+>&#13;   <A
+HREF="http://www.damnsmalllinux.org/"
+TARGET="_top"
+>Damn Small Linux (DSL)</A
+>
+   is a business-card size (50MB) Live CD Linux
+   distribution. Despite its minuscule size it strives to have a functional
+   and easy to use desktop.
+</P
+><P
+>&#13;   <A
+HREF="http://www.puppyos.com/"
+TARGET="_top"
+>Puppy Linux</A
+>
+   installs anywhere flash drive, live-CD, zip disk, hard drive, network
+   emulator. All of the applications are in an approx 50-70MB distribution.
+   So, it all runs in a ramdisk, and it all installs in a
+   128M usb flash card with over half left over for your data.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1020"
+></A
+>3.4.11. Installing via Network Interface</H2
+><P
+>&#13;On most modern laptops and notebooks with integrated network card, a network
+installation via the PXE protocol is easy to achieve. This comes in
+handy especially if there is no CD or DVD drive available.
+
+
+
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1023"
+></A
+>3.4.11.1. How to Prepare the Source Machine</H3
+><P
+>&#13;For my installation I have used a Knoppix CD in the
+source machine. Just enable the Terminal Server
+(KNOPPIX-&#62;Server-Dienste-&#62;Terminal-Server KNOPPIX-Services-Start-&#62; KNOPPIX Terminal Server)
+For almost any laptop model the default network drivers should work.
+Disable secure options, otherwise you will not be able to become the root user
+on the target machine.
+Besides using Knoppix, there are numerous ways to prepare 
+the source machine for PXE. I haven't checked the EtherBoot
+protocol yet, but this might work too.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1026"
+></A
+>3.4.11.2. How to Prepare the Target Machine</H3
+><P
+>&#13;Look up the BIOS for something like a NetBoot Option and set it on.
+Boot the machine and choose booting from the network device.
+This is usually achieved by pressing a certain key during boot up
+or by pre-selecting the network interface as the boot device in the BIOS.
+Now Knoppix should come up. Open a shell and do an
+<B
+CLASS="command"
+>su</B
+> to become root. To achieve a hard disk installation 
+do either <B
+CLASS="command"
+>knx-hdinstall</B
+> for Knoppix &#60;=3.3 
+or <B
+CLASS="command"
+>knoppix-installer</B
+> for Knoppix &#62;=3.3.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1032"
+></A
+>3.4.12. Installing via VNC</H2
+><P
+>&#13;You might ask why do a laptop installation via the VNC protocol? 
+Indeed I know only of one reason to do so. Imagine you want
+to use a laptop with a broken keyboard you may use the
+keyboard of the remote machine to achieve the installation. 
+Though you have to do a few key stroke to initiate the VNC
+installation!
+You have to prepare the source machine accordingly (instructions how
+to do so will follow later). For recent SuSE versions the
+distribution is already prepared, see the handbook for details.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1035"
+></A
+>3.4.13. Installing Linux on Small Machines</H2
+><P
+>&#13;   If you have less than 8MB memory and want to install via NFS you
+   may get the message "fork: out of memory". To handle this problem,
+   use <B
+CLASS="command"
+>fdisk</B
+> to make a swap partition
+   (<B
+CLASS="command"
+>fdisk</B
+> should be on the install floppy or take
+   one of the mini Linuxes described above). Then try to boot from the
+   install floppy again. Before configuring the NFS connection change
+   to another console (for instance by pressing &#60;ALT&#62;&#60;F2&#62;)
+   and issue <B
+CLASS="command"
+>swapon /dev/xxx</B
+>   (xxx = swap
+   partition ). Thanks to Thomas Schmaltz.
+</P
+><P
+>&#13;   Bruce Richardson has written the
+   
+   <A
+HREF="http://tldp.org/HOWTO/4mb-Laptops.html"
+TARGET="_top"
+>4MB-Laptop-HOWTO</A
+>
+   on installing a modern Linux distribution (specifically
+   Slackware 7.0) onto laptops with 4MB RAM and &#60;= 200MB hard
+   disks.  Another HOWTO is
+   <A
+HREF="http://www.xs4all.nl/~lennartb/rescuedisk/index.html"
+TARGET="_top"
+>Getting Linux into Small Machines - HOWTO</A
+>
+   by  L.C. Benschop.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1044"
+></A
+>3.4.14. Installing Linux on Apple Macintosh PowerBooks and iBooks</H2
+><P
+>&#13;   Macintosh PowerBooks these days come with a CD/DVD drive but not a
+   floppy drive, but the Linux distributions for PPC support booting and
+   installation off of a CD without any need for a floppy.
+</P
+><P
+>&#13;   Sometimes, when you boot the installer on the PowerBooks, the screen is
+   black; this is easily fixed by tapping the brightness key on the
+   keyboard (somehow, the screen brightness gets reset to zero).
+</P
+><P
+>&#13;   If you have a very recent PowerBook, it may not be supported by the
+   kernel on the installation CD. You can get around this by booting off of
+   a recent kernel downloaded onto your hard drive and using a ramdisk on
+   the CD or hard drive, while still loading the installation packages from
+   the CD (the default). (See the instructions available online for yaBoot
+   or BootX, the Linux/PPC boot loaders; yaBoot is currently
+   better-supported on the newest machines.)
+</P
+><P
+>&#13;   They can also boot/install from the Macintosh (HFS) partition on the
+   internal hard disk.
+</P
+><P
+>&#13;   This part is a courtesy of Steven G. Johnson.
+</P
+><P
+>&#13;   For Linux installation reports see 
+   <A
+HREF="http://tuxmobil.org/apple.html"
+TARGET="_top"
+>Linux Laptop and Notebook Survey: Apple</A
+>.
+   </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1053"
+></A
+>3.4.15. Mass Installation</H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1055"
+></A
+>3.4.15.1. 2.5" to 3.5" IDE Adapter</H3
+><P
+>&#13;   If you have a 2,5" to 3,5" IDE drive adapter you can install one of the
+   laptops, and with a desktop computer clone this harddisk to the disks of
+   the other 99 laptops. You can use the DOS utility GHOST (works pretty
+   with ext2) or with tar if the desktop works in linux. You only need an
+   additional boot disk for the reinstall of the <B
+CLASS="command"
+>lilo</B
+> in
+   each laptop and change the hostname and IP address. These adapter are
+   usually quite cheap (app . ten dollar, but difficult to get) .
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1059"
+></A
+>3.4.15.2. SystemImager</H3
+><P
+>&#13;   <A
+HREF="http://systemimager.sourceforge.net"
+TARGET="_top"
+>VA SystemImager</A
+>
+   is software that makes the installation of Linux to masses of similar
+   machines relatively easy.  It also makes software distribution,
+   configuration, and operating system updates easy. You can even update
+   from one Linux release version to another! VA SystemImager can also be
+   used for content management on web servers. It is most useful in
+   environments where you have large numbers of identical machines. Some
+   typical environments include: Internet server farms, high performance
+   clusters, computer labs, or corporate desktop environments where all
+   workstations have the same basic hardware configuration.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1063"
+></A
+>3.4.15.3. Debian/GNU Linux</H3
+><P
+>&#13;   You might want to take a look at 
+   <A
+HREF="http://www.informatik.uni-koeln.de/fai"
+TARGET="_top"
+>FAI - Fully Automatic Installation</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1067"
+></A
+>3.4.15.4. SuSE</H3
+><P
+>&#13;   The package 
+   
+   ALICE - Automatic Linux Installation and Configuration Environment,
+   offers CVS-based configuration files and configuration templates.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1070"
+></A
+>3.4.15.5. Replicator</H3
+><P
+>&#13;   
+   Replicator is a set of scripts to automate the duplication of a
+   Debian GNU/Linux installation from one computer to another.
+   Replicator makes an effort to take into account differences in
+   hardware (like HD size, video card) and in software configuration
+   (such as partitioning). After the initial configuration, the
+   scripts will create a bootdisk that allows you to completely
+   (re)install a Debian box by booting from the floppy and answering a 
+   yes/no question.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1073"
+></A
+>3.4.15.6. partimage</H3
+><P
+>&#13;   <A
+HREF="http://partimage.sourceforge.net/"
+TARGET="_top"
+>Partition Image</A
+>
+   is a Linux/UNIX utility which saves partitions in the ext2fs
+   (the linux standard), ReiserFS (a new journalized and
+   powerful file system) or FAT16/32 (MS-DOS and MS-Windows file
+   systems) file system format to an image file. The image file
+   can be compressed in the GZIP/BZIP2 formats to save disk
+   space, and splitted into multiple files to be copied on
+   floppies (ZIP for example).
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s15-common-problems-installation.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Linux Tools to Repartition a Hard Disk</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3-installation.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Common Problems During Installation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

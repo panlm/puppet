@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Hard Disk</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Optical Drives (CD/DVD)"
+HREF="mobile-guide-p2c1s21-cd-drive.html"><LINK
+REL="NEXT"
+TITLE="Hot-Swapping Devices (MultiBay, SelectBay, ..)"
+HREF="mobile-guide-p2c1s24-hotswap.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s21-cd-drive.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s24-hotswap.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s23-harddisk"
+></A
+>12.33. Hard Disk</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3324"
+></A
+>12.33.1. Linux Compatibility Check</H2
+><P
+>&#13;   Useful programms are <B
+CLASS="command"
+>hdparm</B
+>,
+   <B
+CLASS="command"
+>dmesg</B
+>, <B
+CLASS="command"
+>fsck</B
+> and
+   <B
+CLASS="command"
+>fdisk</B
+> .
+
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3331"
+></A
+>12.33.2. Utilities</H2
+><P
+>&#13;   The 
+   <A
+HREF="http://smartmontools.sourceforge.net/"
+TARGET="_top"
+>smartmontools</A
+>
+   package contains two utility programs (smartctl and smartd)
+   to control and monitor storage systems using the Self-Monitoring, Analysis and
+   Reporting Technology System (SMART) built into most modern ATA and SCSI hard
+   disks.  In many cases, these utilities will provide advanced warning of disk
+   degradation and failure.
+</P
+><P
+>&#13;   The <A
+HREF="http://www.guzu.net/linux/hddtemp.php"
+TARGET="_top"
+>hddtemp</A
+>
+   utility can read the temperature of S.M.A.R.T. hard disks.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3337"
+></A
+>12.33.3. Solid-State-Disks - SSDs</H2
+><P
+>&#13;Solid-State-Disks (SSDS) need some optimization of the Linux file system
+before installing the operating system.
+Here are some 
+<A
+HREF="http://www.thomas-krenn.com/de/wiki/Partition_Alignment"
+TARGET="_top"
+>tips and tricks for partition alignment</A
+>.
+Also useful some tips from Theodore Ts'o about 
+<A
+HREF="http://thunk.org/tytso/blog/2009/02/20/aligning-filesystems-to-an-ssds-erase-block-size/"
+TARGET="_top"
+>aligning filesystems to an SSD's erase block size</A
+>.
+
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3342"
+></A
+>12.33.4. Miscellaneous</H2
+><P
+>&#13;   Be careful when using your laptop abroad. I have heard about some
+   destroyed harddisks due to a magnetic field emitted from the
+   magnetic-holds at the backresttable of the seats in a German railway
+   waggon.
+</P
+><P
+>&#13;   Though I am quite satisfied with the quality of the hard disk in my
+   laptop, when I removed it from the case I unintendedly dropped it. I
+   recommend to be very careful.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3346"
+></A
+>12.33.5. Form Factors</H2
+><P
+>&#13;   AFAIK there are only two form factors for harddisks used in laptops. Since
+   2003 there is the 1.8" format. But much older and still the most common
+   format is the 2.5" format. The 2.5" format seems to be available in different heights
+   (Please note I couldn't verify this information yet):
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   18mm: laptops built before 1996 usually have drives 18mm high
+   
+</P
+></LI
+><LI
+><P
+>&#13;   12.7mm: I got a report about such disks but without a notebook model or manufacturer name
+</P
+></LI
+><LI
+><P
+>&#13;   11mm: since 1996 the drives are 11mm high
+</P
+></LI
+><LI
+><P
+>&#13;   9mm: many laptops, including the subnotebooks, now use a 9mm-high
+   disk drive. The largest available in this format in late 1999 is
+   <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482; <EM
+>12GN</EM
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   9.5mm: Toshiba Libretto L70 and L100 have a 9.5mm HD
+</P
+></LI
+><LI
+><P
+>&#13;   8.45mm: Toshiba Libretto 20, 30, 50 and 60 have 8.45mm tall HDs
+</P
+></LI
+><LI
+><P
+>&#13;   6.35mm: Toshiba Libretto L1000 has a 6.35mm HD
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;   It might be possible to use a hard disk wich doesn't fit with some case
+   modifications.
+</P
+><P
+>&#13;   Some laptops come with a removable hard disk in a tray, for instance the
+   KAPOK 9600D. There seem to be no SCSI drives for laptops available.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3369"
+></A
+>12.33.6. Manufacturer Tools</H2
+><P
+>&#13;   Some hard disk manufacturers offer dedicated tools to change hard disk
+   parameters. For example Hitachi offers
+   <A
+HREF="http://www.hitachigst.com/hdd/support/download.htm"
+TARGET="_top"
+>Drive Fitness Test (DFT)</A
+>,
+   which provides a quick, reliable method to test SCSI and
+   IDE hard disk drives, including Serial-ATA IDE drives. The Drive Fitness Test
+   analyze function performs read tests without overwriting customer data.
+   (However, Drive Fitness Test is bundled with some restoration utilities that
+   will overwrite data.)
+   The
+   <A
+HREF="http://www.hitachigst.com/hdd/support/download.htm"
+TARGET="_top"
+>Feature Tool</A
+>
+   is a DOS-bootable tool for changing various ATA features.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s21-cd-drive.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s24-hotswap.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Optical Drives (CD/DVD)</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Hot-Swapping Devices (MultiBay, SelectBay, ..)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

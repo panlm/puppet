@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Small Space</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Dealing with Limited Resources or Tuning the System"
+HREF="mobile-guide-a5-limited-resources.html"><LINK
+REL="PREVIOUS"
+TITLE="Introduction"
+HREF="mobile-guide-p6a5s2-introduction.html"><LINK
+REL="NEXT"
+TITLE="Hard Disk Speed"
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s2-introduction.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix E. Dealing with Limited Resources or Tuning the System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p6a5s3-small-space"
+></A
+>E.3. Small Space</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5169"
+></A
+>E.3.1. Introduction</H2
+><P
+>&#13;   There are different types of techniques to gain more disk space, such as
+   sharing of space, freeing unused or redundant space, filesystem tuning
+   and compression. Note: some of these techniques use memory instead of disk
+   space. As you will see, there are many small steps necessary to free
+   some space.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5172"
+></A
+>E.3.2. Techniques</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Stripping: Though many distributions come with stripped binaries today
+   it is useful to check this. For details see <B
+CLASS="command"
+>man
+   strip</B
+>. To find every unstripped file you can use the
+   <B
+CLASS="command"
+>file</B
+> command or more convenient the tool
+   <B
+CLASS="command"
+>findstrip</B
+>. Attention: don't strip libraries,
+   sometimes the wrong symbols are removed due to a bad programming
+   technique. Or use the <B
+CLASS="command"
+>--strip-unneeded</B
+> option.
+</P
+></LI
+><LI
+><P
+>&#13;   Perforation: <B
+CLASS="command"
+>zum(1)</B
+> reads a file list on stdin and
+   attempts to perforate these files. Perforation means, that series of
+   null bytes are replaced by <B
+CLASS="command"
+>lseek</B
+>, thus giving the
+   file system a chance of not allocating real disk space for those bytes.
+   Example: <B
+CLASS="command"
+>find . -type f | xargs zum</B
+> 
+</P
+></LI
+><LI
+><P
+>&#13;   Remove Odd Files and Duplicates: Check your system for core files, emacs
+   recovery files &#60;#FILE#&#62; vi recovery files &#60;FILE&#62;.swp, RPM
+   recovery files &#60;FILE&#62;.rpmorig and <B
+CLASS="command"
+>patch</B
+>
+   recovery files. Find duplicates, you may try <B
+CLASS="command"
+>finddup</B
+>.
+   Choose a system to name your backup, temporary and test files, e.g. with
+   a signature at the end.
+</P
+></LI
+><LI
+><P
+>&#13;   Clean Temporary Files: , e.g. <TT
+CLASS="filename"
+>/tmp</TT
+>, there is even a
+   tool <B
+CLASS="command"
+>tmpwatch</B
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   Shorten the Log Files: usually the files in <TT
+CLASS="filename"
+>/var/log</TT
+>. 
+   You may use <B
+CLASS="command"
+>logrotate</B
+> to achieve this task.
+</P
+></LI
+><LI
+><P
+>&#13;   Remove Files: Remove files which are not "necessary" under all
+   circumstances such as man pages, documentation
+   <TT
+CLASS="filename"
+>/usr/doc</TT
+> and sources e.g.
+   <TT
+CLASS="filename"
+>/usr/src</TT
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Unnecessary Libraries: You may use the <B
+CLASS="command"
+>binstats</B
+>
+   package to find unused libraries (Thanks to Tom Ed White).
+</P
+></LI
+><LI
+><P
+>&#13;   Filesystem: Choose a filesystem which treats disk space economically
+   e.g. <B
+CLASS="command"
+>rsfs</B
+>. Tune your filesystem e.g.
+   <B
+CLASS="command"
+>tune2fs</B
+>. Choose an appropriate partition and block
+   size. 
+</P
+></LI
+><LI
+><P
+>&#13;   Reduce Kernel Size: Either by using only the necessary kernel features
+   and/or making a compressed kernel image <B
+CLASS="command"
+>bzImage</B
+>. 
+</P
+></LI
+><LI
+><P
+>&#13;   Compression: I didn't check this but as far as I know you may compress
+   your filesystem with <B
+CLASS="command"
+>gzip</B
+> and decompress it on the
+   fly. Alternatively you may choose to compress only certain files. You
+   can even execute compressed files with <B
+CLASS="command"
+>zexec</B
+>
+</P
+></LI
+><LI
+><P
+>&#13;   Compressed Filesystems:
+   - For e2fs filesystems there is a compression version available
+   <A
+HREF="http://e2compr.sourceforge.net/"
+TARGET="_top"
+>e2compr</A
+>.
+</P
+><P
+>&#13;   - <A
+HREF="http://cmp.felk.cvut.cz/~pisa/dmsdos/"
+TARGET="_top"
+>DMSDOS</A
+> 
+  which enables your machine to access Windows95 compressed drives
+  (drivespace, doublestacker). If you don't need DOS/Windows95
+  compatibility, i.e. if you want to compress Linux-only data, this is
+  really discouraged by the author of the program.
+  
+  
+</P
+></LI
+><LI
+><P
+>&#13;   Partition Sharing: You may share swap-space (see 
+   <A
+HREF="http://tldp.org/HOWTO/Swap-Space.html"
+TARGET="_top"
+>Swap-Space-HOWTO</A
+>) or
+   data partitions between different OS (see <B
+CLASS="command"
+>mount</B
+>).
+   For mounting MS-DOS Windows95 compressed drives (doublespace,
+   drivespace) you may use <B
+CLASS="command"
+>dmsdos</B
+> 
+   <A
+HREF="http://metalab.unc.edu/pub/Linux/system/filesystems/dosfs/"
+TARGET="_top"
+>dosfs/</A
+>
+   .
+</P
+></LI
+><LI
+><P
+>&#13;   Libraries: Take another (older) library, for instance
+   <B
+CLASS="command"
+>libc5</B
+> , this library seems to be smaller than
+   <B
+CLASS="command"
+>libc6</B
+> also known as <B
+CLASS="command"
+>glibc2</B
+> .
+</P
+></LI
+><LI
+><P
+>&#13;   Kernel: If your needs are fitted with an older kernel version, you can
+   save some space.
+</P
+></LI
+><LI
+><P
+>&#13;   GUI: Avoid as much Graphical User Interface (GUI) as possible.
+</P
+></LI
+><LI
+><P
+>&#13;   Tiny Distributions: There are some distributions available which fit
+   from one 3.5" floppy to 10MB disk space and fit for small memories, too. See 
+   <A
+HREF="mobile-guide-a1-other-operating-systems.html"
+>Appendix A</A
+> Appendix D
+   and below.
+</P
+></LI
+><LI
+><P
+>&#13;   External Storage Devices (Hard Disks, ZIP Drives, NFS, SAMBA): Since
+   many notebooks may be limited in their expandability, using the parallel
+   port is an attractive option. There are external hard disks and ZIP
+   Drives available. Usually they are also connectable via
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>. Another way is using the resources of another
+   machine through NFS or SAMBA etc.
+</P
+></LI
+><LI
+><P
+>&#13;   Purging of uneeded locales:
+   <B
+CLASS="command"
+>localepurge</B
+> for Debian
+   is just a simple script to recover disk space wasted for unneeded
+   locale files and localized man pages. Depending on your installation, it
+   is possible to save some 200, 300, or even more megabytes of disk space
+   usually dedicated for locales you'll probably never have any usage for.
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s2-introduction.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Introduction</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-a5-limited-resources.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Hard Disk Speed</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

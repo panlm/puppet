@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Universal Serial Bus - USB</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="SCSI"
+HREF="mobile-guide-p2c1s17-scsi.html"><LINK
+REL="NEXT"
+TITLE="FireWire - IEEE1394 - i.Link"
+HREF="mobile-guide-p2c1s19-firewire.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s17-scsi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s19-firewire.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s18-usb"
+></A
+>12.29. Universal Serial Bus - USB</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3247"
+></A
+>12.29.1. Linux Compatibility Check</H2
+><P
+>&#13;   You should get information about the <SPAN
+CLASS="acronym"
+>USB</SPAN
+> controller
+   with <B
+CLASS="command"
+>cat /proc/pci</B
+> and about <SPAN
+CLASS="acronym"
+>USB</SPAN
+>
+   devices with <B
+CLASS="command"
+>cat /proc/bus/usb/devices</B
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3254"
+></A
+>12.29.2. Miscellaneous</H2
+><P
+>&#13;   Newer laptops come equipped with the Universal Serial Bus - 
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+>. The following <SPAN
+CLASS="acronym"
+>USB</SPAN
+> devices are 
+   available, not all of them are 
+   fully supported by Linux yet:
+   
+   keyboard, 
+   mouse, 
+   printer, 
+   tablet, 
+   camera, 
+   cpia, 
+   webcam, 
+   MP3 player, 
+   modem, 
+   wireless LAN, 
+   audio, 
+   jukebox, 
+   scanner, 
+   storage (hard drive, memory stick), 
+   floppydrive, 
+   ZIP, 
+   Super Disk - LS 120, 
+   compact flash reader, 
+   CD, 
+   BlueTooth, 
+   ethernet, 
+   serial, 
+   joystick, 
+   USB Host-to-Host Cable, 
+   hub
+   .
+</P
+><P
+>&#13;   Visit the 
+   <A
+HREF="http://www.linux-usb.org/"
+TARGET="_top"
+>USB Linux</A
+> home page. Also I
+   have set up a page collecting information about laptops and mobile devices
+   using <SPAN
+CLASS="acronym"
+>USB</SPAN
+> at the
+   <A
+HREF="http://tuxmobil.org/hardware.html"
+TARGET="_top"
+>TuxMobil - Mobile Hardware Survey</A
+> .
+</P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   Please note, I have got a report that the power by a laptop via USB is not
+   enough for some kind of devices, e.g. Web Cams or hard disks. But it seems to depend
+   on the laptop and the specific device. With desktop Linux machines these
+   USB devices work flawlessly, but with mobile devices not.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s17-scsi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s19-firewire.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>SCSI</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>FireWire - IEEE1394 - i.Link</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

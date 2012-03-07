@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Keyboard</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Sound"
+HREF="mobile-guide-p2c1s5-sound.html"><LINK
+REL="NEXT"
+TITLE="Extra Keys / Hot Keys"
+HREF="mobile-guide-p2c1s8-ext-keys.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s5-sound.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s8-ext-keys.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s6-keyboard"
+></A
+>12.11. Keyboard</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2215"
+></A
+>12.11.1. Linux Compatibility Check</H2
+><P
+>&#13;
+
+
+   Usually there are no problems with Linux and the keyboard.
+   Though there are two minor caveats: First the
+   <B
+CLASS="command"
+>setleds</B
+> program might not work. Second the
+   key mapping might not fit your needs. Some
+   <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+> users and <B
+CLASS="command"
+>vi</B
+> users
+   expect to find the &#60;CONTROL&#62; key to the left of the
+   &#60;A&#62; key. Many PC-type keyboards have the
+   &#60;CAPS-LOCK&#62; key there. You may use
+   <B
+CLASS="command"
+>xmodmap</B
+> or <B
+CLASS="command"
+>loadkeys</B
+> to
+   re-map the keyboard. Some laptops (e.g., Toshiba) allow you
+   to swap the &#60;CAPS-LOCK&#62; and &#60;CONTROL&#62; keys. Mark
+   Alexander offered this solution in the linux-laptop mailing
+   list: On RedHat, it's a one-line patch to
+   <TT
+CLASS="filename"
+>/usr/lib/kbd/keytables/us.map</TT
+> , or
+   whatever file is referenced in
+   <TT
+CLASS="filename"
+>/etc/sysconfig/keyboard</TT
+>:
+</P
+><P
+>&#13;<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;*** us.map~     Tue Oct 31 14:00:07 1995
+--- us.map      Thu Aug 28 13:36:03 1997
+*** 113,119 ****
+keycode  57 = space            space           
+        control keycode  57 = nul             
+        alt     keycode  57 = Meta_space      
+! keycode  58 = Caps_Lock       
+keycode  59 = F1               F11              Console_13      
+        control keycode  59 = F1              
+        alt     keycode  59 = Console_1       
+--- 113,119 ----
+keycode  57 = space            space           
+        control keycode  57 = nul             
+        alt     keycode  57 = Meta_space      
+! keycode  58 = Control       
+keycode  59 = F1               F11              Console_13      
+        control keycode  59 = F1              
+        alt     keycode  59 = Console_1       
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2227"
+></A
+>12.11.2. External (Second) Keyboard</H2
+><P
+>&#13;   A second (or external) keyboard can be attached using the
+   PS/2 port (I suppose this is not possible via the serial
+   port, since there is no keyboard controller for the serial
+   port) or via USB port. 
+   Also there is one laptop with a detachable keyboard
+   the Siemens Scenic Mobile 800. This machine uses an
+   infrared connection to the keyboard, but I don't know
+   whether this works with Linux.
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN2230"
+></A
+>12.11.2.1. External USB Keyboard Configuration</H3
+><P
+>&#13;   You may not need any operating system support at all to use a
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboard if you have a PC architecture. There are
+   several <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> available where the
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> can provide <SPAN
+CLASS="acronym"
+>USB</SPAN
+> support from
+   a keyboard plugged into the root hub on the motherboard. This may or may
+   not work through other hubs and does not normally work with add-in
+   boards, so you might want to add in support anyway. You definitely want
+   to add keyboard support if you activate operating system support, as the
+   Linux <SPAN
+CLASS="acronym"
+>USB</SPAN
+> support will disable the
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> support. You also need to use Linux
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboard support if you want to use any of the
+   "multimedia" types keys that are provided with some
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboards.
+</P
+><P
+>&#13;   In the kernel configuration stage, you need to turn on
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> Human Interface Device (HID) support and Keyboard
+   support. Do not turn on <SPAN
+CLASS="acronym"
+>USB</SPAN
+> HIDBP Keyboard support.
+   Perform the normal kernel rebuild and installation steps. If you are
+   installing as modules, you need to load the hid.o, input.o and keybdev.o
+   modules.
+</P
+><P
+>&#13;   Check the kernel logs to ensure that your keyboard is being correctly
+   sensed by the kernel.
+</P
+><P
+>&#13;   At this point, you should be able to use your <SPAN
+CLASS="acronym"
+>USB</SPAN
+>
+   keyboard as a normal keyboard. Be aware that LILO is not
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> aware, and that unless your
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> supports a legacy <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboard, you
+   may not be able to select a non-default boot image using the
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboard. I have personally used a
+   <SPAN
+CLASS="acronym"
+>USB</SPAN
+> keyboard (and <SPAN
+CLASS="acronym"
+>USB</SPAN
+> mouse) and
+   experienced no problems.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN2253"
+></A
+>12.11.2.2. External PS/2 Keyboard</H3
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   Don't plug the external keyboard in while the laptop is
+   booted, or plug the mouse in the keyboard port and the
+   keyboard in the mouse port. On a Toshiba, this caused one
+   user to have to completely shutdown the laptop, remove
+   the keyboard/mouse, and do a cold reboot.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>&#13;   For PS/2 ports there is a so called Y-Cable available,
+   which makes it possible to use external mouse and
+   external keyboard at the same time if your laptop
+   supports this feature.
+</P
+><P
+>&#13;   <A
+HREF="http://linuxconsole.sourceforge.net/input/adapters.html"
+TARGET="_top"
+>Parport to AUX port adapter</A
+>
+   In some cases one kbd port and one aux port is not enough and you may
+   want to add another keyboard or mouse. You can use this adapter,
+   together with the <B
+CLASS="command"
+>parkbd</B
+> module for that.
+</P
+><P
+>&#13;   On some laptops a splitter works to allow both mouse and keyboard
+   to be plugged in; on others it doesn't work at all. If you
+   want to use both, you better check that it works.
+</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s5-sound.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s8-ext-keys.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Sound</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Extra Keys / Hot Keys</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

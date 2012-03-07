@@ -1,0 +1,473 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Printers and Scanners</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Accessories: PCMCIA, USB and Other External Extensions"
+HREF="mobile-guide-p2c2-accessories.html"><LINK
+REL="PREVIOUS"
+TITLE="USB Devices"
+HREF="mobile-guide-p2c2s4-usb-devices.html"><LINK
+REL="NEXT"
+TITLE="Serial Devices"
+HREF="mobile-guide-p3c4s1-pda-serial-devices.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c2s4-usb-devices.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. Accessories: PCMCIA, USB and Other External Extensions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p3c4s1-pda-serial-devices.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c2s4-printers-and-scanners"
+></A
+>13.9. Printers and Scanners</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3701"
+></A
+>13.9.1. Survey of Mobile Printers and Scanners</H2
+><P
+>&#13;   For a survey of ports and protocol to print via a mobile or stationary
+   printer see the Different Environments chapter below.
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://www.canon.com/"
+TARGET="_top"
+>CANON</A
+>
+   : BJC-80 (this printer can also be used as a scanner with the optional
+   scan head!) David F. Davey wrote: "I finally have a Canon BJC-80
+   printer working properly with <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg;. By properly I mean as a
+   pseudo-PostScript device by way of <B
+CLASS="command"
+>ghostscript</B
+> and
+   a modified <B
+CLASS="command"
+>lpd</B
+>.
+</P
+><P
+> 
+   How:
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   linux-2.2.7-ac2-irda6 
+</P
+></LI
+><LI
+><P
+>&#13;   <B
+CLASS="command"
+>/proc/sys/net/irda/slot_timeout</B
+> increased to 10
+   (essential or discovery fails) 
+</P
+></LI
+><LI
+><P
+>&#13;   <B
+CLASS="command"
+>ghostscript</B
+> DEVICE set to bjc600 
+</P
+></LI
+><LI
+><P
+>&#13;   <TT
+CLASS="filename"
+>printcap</TT
+> includes: 
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;:xc#01777777:\
+:fc#017:\
+:fs#020000010002:
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></LI
+><LI
+><P
+>&#13;   and <B
+CLASS="command"
+>lpd</B
+> had to be modified to accept the ulong
+   <EM
+>fs</EM
+> and to handle <EM
+>xc</EM
+> (which is
+   documented but not coded in the lpd's I have looked at). "
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;   For further information look at his page 
+   <A
+HREF="http://www.windclimber.net/linux/bjc-80.pcgi"
+TARGET="_top"
+>BJC-80</A
+>
+   .
+</P
+><P
+>&#13;   Tim Auckland wrote: Would my version of <B
+CLASS="command"
+>lpd</B
+> help?
+   <B
+CLASS="command"
+>unixlpr</B
+> is a portable version of the lpr/lpd suite,
+   compatible with traditional versions and 
+   <A
+HREF="http://rfc.net"
+TARGET="_top"
+>RFC</A
+>
+   1179 and with a couple of
+   minor extensions, including the <B
+CLASS="command"
+>:ms=</B
+> field (also seen
+   in SunOS 4) and the ability to print directly to TCP connected printers
+   without needing special filters. <B
+CLASS="command"
+>ms</B
+> allows you to
+   configure the tty using stty arguments directly, so if stty can handle
+   the extended flags, my <B
+CLASS="command"
+>lpd</B
+> should handle <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg; <EM
+>out of the box</EM
+>.
+   You can find the latest <B
+CLASS="command"
+>unixlpr</B
+> 
+   <A
+HREF="http://www.geocities.com/CapeCanaveral/Hall/7203/Printing/"
+TARGET="_top"
+>here</A
+>
+   .
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.canon.com/"
+TARGET="_top"
+>CANON</A
+>
+   : BJC-50 65% of the size of the BJC-80, 
+   Li-Ion battery included, and basically the same features as the BJC-80.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.canon.com/"
+TARGET="_top"
+>CANON</A
+>
+   : BJ-30
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.citizen-america.com/"
+TARGET="_top"
+>Citizen</A
+>
+   : CN-60
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.pentaxtech.com/"
+TARGET="_top"
+>Pentax</A
+>
+   : Pocketjet
+</P
+></LI
+><LI
+><P
+>&#13;   HP: DeskJet 340Cbi. This is a small, portable, low-duty-cycle printer.
+   It prints either black, or color (3 color). I have had some problems
+   with it loading paper. Overall, the small size and portability make it a
+   nice unit for use with laptops. I use the HP 500/500C driver with Linux.
+</P
+></LI
+><LI
+><P
+>&#13;   Olivetti: JP-90
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.maxpointgmbh.de"
+TARGET="_top"
+>MaxPoint</A
+>
+   : TravelScan, mobile scanner for the <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> port.
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   AFAIK only the HP DeskJet 340Cbi and the BJC-80 machine have an infrared
+   port. Pay attention to the supplied voltage of the power supply if you
+   plan to travel abroad. I couldn't check the scan functionalities with Linux yet.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3766"
+></A
+>13.9.2. Scanner and OCR Software</H2
+><P
+>&#13;   <A
+HREF="http://www.mostang.com/sane/"
+TARGET="_top"
+>SANE</A
+>
+   stands for <EM
+>Scanner Access Now Easy</EM
+> and is an
+   application programming interface (API) that provides standardized
+   access to any raster image scanner hardware (flatbed scanner, hand-held
+   scanner, video- and still-cameras, frame-grabbers, etc.). The SANE
+   standard is free and its discussion and development is open to
+   everybody. The current source code is written for
+   <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+> (including Linux) and is available under the
+   GNU public license (commercial application and backends are welcome,
+   too, however). 
+</P
+><P
+>&#13;   <A
+HREF="http://altmark.nat.uni-magdeburg.de/~jschulen/ocr/"
+TARGET="_top"
+>GOCR</A
+>
+   is optical character recognition software. It converts PGM files into ASC files. 
+</P
+><P
+>&#13;   For scanner drivers see 
+   <A
+HREF="http://www.willamowius.de/scanner.html"
+TARGET="_top"
+>Linux Drivers for Handheld Scanners</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3776"
+></A
+>13.9.3. Connectivity</H2
+><P
+>&#13;   There are different ways to connect a printer or scanner to a laptop.
+   For printers usually: parallel port, serial port, <SPAN
+CLASS="acronym"
+>USB</SPAN
+>
+   and <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg; port. For scanners
+   usually: parallel port, SCSI (via <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> or generic
+   SCSI port), <SPAN
+CLASS="acronym"
+>USB</SPAN
+> and <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> port.
+   All of them need the appropriate kernel drivers. 
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2s4-usb-devices.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p3c4s1-pda-serial-devices.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>USB Devices</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2-accessories.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Serial Devices</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

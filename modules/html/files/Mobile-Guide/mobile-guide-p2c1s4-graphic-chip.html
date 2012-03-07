@@ -1,0 +1,777 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Graphics Chip</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="PCMCIA Controller"
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"><LINK
+REL="NEXT"
+TITLE="DVI Port"
+HREF="mobile-guide-p2c1s24-dvi-port.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s24-dvi-port.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s4-graphic-chip"
+></A
+>12.6. Graphics Chip</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1963"
+></A
+>12.6.1. Linux Compatibility Check</H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1965"
+></A
+>12.6.1.1. Video Mode</H3
+><P
+>&#13;
+   Attention: The <B
+CLASS="command"
+>SuperProbe</B
+> is deprecated.
+
+   The tool <B
+CLASS="command"
+>SuperProbe</B
+> is part of XFree86 and is able to
+   check many graphics chips. Please read the documentation carefully,
+   because it might crash your hardware. 
+   From <B
+CLASS="command"
+>man SuperProbe</B
+>:
+</P
+><P
+>&#13;   "<B
+CLASS="command"
+>SuperProbe</B
+> is a program that will attempt to determine the type of
+   video hardware installed in an EISA/ISA/VLB-bus system by checking for
+   known registers in various combinations at various locations
+   (MicroChannel and PCI machines may not be fully supported; many work
+   with the use of the <B
+CLASS="command"
+>-no_bios</B
+> option). This is an
+   error-prone process, especially on <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+> (which
+   usually has a lot more esoteric hardware installed than MS-DOS system
+   do), so <B
+CLASS="command"
+>SuperProbe</B
+> may likely need help from the user.
+</P
+><P
+>&#13;   At this time, <B
+CLASS="command"
+>SuperProbe</B
+> can identify MDA, Hercules, CGA, MCGA, EGA,
+   VGA, and an entire horde of SVGA chipsets (see the -info option, below).
+   It can also identify several HiColor/True-color RAMDACs in use on SVGA
+   boards, and the amount of video memory installed (for many chipsets). It
+   can identify 8514/A and some derivatives, but not XGA, or PGC (although
+   the author intends to add those capabilities). Nor can it identify other
+   esoteric video hardware (like Targa, TIGA, or Microfield boards).":
+
+
+
+</P
+><P
+>&#13;   For testing reasons start the X11 server with <B
+CLASS="command"
+>X 2&#62;
+   &#60;error.msg&#62;</B
+>. And try to change the resolution by typing
+   <B
+CLASS="command"
+>&#60;CTL&#62;&#60;ALT&#62;&#60;+&#62;</B
+> or
+   <B
+CLASS="command"
+>&#60;CTL&#62;&#60;ALT&#62;&#60;-&#62;</B
+>. Note: the + or -
+   sign have to be taken from the numeric pad, which can be emulated at
+   the letter pad or with the <B
+CLASS="command"
+>Fn</B
+> key by some laptops.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN1983"
+></A
+>12.6.1.2. Text Mode</H3
+><P
+>&#13;   Just watch the display and determine if it works properly. 
+   If not, try to enable different video modes at startup time. 
+   Setting up X11 can sometimes be an exercise in trial and error.
+   
+
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1986"
+></A
+>12.6.2. Related Documentation</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   First of all the
+   <A
+HREF="http://www.xfree86.org/"
+TARGET="_top"
+>XFree86 documentation</A
+>
+   itself. Often locally available at
+   <TT
+CLASS="filename"
+>/usr/share/doc/xfree86*</TT
+>.
+   Or the <A
+HREF="http://x.org/"
+TARGET="_top"
+>X.Org</A
+> documentation.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/XFree86-HOWTO/"
+TARGET="_top"
+>XFree86-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/XFree86-Video-Timings-HOWTO/"
+TARGET="_top"
+>XFree86-Video-Timings-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/XFree86-XInside.html"
+TARGET="_top"
+>XFree86-XInside-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/X-Big-Cursor.html"
+TARGET="_top"
+>X-Big-Cursor-mini-HOWTO</A
+>
+   (useful when running X11 on a notebook with low contrast <SPAN
+CLASS="acronym"
+>LCD</SPAN
+>)
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html"
+TARGET="_top"
+>Keyboard-and-Console-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Framebuffer-HOWTO.html"
+TARGET="_top"
+>Framebuffer-HOWTO</A
+>
+   
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2014"
+></A
+>12.6.3. Survey X11-Servers</H2
+><P
+>&#13;   You might discover that some features of your laptop are not supported by
+   <A
+HREF="http://www.xfree86.org/"
+TARGET="_top"
+>XFree86</A
+>
+   or <A
+HREF="http://x.org/"
+TARGET="_top"
+>X.Org</A
+>.
+   , e.g. high resolutions, accelerated X or an external monitor.
+   Therefore I give a survey of available X11 servers.
+
+
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://www.xfree86.org/"
+TARGET="_top"
+>XFree86</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://x.org/"
+TARGET="_top"
+>X.Org</A
+>.
+</P
+></LI
+><LI
+><P
+>&#13;   VESA Frame-Buffer-Device, available with 2.2.x kernels and XFree86 3.3.2 or greater. 
+   See
+   <A
+HREF="http://linux-fbdev.org/"
+TARGET="_top"
+>FBDev.ORG</A
+> and
+   <A
+HREF="http://www.strusel007.de/linux/fb.html"
+TARGET="_top"
+>FB FAQ</A
+> 
+   and kernel source <TT
+CLASS="filename"
+>/usr/src/linux/Documentation</TT
+>
+   .
+</P
+><P
+>&#13;   Please check the latest release of
+   <A
+HREF="http://directfb.org/"
+TARGET="_top"
+>DirectFB</A
+>
+   for a dedicated Framebuffer Driver for the NeoMagic 
+   chip and other chipsets, with support for acceleration.
+   DirectFB is a thin library that provides developers with hardware graphics
+   acceleration, input device handling and abstraction, an integrated
+   windowing system with support for translucent windows and multiple display
+   layers on top of the Linux framebuffer device. It is a complete hardware
+   abstraction layer with software fallbacks for every graphics operation that
+   is not supported by the underlying hardware. 
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.xig.com/"
+TARGET="_top"
+>Xi Graphics</A
+> 
+   , commercial, also known under their former names 
+   AcceleratedX or Xinside. 
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.scitechsoft.com/"
+TARGET="_top"
+>SciTech</A
+>, commercial.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.metrolink.com/"
+TARGET="_top"
+>Metro-X</A
+>, commercial.
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   If you can't get an appropriate X11 server working, but cannot
+   afford a commercial X11 server you may try the VGA16 or the mono server
+   included in XFree86.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2044"
+></A
+>12.6.4. Resources</H2
+><P
+>&#13;   You may find a survey about
+   <A
+HREF="http://tuxmobil.org/graphic_linux.html"
+TARGET="_top"
+>current graphics chips
+   used in laptops and notebooks</A
+> at TuxMobil.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2048"
+></A
+>12.6.5. External Monitors: LCD, CRT, TV, Projector</H2
+><P
+>&#13;   There are several different methods to activate support for an external
+   monitor: as a <EM
+>BIOS option</EM
+> or during runtime with a
+   <EM
+>keystroke</EM
+> e.g.
+   <B
+CLASS="command"
+>&#60;Fn&#62;+&#60;F4&#62;</B
+>.
+</P
+><P
+>&#13;   Read the X11 docs about your graphics chip carefully, for instance for
+   the NeoMagic NM20xx chips you have to edit
+   <TT
+CLASS="filename"
+>/etc/XF86Config</TT
+> by configuring
+   <B
+CLASS="command"
+>intern_disp</B
+> and <B
+CLASS="command"
+>extern_disp</B
+>. Note:
+   As far as I know these options are only valid for XFree86 3.3.x, for
+   XFree86 4.x I couldn't find a similar option.
+</P
+><P
+>&#13;   If you can't get the external monitor to work with XFree86, try a demo
+   version of the commercial X11 servers mentioned above. Also check with
+   the RedHat and SuSE WWW sites as they may have new, binary-only, X11
+   servers that may work with your laptop.
+   Or check X11 servers from <A
+HREF="http://x.org/"
+TARGET="_top"
+>X.Org</A
+>.
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN2060"
+></A
+>12.6.5.1. Tools</H3
+><P
+>&#13;   The 
+   <A
+HREF="http://www.stud.uni-hamburg.de/users/lennart/projects/atitvout/"
+TARGET="_top"
+>atitvout</A
+>
+   utility may be used for executing several configuration commands
+   for the TV Out connector of ATI Rage Mobility P/M graphics boards under
+   GNU/Linux on x86.  It is intended primarily to enable TV Out support after
+   bootup and for switching the used TV standard from NTSC to PAL.
+</P
+><P
+>&#13;   <A
+HREF="http://www.probo.com/timr/savage40.html"
+TARGET="_top"
+>s3switch</A
+>
+   will allow you to switch your
+   display between the various output devices supported by the Savage (CRT,
+   LCD, TV).
+</P
+><P
+>&#13;   <A
+HREF="http://sourceforge.net/projects/nv-tv-out"
+TARGET="_top"
+>nv-tv-out</A
+>
+   is a tool to enable TV-Out on Linux for NVidia cards. It does not
+   need the kernel, supports multiple TV encoder chips. You may use all the
+   features of the chip, down to direct register access, and all resolutions
+   and sizes the chip supports.
+</P
+><P
+>&#13;   <A
+HREF="http://www16.plala.or.jp/mano-a-mano/i810switch.html"
+TARGET="_top"
+>i810switch</A
+>
+   is an utility for switching the LCD and external VGA displays on and off,
+   with almost every graphics chip from Intel's i8xx family, including
+   Centrino.
+</P
+><P
+>&#13;   <A
+HREF="http://sourceforge.net/projects/i855crt"
+TARGET="_top"
+>i855crt</A
+>
+   is an userspace driver that can enable the CRT out (port for
+   external monitor) on Intel 855GM based laptops.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN2072"
+></A
+>12.6.5.2. Solutions</H3
+><P
+>&#13;   Klaus Weidner has described a
+   <A
+HREF="http://mailman.linux-thinkpad.org/pipermail/linux-thinkpad/2003-November/013701.html"
+TARGET="_top"
+>Dual monitor setup</A
+>
+   without using xinerama, but <B
+CLASS="command"
+>x2vnc</B
+> instead.
+   This approach allows to add and
+   remove the second monitor dynamically without reconfiguring or restarting anything.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2077"
+></A
+>12.6.6. Power Management for Graphics Cards</H2
+><P
+>&#13;The uptime on batteries can be improved by enabling the power management
+features of the graphics card. There are tools available to change the clock
+frequency and to shut down the backlight of the display. Usually these tools
+are specific for a graphics card or a graphics card manufacturer.
+Here are some techniques for graphics cards made by ATI.
+</P
+><P
+>&#13;The proprietary <TT
+CLASS="filename"
+>fglrx</TT
+> driver from ATI needs to be
+enabled by adding the PowerState option to the Device Section in the
+<TT
+CLASS="filename"
+>/etc/X11/xorg.conf</TT
+> X11 configuration file:
+</P
+><P
+>&#13;
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;Section "Device"
+Identifier "aticonfig-Device[0]"
+Driver "fglrx"
+Option "PowerState" "1"
+EndSection
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+><P
+>&#13;After rebooting or re-starting X11 you can start the power save mode with the
+command <B
+CLASS="command"
+>aticonfig --set-powerstate=1 --effective=now</B
+>.
+Use <B
+CLASS="command"
+>aticonfig --list-powerstates</B
+> to get all available
+powerstates.
+</P
+><P
+>&#13;For ATI Radeon graphics cards the <B
+CLASS="command"
+>rovclock</B
+> tool can be used
+to save power e.g. <B
+CLASS="command"
+>rovclock -c 80 -m 80</B
+> to use only 80MHz chip
+and memory frequency. The command <B
+CLASS="command"
+>radeontool light off</B
+>
+switches the backlight off, if closing the lid or using an extra key is not an
+option.
+</P
+><P
+>&#13;The 
+<A
+HREF="http://lkml.org/lkml/2006/10/9/83"
+TARGET="_top"
+>ACPI backlight driver</A
+>
+by Holger Macht in 2.6.x  for IBM, Toshiba, ASUS laptops
+adds support for the generic backlight interface below
+<TT
+CLASS="filename"
+>/sys/class/backlight</TT
+>. The patch keeps the procfs brightness handling for
+backward compatibility. For this to archive, the patch adds two generic
+functions brightness_get and brightness_set to be used both by the procfs
+related and the sysfs related methods.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2095"
+></A
+>12.6.7. Miscellaneous</H2
+><P
+>&#13;   Sometimes you may encounter a display not working properly in text mode.
+   Currently I don't have any recommendations, please see
+   <A
+HREF="http://tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html"
+TARGET="_top"
+>Keyboard-and-Console-HOWTO</A
+>
+   .
+</P
+><P
+>&#13;   Take care of the <EM
+>backlight</EM
+> as far as I know this
+   device can only bear a limited number of uptime circles. So avoid using
+   screensavers too much.
+</P
+><P
+>&#13;   For problems with X Windows and <SPAN
+CLASS="acronym"
+>APM</SPAN
+> please see the
+   <SPAN
+CLASS="acronym"
+>APM</SPAN
+> chapter.
+</P
+><P
+>&#13;   <A
+HREF="http://www.srcf.ucam.org/~mjg59/vbetool/"
+TARGET="_top"
+>vbetool</A
+>
+   uses LRMI in order to run code from the video BIOS.
+   Currently, it is able to alter DPMS states, save/restore video card state,
+   and attempt to initialize the video card from scratch. It exists primarily
+   in order to increase the chances of successfully recovering video state
+   after an ACPI S3 suspend-to-RAM.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s2-pcmcia-controller.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s24-dvi-port.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Controller</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>DVI Port</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Docking Station / Port Replicator</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Plug-and-Play Devices (PnP)"
+HREF="mobile-guide-p2c1s13-pnp.html"><LINK
+REL="NEXT"
+TITLE="Network Connections"
+HREF="mobile-guide-p2c1s15-network-connections.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s13-pnp.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s15-network-connections.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s14-docking-station-port-replicator"
+></A
+>12.24. Docking Station / Port Replicator</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3057"
+></A
+>12.24.1. Definitions</H2
+><P
+>&#13;   First some definitions. There is a difference between <EM
+>docking
+   station</EM
+> and <EM
+>port replicator</EM
+>.
+</P
+><P
+>&#13;   I use the term <EM
+>docking station</EM
+> for a box which
+   contains slots to put some interface cards in, and space to put a
+   harddisk, etc. in. This box can be permanently connected to a PC. A
+   <EM
+>port replicator</EM
+> is just a copy of the laptop ports
+   which may be connected permanently to a PC.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3065"
+></A
+>12.24.2. Other Solutions</H2
+><P
+>&#13;   I don't use a docking station myself. They seem really expensive and I can't
+   see any usefulness. Alright you have to deal with some more cables, but is
+   it worth so much money? Docking stations are useful in an office
+   environment when you have a permanent network connection, or need the
+   docking station's expansion bus slots (e.g. for some excotic SCSI device).
+</P
+><P
+>&#13;   Also all docking stations I know are proprietary models, so if you
+   change your laptop you have to change this device, too. I just found
+   one exception a docking station which connects to your laptop via
+   <SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg; the IRDocking IR-660 by 
+   <A
+HREF="http://www.tekram.com/"
+TARGET="_top"
+>Tekram</A
+>
+   . It supports these connectors: 10Base-T (RJ-45); PS/2 Keyboard; PS/2
+   Mouse; 25-Pin Printer Port (LPT); IR Transceiver; Power (6 VDC). So it
+   seems that a VGA port and a port to connect a desktop PC directly are
+   missing. This device should work with Linux/<SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg;, though I couldn't check it out.
+</P
+><P
+>&#13;   I would prefer to buy a PC instead and connect it via
+   <EM
+>network</EM
+> to the laptop.
+</P
+><P
+>&#13;   Or use an external display, which usually works well as described above,
+   and an external keyboard and mouse. If your laptop supports an extra
+   PS/2 port you may use a cheap solution a <EM
+>Y-cable</EM
+>,
+   which connects the PS/2 port to an external keyboard and an external
+   monitor. Note: Your laptop probably has support for the <EM
+>Y-cable</EM
+>
+   feature, e.g. the COMPAQ Armada 1592DT.  
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3077"
+></A
+>12.24.3. Docking Station Connection Methods</H2
+><P
+>&#13;   AFAIK there are <EM
+>four solutions</EM
+> to connect a laptop
+   to a docking station:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   SCSI port (very seldom)
+</P
+></LI
+><LI
+><P
+>&#13;parallel port
+</P
+></LI
+><LI
+><P
+>&#13;(proprietary) docking port (common)
+</P
+></LI
+><LI
+><P
+>&#13;USB (often offered by third party manufacturers)
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   From Martin J. Evans
+   
+   "The main problem with docking stations is getting the operating
+   system to detect you are docked. Fortunately, 
+   you can examine the devices available in <TT
+CLASS="filename"
+>/proc</TT
+>
+   and thus detect a docked state. With
+   this in mind a few simple scripts is all you need to get your machine
+   configured correctly in a docked state.
+</P
+><P
+>&#13;   You may want to build support for the docking station hardware as
+   modules instead of putting it directly into the kernel. This will save
+   space in your kernel but your choice probably largely depends on how
+   often you are docked.
+</P
+><P
+>&#13;   1) Supporting <EM
+>additional disks</EM
+> on the docking
+   station SCSI card
+</P
+><P
+>&#13;   To my mind the best way of doing this is to:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Either build support for the SCSI card into the kernel or build it as a module.
+</P
+></LI
+><LI
+><P
+>&#13;   Put the mount points into <TT
+CLASS="filename"
+>/etc/fstab</TT
+> but use the
+   "noauto" flag to prevent them from being mounted automatically with the
+   <B
+CLASS="command"
+>mount -a</B
+> flag. In this way, when you are docked you
+   can explicitly mount the partitions off any disk connected to the
+   docking station SCSI card.
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   2) Supporting <EM
+>additional network adaptors</EM
+> in the docking station
+</P
+><P
+>&#13;   You can use a similar method to that outlined above for the graphics
+   card. Check the <TT
+CLASS="filename"
+>/proc</TT
+> filesystem in your rc scripts
+   to see if you are docked and then set up your network connections
+   appropriately. "
+</P
+><P
+>&#13;   Once you determine this information, you may use a script, similar to
+   the following example, to configure the connection to your docking
+   station at startup. The script is provided by Friedhelm Kueck:
+</P
+><P
+>&#13;
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;# check, if laptop is in docking-station (4 <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> slots available)
+# or if it is standalone (2 slots available)
+# Start after cardmgr has started
+#
+# Friedhelm Kueck mailto:fk_AT_impress.de
+# 08-Sep-1998
+#
+# Find No. of Sockets
+SOCKETS=`tail -1 /var/run/stab | cut -d ":" -f 1`
+case "$SOCKETS" in
+"Socket 3")
+echo Laptop is in Dockingstation ...
+echo Disabeling internal LCD Display for X11
+echo
+cp /etc/XF86Config_extern /etc/XF86Config
+#
+# Setup of <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> Network Interface after start of cardmgr
+#
+echo
+echo "Setting up eth0 for use at Network ..."
+echo
+/sbin/ifconfig eth0 10.1.9.5 netmask 255.255.0.0 broadcast 10.1.255.255
+/sbin/route add -net 10.1.0.0 gw 10.1.9.5
+/sbin/route add default gw 10.1.10.1
+;;
+
+"Socket 1")
+echo Laptop is standalone
+echo Disabling external Monitor for X11
+cp /etc/XF86Config_intern /etc/XF86Config
+echo
+echo Network device NOT setup
+;;
+esac
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3114"
+></A
+>12.24.4. Universal USB Port Replicators</H2
+><P
+>&#13;I have used a Typhoon USB 2.0 7in1 Docking Station made by 
+<A
+HREF="http://www.anubisline.com/"
+TARGET="_top"
+>Anubis</A
+>
+P/N 83057 to check the Linux compatibility of such devices. Actually
+this device should be named port replicator, because it does not have
+any extension slots. 
+This device doesn't have a VGA port to connect to an external
+display. Only a few USB docking stations have this feature. It would
+be nice to get a report whether a VGA port works or not.
+Tested with laptop COMPAQ M700 (USB 1.1) and custom made kernel 2.6.1.
+Note the port replicator didn't work with
+an Apple PowerBook G4.
+
+
+</P
+><P
+>&#13;How does its different ports work with Linux:
+
+
+<P
+></P
+><UL
+><LI
+><P
+>&#13;USB 2.0 A-type downstream: works with external hard disk and mouse out of the box
+</P
+></LI
+><LI
+><P
+>&#13;USB 2.0 A-type downstream: see above
+</P
+></LI
+><LI
+><P
+>&#13;PS/2 keyboard: works out of the box
+</P
+></LI
+><LI
+><P
+>&#13;PS/2 mouse: works, but for 2.6 Kernels you have to specifiy
+the right mouse protocol <B
+CLASS="command"
+>psmouse_proto=imps</B
+> 
+(if psmouse is compiled as a module).
+</P
+></LI
+><LI
+><P
+>&#13;serial port: tested with serial mouse, doesn't seem to work,
+  <B
+CLASS="command"
+>/dev/ttyUSB0</B
+> was assigned
+</P
+></LI
+><LI
+><P
+>&#13;parallel port: tested, device <B
+CLASS="command"
+>/dev/usb/usblp0</B
+> assigned, works
+  e.g. with HP LaserJet 2100
+</P
+></LI
+><LI
+><P
+>&#13;LAN: usbnet loads, device eth1 was assigned,
+  <B
+CLASS="command"
+>ifconfig</B
+> or <B
+CLASS="command"
+>pump</B
+> configures the network device
+</P
+></LI
+><LI
+><P
+>&#13;transfer port aka host link:
+  works with usbnet module, use  <B
+CLASS="command"
+>ifconfig usb0</B
+> to configure
+  the network interface,
+ (USB 1.1 host link B-type) untested
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;Here is the output of <B
+CLASS="command"
+>dmesg</B
+>
+for the Typhoon port replicator:
+
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;hub 1-0:1.0: new USB device on port 1, assigned address 26
+hub 1-1:1.0: USB hub found
+hub 1-1:1.0: 4 ports detected
+hub 1-1:1.0: new USB device on port 3, assigned address 27
+hub 1-1.3:1.0: USB hub found
+hub 1-1.3:1.0: 4 ports detected
+hub 1-1:1.0: new USB device on port 4, assigned address 28
+eth1: register usbnet at usb-0000:00:07.2-1.4, ASIX AX8817x USB 2.0 Ethernet
+hub 1-1.3:1.0: new USB device on port 1, assigned address 29
+usb0: register usbnet at usb-0000:00:07.2-1.3.1, Prolific PL-2301/PL-2302
+hub 1-1.3:1.0: new USB device on port 2, assigned address 30
+drivers/usb/class/usblp.c: usblp0: USB Bidirectional printer dev 30 if 0 alt 1 proto 2 vid 0x067B pid 0x2305
+hub 1-1.3:1.0: new USB device on port 3, assigned address 31
+pl2303 1-1.3.3:1.0: PL-2303 converter detected
+usb 1-1.3.3: PL-2303 converter now attached to ttyUSB0 (or usb/tts/0 for devfs)
+hub 1-1.3:1.0: new USB device on port 4, assigned address 32
+HID device not claimed by input or hiddev
+hid: probe of 1-1.3.4:1.0 failed with error -5
+input: Composite USB PS2 Converter USB to PS2 Adaptor  v1.09 on usb-0000:00:07.2-1.3.4
+HID device not claimed by input or hiddev
+hid: probe of 1-1.3.4:1.1 failed with error -5
+input: Composite USB PS2 Converter USB to PS2 Adaptor  v1.09 on usb-0000:00:07.2-1.3.4
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s13-pnp.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s15-network-connections.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Plug-and-Play Devices (PnP)</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Network Connections</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

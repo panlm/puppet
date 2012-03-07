@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Batteries</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Power Management Unit - PMU (PowerBook)"
+HREF="mobile-guide-p2c1s10-pmu.html"><LINK
+REL="NEXT"
+TITLE="Memory"
+HREF="mobile-guide-p2c1s12-memory.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s10-pmu.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s12-memory.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s11-batteries"
+></A
+>12.21. Batteries</H1
+><TABLE
+BORDER="0"
+WIDTH="100%"
+CELLSPACING="0"
+CELLPADDING="0"
+CLASS="EPIGRAPH"
+><TR
+><TD
+WIDTH="45%"
+>&nbsp;</TD
+><TD
+WIDTH="45%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><I
+><P
+><I
+>May the batteries be with you.</I
+></P
+></I
+></TD
+></TR
+><TR
+><TD
+WIDTH="45%"
+>&nbsp;</TD
+><TD
+WIDTH="45%"
+ALIGN="RIGHT"
+VALIGN="TOP"
+><I
+><SPAN
+CLASS="attribution"
+>&#13;   Unknown AuthorEss
+</SPAN
+></I
+></TD
+></TR
+></TABLE
+><P
+>&#13;   For information about available battery types, take a
+   look at the Hardware Features chapter above.
+</P
+><P
+>&#13;   Please see the 
+   <A
+HREF="http://tldp.org/HOWTO/Battery-Powered/"
+TARGET="_top"
+>Battery Powered Linux Mini-HOWTO</A
+>
+   and the
+   <A
+HREF="http://tuxmobil.org/mobile_battery.html"
+TARGET="_top"
+>TuxMobil battery page</A
+>
+   for further information. A survey of 
+   <A
+HREF="http://tuxmobil.org/energy_laptops.html"
+TARGET="_top"
+>other means to supply power for mobile computers</A
+>
+   e.g. solar energy is available at TuxMobil.
+   For general information about batteries see the
+   <A
+HREF="http://www.technick.net/public/code/cp_dpage.php?aiocp_dp=guide_bpw2_00_toc"
+TARGET="_top"
+>Battery FAQ</A
+>.
+
+
+
+</P
+><P
+>&#13;   <A
+HREF="http://www.canb.auug.org.au/~sfr/"
+TARGET="_top"
+>Stephen Rothwell</A
+>
+   proposed a patch that will add multiple battery support to the kernel APM. 
+</P
+><P
+>&#13;   From the <B
+CLASS="command"
+>mobile-update</B
+> page
+   (modified by WH): Discharge the battery. If your
+   battery runs only for about 20 minutes, you probably
+   suffer from memory effects. Most laptops do not
+   discharge the battery properly. With low powered
+   devices like old computer fans they can be discharged
+   completely. This removes memory effects. You should
+   do so even with LiIon batteries, though they don't
+   suffer much from memory effect (the manual of
+   an <SPAN
+CLASS="trademark"
+>IBM</SPAN
+>&#8482; Thinkpad says
+   to cycle the batteries through a full
+   charge/discharge cycle 3 times every few
+   months or so).
+</P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;   Try this at your own risk! Make sure the voltage of
+   the fans is compatible to your battery. It works
+   for me.
+</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>&#13;   In the US, this company has most batteries for
+   anything and can rebuild many that are no longer
+   manufactured: Batteries Plus, 2045 Pleasant Hill
+   Road, Duluth, GA 30096 +1 770 495 1644.
+</P
+><P
+>&#13;   The 
+   <A
+HREF="http://karl.jorgensen.com/battery-stats/"
+TARGET="_top"
+>battery-stats</A
+>
+   package collects statistics about the (lack of)
+   charge on laptop batteries.  It also contains a simple graph
+   utility to show the battery charge over time or detect 
+   a misbehaviour of the battery which might announce a
+   coming end of batterylife.
+   
+   Battery-stats knows nothing about electrochemical stuff going on
+   inside batteries - hence it will not try to make any predictions
+   whatsoever.  But somebody with knowledge of batteries should be able
+   to tell whether they are behaving OK.
+   This package uses APM; there is no support for ACPI yet.
+</P
+><P
+>&#13;   <A
+HREF="http://ibam.sourceforge.net/"
+TARGET="_top"
+>IBAM (Intelligent BAttery Monitor)</A
+>
+   is an advanced battery monitor
+   for laptops, which uses statistical and adaptive linear methods to provide
+   accurate estimations of minutes of battery left or of the time needed until
+   full recharge. 
+   This package uses APM; there is no support for ACPI yet.
+</P
+><P
+>&#13;   <A
+HREF="http://www-leland.stanford.edu/~bbense/toys/"
+TARGET="_top"
+>A hacked rclock</A
+>
+   . Booker C. Bense has hacked the <EM
+>rclock</EM
+> program 
+   to include a simple battery power meter on the clock face.
+</P
+><P
+>&#13;   <A
+HREF="http://www.jaist.ac.jp/~daisuke/Linux/xbatstat.html"
+TARGET="_top"
+>xbatstat</A
+>
+   . A battery level status checker for Linux and X.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3014"
+></A
+>12.21.1. Smart Battery Support</H2
+><P
+>&#13;   The 
+   <A
+HREF="https://sourceforge.net/projects/sbs-linux/"
+TARGET="_top"
+>sbsutils</A
+>
+   package is a set of utilities programs to handle the Smart Battery
+   on laptops, it offers Linux kernel &#38; ACPI support for the Smart Battery System
+   found in some laptop computers.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3018"
+></A
+>12.21.2. How to Improve Battery Uptime</H2
+><P
+>&#13;These are the most important factors which have influence on the battery
+uptime. Please see the appropriate chapters for power saving tips:
+</P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;   <A
+HREF="mobile-guide-p2c1s1-cpu.html"
+>Section 12.3</A
+> CPU
+</P
+></LI
+><LI
+><P
+>&#13;   fan
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="mobile-guide-p2c1s12-memory.html"
+>Section 12.22</A
+> memory
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="mobile-guide-p2c1s4-graphic-chip.html"
+>Section 12.6</A
+>graphics card
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="mobile-guide-p2c1s23-harddisk.html"
+>Section 12.33</A
+> hard disk drive
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="mobile-guide-p2c1s21-cd-drive.html"
+>Section 12.32</A
+> optical drive
+</P
+></LI
+></UL
+><P
+>&#13;Getting your computer to use the least amount of power can be problematic.
+Intel's 
+<A
+HREF="http://www.linuxpowertop.org/index.php"
+TARGET="_top"
+>http://www.linuxpowertop.org/index.php</A
+> project provides information on reducing power usage, tips, and tricks for Intel-based computers running Linux.
+As a first step, Intel has released PowerTOP, a tool that helps you find what
+software is using the most power. By fixing (or closing) these applications or
+processes, you can immediately see the power savings in the tool. You'll also
+see the estimated time left for battery power if you are running a laptop. The
+Tips &#38; Tricks page has fixes for a lot of the issues that are already found.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s10-pmu.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s12-memory.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Power Management Unit - PMU (PowerBook)</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Memory</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

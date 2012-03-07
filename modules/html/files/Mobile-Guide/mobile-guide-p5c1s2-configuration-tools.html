@@ -1,0 +1,849 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Configuration Tools</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Different Environments"
+HREF="mobile-guide-p5c1-different-environments.html"><LINK
+REL="PREVIOUS"
+TITLE="Related Documentation"
+HREF="mobile-guide-p5c1s1-related-howtos.html"><LINK
+REL="NEXT"
+TITLE="E-Mail"
+HREF="mobile-guide-p5c1s3-e-mail.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s1-related-howtos.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Different Environments</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s3-e-mail.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c1s2-configuration-tools"
+></A
+>15.2. Configuration Tools</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3921"
+></A
+>15.2.1. NetEnv</H2
+><P
+>&#13;   Do you use your laptop in different network environments? At home? In
+   the office? At a customers site?
+</P
+><P
+>&#13;   If yes, the small package "netenv" might be useful for you. When booting
+   your laptop it provides you with a simple interface from which you can
+   choose the current network environment. The first time in a new
+   environment, you can enter the basic data and save it for later reuse.
+</P
+><P
+>&#13;   Netenv sets up a file containing variable assignments which describe the
+   current environment. This can be used by the <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   setup scheme, e.g. like the one that comes with Debian/GNU Linux and
+   perhaps others.
+</P
+><P
+>&#13;   The netenv data can be used for things like:
+</P
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   Network Device: Configure the network device for different environments.
+</P
+></LI
+><LI
+><P
+>&#13;   Choose a proper <TT
+CLASS="filename"
+>XF86Config</TT
+>: Think of using your
+   laptop standalone with touchpad vs. connected to a CRT monitor along
+   with an external mouse. For example, a wheel mouse could be used when
+   docked, but the driver is not compatible with the normal trackpoint or
+   touchpad.
+</P
+></LI
+><LI
+><P
+>&#13;   Windowmanager: You can set up your windowmanager appropriate to the
+   current location of your machine.
+</P
+></LI
+><LI
+><P
+>&#13;   Printing Environment: The netenv data can easily be used to set up the
+   printing environment.
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   Netenv is available at
+   <A
+HREF="http://netenv.sourceforge.net"
+TARGET="_top"
+>netenv home</A
+>.
+   It depends on <B
+CLASS="command"
+>dialog(1)</B
+> for its menu interface.
+   Netenv was developed by Gerd Bavendiek.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3942"
+></A
+>15.2.2. System Configuration Profile Management - SCPM</H2
+><P
+>&#13;   SuSE's
+   <A
+HREF="http://forge.novell.com/modules/xfmod/project/?scpm"
+TARGET="_top"
+>System Configuration Profile Management - SCPM</A
+>
+   software allows you to switch configuration profiles.
+   You can boot directly into one profile and then switch to another
+   profile at run time. This is the successor of SuSE's older "scheme"
+   management software.
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3946"
+></A
+>15.2.3. ifplugd</H2
+><P
+>&#13;   <A
+HREF="http://0pointer.de/lennart/projects/ifplugd/"
+TARGET="_top"
+>ifplugd</A
+>
+   is a lightweight Linux daemon which configures the network
+   automatically when a cable is plugged in and deconfigures it when the
+   cable is pulled. It is primarily intended for usage with laptops. It
+   relies on the distribution's native network configuration subsystem, and
+   is thus not very intrusive.
+   
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3950"
+></A
+>15.2.4. divine</H2
+><P
+>&#13;   <A
+HREF="http://www.fefe.de/divine/"
+TARGET="_top"
+>divine</A
+>
+   is an utility for people who use their machines in different 
+   networks all the time. "The idea is this:
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   you describe the possible networks in /etc/divine.conf, including one or
+   more machines that are probably up (routers and NIS servers come to
+   mind).
+</P
+></LI
+><LI
+><P
+>&#13;   at boot time, you run divine.
+</P
+></LI
+><LI
+><P
+>&#13;   <B
+CLASS="command"
+>divine</B
+> starts a thread that injects fake arp requests
+   into the network.  The thread will try again up to three times, pausing
+   1 second between retries.  If the last try times out again, the thread
+   will print an error message, leave the interface in the original state
+   and exit cleanly.
+</P
+></LI
+><LI
+><P
+>&#13;   the main thread just looks for arp replies and exits if one is found.
+</P
+></LI
+><LI
+><P
+>&#13;   You have one <TT
+CLASS="filename"
+>resolv.conf</TT
+> per network, for example
+   <TT
+CLASS="filename"
+>/etc/resolv.conf.default</TT
+> and
+   <TT
+CLASS="filename"
+>/etc/resolv.conf.work</TT
+>.  <B
+CLASS="command"
+>divine</B
+>
+   will symlink one of them to <TT
+CLASS="filename"
+>/etc/resolv.conf</TT
+> for
+   you.
+</P
+></LI
+><LI
+><P
+>&#13;   You can specify a proxy server plus port and divine 
+   will write the  proxy server to 
+   <TT
+CLASS="filename"
+>/etc/proxy</TT
+>. This can be evaluated 
+   inside your shell startup script, like this (<B
+CLASS="command"
+>zsh</B
+>):
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;export http_proxy="http://`&#60;/etc/proxy`/"
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   The included perl script edit-netscape-proxy.pl 
+   will edit the proxy settings in your Netscape 4 preferences file.
+</P
+></LI
+><LI
+><P
+>&#13;   You can even specify an additional script to be run for each selection.
+   You can use this to edit <TT
+CLASS="filename"
+>/etc/printcap</TT
+> or
+   <TT
+CLASS="filename"
+>/etc/issue</TT
+> or do something else I forgot.
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;   The point about <B
+CLASS="command"
+>divine</B
+> in contrast to other solutions
+   is that other solutions normally use <B
+CLASS="command"
+>ping</B
+> or
+   something like that. <B
+CLASS="command"
+>divine</B
+> can check a large number
+   of networks instantaneously, assuming that the machines you ping answer
+   within one second (.4 seconds are normal on Ethernets). And pinging an
+   unknown address will do an arp request anyway, so why not do an arp
+   request in the first place?"
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3985"
+></A
+>15.2.5. Mobile IP</H2
+><P
+>&#13;   From the
+   <A
+HREF="http://tldp.org/HOWTO/NET3-4-HOWTO.html"
+TARGET="_top"
+>Networking-HOWTO</A
+>
+   : "The term <EM
+>IP Mobility</EM
+>
+   describes the ability of a host that is able to move its network
+   connection from one point on the Internet to another without changing
+   its IP address or losing connectivity. Usually when an IP host changes
+   its point of connectivity it must also change its IP address. IP
+   Mobility overcomes this problem by allocating a fixed IP address to the
+   mobile host and using IP encapsulation (tunneling) with automatic
+   routing to ensure that datagrams destined for it are routed to the
+   actual IP address it is currently using."
+</P
+><P
+>&#13;   
+   <A
+HREF="http://dynamics.sourceforge.net/"
+TARGET="_top"
+>Dynamics Mobile IP</A
+>
+   is a dynamical, hierarchical Mobile IP system for Linux operating system.
+   The implementation enables a hierarchical model for IP mobility, thus
+   decreasing the location update times as a mobile host moves. Dynamics
+   system has been designed Wireless LAN technology in mind, and the system
+   has optimized functionality for mobility in WLAN.
+</P
+><P
+>&#13;   See also
+   <A
+HREF="http://tuxmobil.org/manet_linux.html"
+TARGET="_top"
+>Linux and Mobile AdHoc Networks - MANETs</A
+>.
+</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN3994"
+></A
+>15.2.5.1. Resources</H3
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://www.hpl.hp.com/personal/Jean_Tourrilhes/MobileIP/index.html"
+TARGET="_top"
+>Linux Mobile IP from HP Labs Bristol</A
+>
+   by Manuel Rodriguez.
+</P
+></LI
+><LI
+><P
+>&#13;<A
+HREF="http://mosquitonet.Stanford.EDU/software/mip.html"
+TARGET="_top"
+>MosquitoNet Mobile IP</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://http.cs.berkeley.edu/~randy/Daedalus/BARWAN/"
+TARGET="_top"
+>Bay Area Research Wireless Access Network</A
+>
+   - BARWAN
+</P
+></LI
+></OL
+>
+
+</P
+><P
+>&#13;   Sources: Kenneth E. Harker and Dag Brattli
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4008"
+></A
+>15.2.6. DHCP/BootP</H2
+><P
+>&#13;   DHCP and BootP are also useful for working in different environments.
+   Please see the
+   <A
+HREF="http://tldp.org/HOWTO/DHCP/index.html"
+TARGET="_top"
+>DHCP-HOWTO</A
+>
+   .
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4012"
+></A
+>15.2.7. PPPD Options</H2
+><P
+>&#13;   The <B
+CLASS="command"
+>pppd</B
+> command can be configured via several
+   different files: 
+   <B
+CLASS="command"
+>pppd file /etc/ppp/&#60;your_options&#62;</B
+> .
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4017"
+></A
+>15.2.8. /etc/init.d</H2
+><P
+>&#13;   You may even choose to do your configuration by editing the
+   <TT
+CLASS="filename"
+>/etc/init.d</TT
+> files manually.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4021"
+></A
+>15.2.9. <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> - Schemes</H2
+><P
+>&#13;   How can I have separate <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> device setups for home
+   and work? This is fairly easy using <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   <EM
+>scheme</EM
+> support. Use two configuration schemes,
+   called <B
+CLASS="command"
+>home</B
+> and <B
+CLASS="command"
+>work</B
+>. For details
+   please read the appropriate chapter in the
+   <A
+HREF="http://pcmcia-cs.sourceforge.net/ftp/doc/PCMCIA-HOWTO.html"
+TARGET="_top"
+><SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>-HOWTO</A
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4032"
+></A
+>15.2.10. Bootloaders</H2
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN4034"
+></A
+>15.2.10.1. LILO</H3
+><P
+>&#13;   From Martin J. Evans
+   
+   I have taken this recommendation: The first point to note is that
+   <B
+CLASS="command"
+>init</B
+> will take any arguments of the form
+   <B
+CLASS="command"
+>name=value</B
+> as environment variable assignments if
+   they are not recognized as something else. This means you can set
+   environment variables from the LILO boot prompt before your rc scripts
+   run. I set the <B
+CLASS="command"
+>LOCATION</B
+> environment variable
+   depending on where I am when I boot Linux. e.g.
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;LILO: linux LOCATION=home
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   Or
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;LILO: linux LOCATION=work
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   Or simply
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;LILO: linux
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   where failing to set <B
+CLASS="command"
+>LOCATION</B
+> means the same as
+   <B
+CLASS="command"
+>LOCATION=home</B
+> (i.e. my default). Instead of typing
+   <B
+CLASS="command"
+>LOCATION=place</B
+> each time you boot you can add an
+   entry to your <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> file and use the
+   append instruction. e.g.
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;# Linux bootable partition for booting Linux at home
+#
+image = /vmlinuz
+root = /dev/hda3
+label = linux
+read-only
+# Linux bootable partition config ends
+#
+# Linux bootable partition for booting Linux at work
+#
+image = /vmlinuz
+root = /dev/hda3
+label = work
+read-only
+append="LOCATION=work"
+# Linux bootable partition config ends
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   With the example above you can use "linux" 
+   for booting at home and "work" for booting at work.
+</P
+><P
+>&#13;   Armed with the facility above, you can now edit the relevant rc scripts
+   to test ENVIRONMENT before running <B
+CLASS="command"
+>ifconfig</B
+>, setting
+   up <B
+CLASS="command"
+>route</B
+> etc.
+</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN4051"
+></A
+>15.2.10.2. Other Bootloaders</H3
+><P
+>&#13;   There are several other bootloaders which are often overlooked.
+   Besides LILO, have a look at loadlin, CHooseOS (CHOS) (not GPL), GRand
+   Unified Bootloader (GRUB), System Commander and take a look at 
+   <A
+HREF="ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/"
+TARGET="_top"
+>ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/</A
+>
+   . The MicroSoft Windows-NT boot loader or OS/2 boot loader may even be used.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4055"
+></A
+>15.2.11. X-Windows</H2
+><P
+>&#13;   From Steve &#60;steve_AT_cygnet.co.uk&#62; I got a configuration for X
+   Windows with an external monitor: Note that I have introduced a neat
+   trick! For my nice 17" monitor I start X11 with no options and get the
+   default 16-bit 1152x864 display - but when using the
+   <SPAN
+CLASS="acronym"
+>LCD</SPAN
+> screen I specify a 15-bit display
+   (<B
+CLASS="command"
+>startx -- -bpp 15</B
+>) and get the correct 800x600
+   resolution automatically. This saves having to have two X11 config
+   files.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN4060"
+></A
+>15.2.12. More Info</H2
+><P
+>&#13;   <A
+HREF="http://www.ssc.com/lg/issue20/laptop.html"
+TARGET="_top"
+>Using a Laptop in Different Environments</A
+>
+   by  Gerd Bavendiek . This article appeared in
+   the August, 1997 issue of the 
+   <A
+HREF="http://www.ssc.com/lg/"
+TARGET="_top"
+>Linux Gazette</A
+>
+   . This is an excellent, short technical article describing an easy way
+   to setup your Linux notebook to boot into different network and printing
+   configurations, especially useful for those who use their machines at
+   home as well as other locations such as in the office, at school, or at
+   a customer site.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s1-related-howtos.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s3-e-mail.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Related Documentation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-different-environments.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>E-Mail</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

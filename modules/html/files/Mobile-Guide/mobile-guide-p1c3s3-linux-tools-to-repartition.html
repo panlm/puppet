@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Linux Tools to Repartition a Hard Disk</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Installation"
+HREF="mobile-guide-p1c3-installation.html"><LINK
+REL="PREVIOUS"
+TITLE="Prerequisites - BIOS, Boot Options, Partitioning"
+HREF="mobile-guide-p1c3s2-prerequisites-partitioning.html"><LINK
+REL="NEXT"
+TITLE="Laptop Installation Methods"
+HREF="mobile-guide-p1c3s4-installation-methods.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s2-prerequisites-partitioning.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s4-installation-methods.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c3s3-linux-tools-to-repartition"
+></A
+>3.3. Linux Tools to Repartition a Hard Disk</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN689"
+></A
+>3.3.1. GNU parted</H2
+><P
+>&#13;   <A
+HREF="http://www.gnu.org/software/parted"
+TARGET="_top"
+>GNU parted</A
+>
+   allows you to create, destroy, resize and copy partitions. It 
+   currently supports ext2 and fat (fat16 and fat32) filesystems, 
+   Linux swap partitions, and MS-DOS disklabels, as well as Macintosh and PC98.
+   For NTFS file systems see
+   <A
+HREF="http://mlf.linux.rulez.org/mlf/ezaz/ntfsresize.html"
+TARGET="_top"
+>ntfsresize</A
+>
+   .
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN694"
+></A
+>3.3.2. ext2resize</H2
+><P
+>&#13;   <A
+HREF="http://ext2resize.sourceforge.net/"
+TARGET="_top"
+>ext2resize</A
+>
+   is a program capable of resizing (shrinking and growing) ext2 and ext3 filesystems. 
+   Checks whether the new size the user gave is feasible 
+   (i.e. whether the filesystem isn't too occupied to shrink it), 
+   connected to the <B
+CLASS="command"
+>parted</B
+> project.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN699"
+></A
+>3.3.3. fixdisktable</H2
+><P
+>&#13;   Something was recently published on the
+   &#60;linux-kernel_at_vger.rutgers.edu&#62; mailing list about a partition
+   recovery program. I have neither used , nor examined, nor read much
+   about it (except for the HTML page.) It may be useful to some of you if
+   you have problems with <A
+HREF="http://www.igd.fhg.de/~aschaefe/fips/"
+TARGET="_top"
+>FIPS</A
+>
+   , Ranish Partition Manager/Utility or Partition Magic destroying your
+   partition information.  You can find information on this
+   partition-fixer named "fixdisktable" at 
+   <A
+HREF="http://bmrc.berkeley.edu/people/chaffee/fat32.html"
+TARGET="_top"
+>his pages</A
+>.
+   It is quite a ways down in that page. Or look for it 
+   <A
+HREF="ftp://bmrc.berkeley.edu/pub/linux/rescue/"
+TARGET="_top"
+>via ftp</A
+>
+   and locate the latest "fixdisktable" in that 
+   FTP directory. (Source and binary dist should be available.)
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN705"
+></A
+>3.3.4. Caveats</H2
+><P
+>&#13;   Before repartitioning your hard disk take care about the disk layout.
+   Especially look for hidden disk space or certain partitions used for
+   <EM
+>suspend to disk</EM
+> or <EM
+>hibernation</EM
+>
+   mode. Some laptops come with a partition which contains some
+   <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> programs (e.g. COMPAQ Armada 1592DT). Search the
+   manual carefully for tools like <B
+CLASS="command"
+>PHDISK.EXE</B
+>, Suspend
+   to Disk, Diagnostic TOOLS.
+</P
+><P
+>&#13;   <A
+HREF="http://www.procyon.com/~pda/lphdisk/"
+TARGET="_top"
+>Patrick D. Ashmore</A
+>
+   has recently released a Linux utility to prepare hibernation
+   partitions for use with laptops and notebooks using Phoenix
+   NoteBIOS. "This utility isn't needed to utilize the
+   <SPAN
+CLASS="acronym"
+>APM</SPAN
+> "Suspend-To-Disk" feature ... if you
+   already have a valid hibernation partition, you should be able to
+   use it from any operating system that can handle
+   <SPAN
+CLASS="acronym"
+>APM</SPAN
+> suspends.
+</P
+><P
+>&#13;   However, if one ever upgrades hard drive, memory, or repartitions their
+   hard drive, they discover that they either have to do without the
+   suspend-to-disk feature or boot to DOS and use the
+   <B
+CLASS="command"
+>PHDISK.EXE</B
+> program provided with their laptop or
+   directly from Phoenix Technologies.
+</P
+><P
+>&#13;   Now, Linux users are free from this restriction.
+   <B
+CLASS="command"
+>lphdisk</B
+> is a Linux utility that properly prepares
+   these partitions for use. Not only does this eliminate having to boot to
+   DOS, but my utility does not exhibit some of the nastier bugs that its
+   DOS counterpart has."
+</P
+><P
+>&#13;   Please see chapter DOS Tools to Repartition a Hard Disk, too.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN721"
+></A
+>3.3.5. Multi Boot</H2
+><P
+>&#13;   Please see the chapter 
+   chapter <A
+HREF="mobile-guide-p5c1-different-environments.html"
+>Chapter 15</A
+> Different Environments, for
+   information about booting different operating systems from
+   the same harddisk.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s2-prerequisites-partitioning.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s4-installation-methods.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Prerequisites - BIOS, Boot Options, Partitioning</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3-installation.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Laptop Installation Methods</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

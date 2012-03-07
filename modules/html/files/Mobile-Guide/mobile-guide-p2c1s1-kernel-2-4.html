@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Kernel 2.4</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Kernel History"
+HREF="mobile-guide-p5c1-kernel-history.html"><LINK
+REL="PREVIOUS"
+TITLE="Kernel History"
+HREF="mobile-guide-p5c1-kernel-history.html"><LINK
+REL="NEXT"
+TITLE="Kernel 2.6"
+HREF="mobile-guide-p2c1s1-kernel-2-6.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1-kernel-history.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Kernel History</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s1-kernel-2-6.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s1-kernel-2-4"
+></A
+>14.1. Kernel 2.4</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3834"
+></A
+>14.1.1. PCMCIA</H2
+><P
+>&#13;   From 
+   <A
+HREF="http://www.pcmcia.org/"
+TARGET="_top"
+>PCMCIA.ORG</A
+>:
+   <SPAN
+CLASS="QUOTE"
+>"
+   PCMCIA (Personal Computer Memory Card International Association) is an
+   international standards body and trade association with over 200 member companies
+   that was founded in 1989 to establish standards for Integrated Circuit cards and to
+   promote interchangeability among mobile computers where ruggedness, low power,
+   and small size were critical. As the needs of mobile computer users have changed, so
+   has the PC Card Standard. By 1991, PCMCIA had defined an I/O interface for the
+   same 68 pin connector initially used for memory cards. At the same time, the Socket
+   Services Specification was added and was soon followed by the Card Services
+   Specifcation as developers realized that common software would be needed to
+   enhance compatibility.
+   "</SPAN
+>
+   The cards are available in different formats: Type I, II, III.
+</P
+><P
+>&#13;   A quotation from the <TT
+CLASS="filename"
+>../Documentation/Changes</TT
+> file:
+   "PCMCIA (PC Card) support is now partially implemented in the main
+   kernel source. Pay attention when you recompile your kernel.  If you
+   need to use the <B
+CLASS="command"
+>PCMCIA-CS</B
+> modules, then don't compile
+   the kernel's PCMCIA support. If you don't need to use the PCMCIA-CS
+   modules (i.e. all the drivers you need are in the kernel sources), then
+   don't compile them; you won't need anything in there.  Also, be sure to
+   upgrade to the latest <B
+CLASS="command"
+>PCMCIA-CS</B
+> release." Further
+   information you may get from the README-2.4 included with this package.
+</P
+><P
+>&#13;   You may find an example kernel configuration for laptops in the 
+   <A
+HREF="mobile-guide-a12-kernel-configuration.html"
+>Section 14.3</A
+>.
+   
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3845"
+></A
+>14.1.2. Powermanagement</H2
+><P
+>&#13;   At the moment there are two power management drivers in the linux kernel
+   (AFAIK). They each have different userspace interfaces
+   <TT
+CLASS="filename"
+>/proc/apm/</TT
+> and <TT
+CLASS="filename"
+>/dev/apmctl/</TT
+> and
+   <TT
+CLASS="filename"
+>/proc/acpi/</TT
+> or something.
+</P
+><P
+>&#13;   For further information see the page of 
+   <A
+HREF="http://john.fremlin.de/linux/offbutton/index.html"
+TARGET="_top"
+>John Fremlin</A
+>
+   . He has also written a program named <B
+CLASS="command"
+>powermanager</B
+>.
+</P
+><P
+>&#13;   With kernel 2.4 there is <SPAN
+CLASS="acronym"
+>ACPI</SPAN
+> available, see
+   <SPAN
+CLASS="acronym"
+>ACPI</SPAN
+> chapter below.
+</P
+><P
+>&#13;   The SuSE
+   <A
+HREF="http://forge.novell.com/modules/xfmod/cvs/cvsbrowse.php/powersave/"
+TARGET="_top"
+>Powersave Daemon</A
+>
+   provides battery, temperature, AC, and CPU
+   frequency control and monitoring along with proper suspend to disk/RAM and
+   standby support with shell hooks that are easy to extend. It supports APM
+   and ACPI machines and can control a hard disk's advanced power and
+   acoustic management settings. It is perfect for laptops and workstations
+   that need to run quietly with low power consumption, or switch to full
+   performance mode if needed. Self definable power schemes give full control
+   over power control features and allow easy and automatic switching between
+   performance or power saving settings for each hardware component.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3859"
+></A
+>14.1.3. Hotplug</H2
+><P
+>&#13;   There is a new 
+   <A
+HREF="http://lists.sourceforge.net/lists/listinfo/linux-hotplug-devel"
+TARGET="_top"
+>mailing list</A
+>
+   for developers interested in any aspects of the Linux
+   kernel hotplug ability and functionality. This would include (but is
+   not restricted to) USB, PCMCIA, SCSI, Firewire, and probably PCI
+   developers.
+   There is an initial 
+   <A
+HREF="http://sourceforge.net/projects/linux-hotplug/"
+TARGET="_top"
+>SourceForge</A
+>
+   site.
+</P
+><P
+>&#13;   Kernel Support for Hot-Plugable Devices
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;CONFIG_HOTPLUG
+  Say Y here if you want to plug devices into your computer while
+  the system is running, and be able to use them quickly. In many
+  cases, the devices can likewise be unplugged at any time too.
+
+  One well known example of this is PCMCIA- or PC-cards, credit-card
+  size devices such as network cards, modems or hard drives which are
+  plugged into slots found on all modern laptop computers. Another
+  example, used on modern desktops as well as laptops, is USB.
+
+  Enable HOTPLUG and KMOD, and build a modular kernel. Get 
+  <A
+HREF="http://linux-hotplug.sourceforge.net"
+TARGET="_top"
+>agent software</A
+>
+  and install it. Then your kernel will automatically call out to a
+  user mode "policy agent" (<B
+CLASS="command"
+>/sbin/hotplug</B
+>) to
+  load modules and set up software needed to use devices as
+  you hotplug them.
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-kernel-history.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s1-kernel-2-6.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Kernel History</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-kernel-history.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Kernel 2.6</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Connection to Digital Camera</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Solutions with Mobile Computers"
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"><LINK
+REL="PREVIOUS"
+TITLE="Mobile Office"
+HREF="mobile-guide-p5c2s6-mobile-office.html"><LINK
+REL="NEXT"
+TITLE="Connection to QuickCam (Video)"
+HREF="mobile-guide-p5c2s8-quickcam.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c2s6-mobile-office.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 16. Solutions with Mobile Computers</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c2s8-quickcam.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c2s7-digital-camera"
+></A
+>16.7. Connection to Digital Camera</H1
+><P
+>&#13;   AFAIK there are currently three methods to connect a digital camera to a
+   laptop: the infrared port (<SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&reg;), serial port and maybe USB. There
+   are also some auxiliary programs for conversion of pictures, etc.
+</P
+><P
+>&#13;   Eric &#60;dago_AT_tkg.att.ne.jp&#62; wrote: "I finally succeeded in
+   downloading pictures from my digital camera, but not exactly the way I
+   expected, i.e. not through <SPAN
+CLASS="acronym"
+>USB</SPAN
+> port but using
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> card port and memory stick device, part of
+   digital camera hardware. Anyway, some interesting things to mention: 
+</P
+><P
+>&#13;   Sony (pretending using a standard) uses the msdos format to store
+   images as JPEG files ; so the best way to have your OS recognizing
+   them is to mount the raw device like a msdos filesystem; using mount
+   directly doesn't work (don't know why) but an entry in the /etc/fstab
+   file allows you to mount the device correctly. i.e.: 
+
+<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><FONT
+COLOR="#000000"
+><PRE
+CLASS="programlisting"
+>&#13;/dev/hde1    /mnt/camera    msdos     user,noauto,ro    0    0
+</PRE
+></FONT
+></TD
+></TR
+></TABLE
+>
+
+   Of course, <B
+CLASS="command"
+>newfs</B
+> before <B
+CLASS="command"
+>mount</B
+> works
+   too, but there is nothing to see at all ;-) I think both
+   <B
+CLASS="command"
+>noauto</B
+> and <B
+CLASS="command"
+>ro</B
+> are important flags;
+   I tried without it and it didn't work. Somehow the mount I got seems
+   buggy . And if <B
+CLASS="command"
+>ro</B
+> is missing, the camera doesn't
+   recognize back the memory stick and it needs to be msdos-formatted. 
+</P
+><P
+>&#13;   Appropriate to the camera documentation , both <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   and <SPAN
+CLASS="acronym"
+>USB</SPAN
+> port behave the same (for Mac and Windoze -
+   i.e. you see a file system auto mounted) - I deduce for Linux it should
+   be the same thing too, as long as the <SPAN
+CLASS="acronym"
+>USB</SPAN
+> driver is
+   installed. I think now that mounting <SPAN
+CLASS="acronym"
+>USB</SPAN
+> raw device
+   the way I did with <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> should work, but I still
+   couldn't find which device to use."
+</P
+><P
+>&#13;   <A
+HREF="http://digitalux.netpedia.net/"
+TARGET="_top"
+>OpenDiS (Open Digita Support)</A
+>
+   is a library and utility program for cameras such as the Kodak
+   DC-220, DC-260, DC-265, and DC-280, that run Flashpoint's Digita
+   operating system. The library is a unix implementation of the
+   Digita Host Interface Specification, intended for embedding
+   Digita support in other products such as
+   <B
+CLASS="command"
+>gPhoto</B
+>. The utility is a simple command-line
+   program for standalone downloading of photos from the cameras.
+</P
+><P
+>&#13;   <A
+HREF="http://www.gphoto.org/"
+TARGET="_top"
+>gPhoto</A
+>
+   enables you to take a photo from any digital camera, load it
+   onto your PC running a free operating system like GNU/Linux,
+   print it, email it, put it on your web site, save it on your
+   storage media in popular graphics formats or just view it on
+   your monitor. <B
+CLASS="command"
+>gPhoto</B
+> sports a new HTML
+   engine that allows the creation of gallery themes (HTML
+   templates with special tags) making publishing images to the
+   world wide web a snap. A directory browse mode is implemented
+   making it easy to create an HTML gallery from images already on
+   your computer. Support for the Canon PowerShot A50, Kodak
+   DC-240/280 USB, and Mustek MDC-800 digital cameras.
+</P
+><P
+>&#13;   <A
+HREF="http://www.lightner.net/lightner/bruce/ppc_use.html"
+TARGET="_top"
+>photopc</A
+>
+   is a library and a command-line frontend to manipulate
+   digital still cameras based on Fujitsu chipset and Siarra
+   Imaging firmware. The program is known to work with Agfa,
+   Epson and Olympus cameras. Should also work with Sanyo, but
+   this is untested. The cameras typically come with software
+   for Windows and for Mac, and no description of the protocol.
+   With this tool, they are manageable from a
+   <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+> box. Bruce D. Lightner
+   &#60;lightner_AT_metaflow.com&#62; has added support for
+   Win32 and DOS platforms. Note that the program does not
+   have any GUI, it is plain command-line even on Windows.
+   For a GUI, check out the <B
+CLASS="command"
+>phototk</B
+>
+   program.
+</P
+><P
+>&#13;   <A
+HREF="http://kdc2tiff.sourceforge.net/"
+TARGET="_top"
+>kdc2tiff</A
+>
+   is software to convert .kdc images from Kodak's DC120
+   digital camera to .tiff or .jpg files. This software pays
+   particular attention to aspect ratio, high quality
+   scaling, contrast adjustment, gamma correction, and image
+   rotation.
+</P
+><P
+>&#13;   <A
+HREF="http://www.netspace.net.au/~bmiller/linux/rdc2e/"
+TARGET="_top"
+>rdc2e</A
+>
+   is a command line tool that downloads images from a
+   Ricoh RDC-2E digital camera. It is available as either
+   a source tar ball or a RedHat 6.1 i386 RPM.
+</P
+><P
+>&#13;   <A
+HREF="http://www.debian.org/Packages/unstable/graphics/fujiplay.html"
+TARGET="_top"
+>fujiplay</A
+>
+   Interface for Fuji digital cameras.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2s6-mobile-office.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2s8-quickcam.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Mobile Office</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c2-solutions-with-laptops.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Connection to QuickCam (Video)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
