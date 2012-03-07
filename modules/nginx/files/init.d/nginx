@@ -18,6 +18,8 @@
 # Short-Description: start and stop nginx
 ### END INIT INFO
 
+ulimit -HSn 65535
+
 # Source function library.
 . /etc/rc.d/init.d/functions
 
