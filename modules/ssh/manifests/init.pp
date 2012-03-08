@@ -1,7 +1,7 @@
 class ssh {
-    service {
-        ["ssh"]:
-        ensure => running;
+    package {
+        "openssh-server":
+        ensure => installed;
     }
     file {
         "/root/.ssh":
@@ -12,6 +12,19 @@ class ssh {
         "/root/.ssh/authorized_keys":
         require => File["/root/.ssh"],
         source => "puppet://$fileserver/ssh/authorized_keys";
+    }
+    file {
+        "/etc/ssh/sshd_config":
+        require => Package["openssh-server"],
+        source => "puppet://$fileserver/ssh/sshd_config";
+    }
+    service {
+        ["ssh"]:
+        require => Package["openssh-server"],
+        subscribe => File["/etc/ssh/sshd_config"],
+        hasrestart => true,
+        hasstatus => true,
+        ensure => running;
     }
 }
 
