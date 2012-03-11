@@ -1,7 +1,7 @@
 
 #user  nobody;
-<% if @hostname =~ /^vm[1234]$/i %>
-worker_processes  1000;
+<% if @hostname =~ /^vm[01234]$/i %>
+worker_processes  500;
 <% else %>
 worker_processes 200;
 <% end -%>
@@ -42,23 +42,23 @@ http {
         #server   vm2:80;
         #server   vm3:80;
         #server   vm4:80;
-        server   vm5:80;
-        server   vm6:80;
-        server   vm7:80;
-        server   vm8:80;
-        server   vm9:80;
-        server   vm10:80;
-        server   vm11:80;
-        server   vm12:80;
-        server   vm13:80;
-        server   vm14:80;
-        server   vm15:80;
-        server   vm16:80;
-        server   vm17:80;
-        server   vm18:80;
-        server   vm19:80;
-        server   vm20:80;
-        fair;
+        server    vm5:80 weight=1;
+        server    vm6:80 weight=20;
+        server    vm7:80 weight=40;
+        server    vm8:80 weight=60;
+        server    vm9:80 weight=80;
+        server   vm10:80 weight=100;
+        server   vm11:80 weight=120;
+        server   vm12:80 weight=140;
+        server   vm13:80 weight=160;
+        server   vm14:80 weight=180;
+        server   vm15:80 weight=200;
+        server   vm16:80 weight=220;
+        server   vm17:80 weight=240;
+        server   vm18:80 weight=260;
+        server   vm19:80 weight=280;
+        server   vm20:80 weight=300;
+        #fair;
     }
 
     server {

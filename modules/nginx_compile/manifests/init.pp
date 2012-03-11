@@ -69,7 +69,8 @@ class nginx_compile {
     file {
         "/usr/local/nginx/conf/nginx.conf":
         require => Exec["compile"],
-        source => "puppet://$fileserver/nginx_compile/nginx/conf/nginx.conf";
+        #source => "puppet://$fileserver/nginx_compile/nginx/conf/nginx.conf";
+        content => template("nginx_compile/nginx.conf.erb");
         "/etc/init.d/nginx":
         require => Exec["compile"],
         source => "puppet://$fileserver/nginx_compile/init/nginx";
@@ -79,14 +80,14 @@ class nginx_compile {
         ["nginx"]:
         require => Exec["compile"],
         subscribe => File["/usr/local/nginx/conf/nginx.conf","/etc/init.d/nginx"],
-        #binary => "/usr/local/nginx/sbin/nginx",
-        #pattern => "nginx",
-        #start => "/usr/local/nginx/sbin/nginx",
-        #stop => "/usr/local/nginx/sbin/nginx -s stop",
-        #restart => "/usr/local/nginx/sbin/nginx -s reload";
-        hasrestart => true,
-        hasstatus => true,
-        enable => true,
+        binary => "/usr/local/nginx/sbin/nginx",
+        pattern => "nginx",
+        start => "/usr/local/nginx/sbin/nginx",
+        stop => "/usr/local/nginx/sbin/nginx -s stop",
+        restart => "/usr/local/nginx/sbin/nginx -s reload",
+        #hasrestart => false,
+        #hasstatus => true,
+        #enable => true,
         ensure => running;
     }
 
