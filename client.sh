@@ -3,8 +3,10 @@ yes y |yum install ruby
 
 mkdir -p /pub/puppet
 cd /pub/puppet
-wget http://172.30.254.100/facter-1.6.6.tar.gz
-wget http://172.30.254.100/puppet-2.6.14.tar.gz
+#wget http://172.30.254.100/facter-1.6.6.tar.gz
+#wget http://172.30.254.100/puppet-2.6.14.tar.gz
+wget http://puppetlabs.com/downloads/puppet/puppet-2.6.14.tar.gz
+wget http://puppetlabs.com/downloads/facter/facter-1.6.6.tar.gz
 tar xf facter-1.6.6.tar.gz
 cd facter-1.6.6
 ruby install.rb

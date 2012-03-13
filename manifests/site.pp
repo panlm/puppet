@@ -53,5 +53,15 @@ node vm17 { include base_node_class }
 node vm18 { include base_node_class }
 node vm19 { include base_node_class }
 node vm20 { include base_node_class }
+node vm21 { include base_node_class }
+node vm22 { include base_node_class }
+node vm23 { include base_node_class }
+node vm24 { include base_node_class }
+node vm25 { include base_node_class }
+node vm26 { include base_node_class }
+node vm27 { include base_node_class }
+node vm28 { include base_node_class }
+node vm29 { include base_node_class }
+node vm30 { include base_node_class }
 
 #import "modules.pp"
