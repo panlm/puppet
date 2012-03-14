@@ -1,3 +1,5 @@
+echo "nameserver 172.29.254.100" > /etc/resolv.conf
+
 #rpm -Uhv http://apt.sw.be/redhat/el5/en/i386/rpmforge/RPMS/rpmforge-release-0.3.6-1.el5.rf.i386.rpm
 yes y |yum install ruby
 
@@ -27,7 +29,7 @@ chown -R puppet.puppet /var/run/puppet
 
 echo "send dhcp-client-identifier \"`hostname`\";" > /etc/dhclient-eth0.conf
 
-sed -i "/^yinji\.com\.cn/d" /etc/hosts
+sed -i "/yinji\.com\.cn/d" /etc/hosts
 sed -i "/^search/d" /etc/resolv.conf
 echo "    server = vm0" >> /etc/puppet/puppet.conf
 puppet agent --test
