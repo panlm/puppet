@@ -1,7 +1,7 @@
 
 #user  nobody;
-<% if @hostname =~ /^vm[01234]$/i %>
-worker_processes  500;
+<% if @hostname =~ /^vm[0-9]$/i %>
+worker_processes  1000;
 <% else %>
 worker_processes 200;
 <% end -%>
@@ -42,22 +42,62 @@ http {
         #server   vm2:80;
         #server   vm3:80;
         #server   vm4:80;
-        server    vm5:80 weight=1;
-        server    vm6:80 weight=20;
-        server    vm7:80 weight=40;
-        server    vm8:80 weight=60;
-        server    vm9:80 weight=80;
-        server   vm10:80 weight=100;
-        server   vm11:80 weight=120;
-        server   vm12:80 weight=140;
-        server   vm13:80 weight=160;
-        server   vm14:80 weight=180;
-        server   vm15:80 weight=200;
-        server   vm16:80 weight=220;
-        server   vm17:80 weight=240;
-        server   vm18:80 weight=260;
-        server   vm19:80 weight=280;
-        server   vm20:80 weight=300;
+        #server   vm5:80 weight=50;
+        #server    vm6:80 weight=10  ;
+        #server    vm7:80 weight=30  ;
+        #server    vm8:80 weight=50  ;
+        #server    vm9:80 weight=70  ;
+        server   vm10:80 weight=90  ;
+        server   vm11:80 weight=110 ;
+        server   vm12:80 weight=130 ;
+        server   vm13:80 weight=150 ;
+        server   vm14:80 weight=170 ;
+        server   vm15:80 weight=190 ;
+        server   vm16:80 weight=210 ;
+        server   vm17:80 weight=230 ;
+        server   vm18:80 weight=250 ;
+        server   vm19:80 weight=270 ;
+        server   vm20:80 weight=290 ;
+        server   vm21:80 weight=310 ;
+        server   vm22:80 weight=330 ;
+        server   vm23:80 weight=350 ;
+        server   vm24:80 weight=370 ;
+        server   vm25:80 weight=390 ;
+        server   vm26:80 weight=410 ;
+        server   vm27:80 weight=430 ;
+        server   vm28:80 weight=450 ;
+        server   vm29:80 weight=470 ;
+        #server   vm30:80 weight=490 ;
+        server   vm31:80 weight=510 ;
+        server   vm32:80 weight=530 ;
+        server   vm33:80 weight=550 ;
+        server   vm34:80 weight=570 ;
+        server   vm35:80 weight=590 ;
+        server   vm36:80 weight=610 ;
+        server   vm37:80 weight=630 ;
+        server   vm38:80 weight=650 ;
+        server   vm39:80 weight=670 ;
+        server   vm40:80 weight=690 ;
+        server   vm41:80 weight=710 ;
+        server   vm42:80 weight=730 ;
+        server   vm43:80 weight=750 ;
+        server   vm44:80 weight=770 ;
+        server   vm45:80 weight=790 ;
+        server   vm46:80 weight=810 ;
+        server   vm47:80 weight=830 ;
+        server   vm48:80 weight=850 ;
+        server   vm49:80 weight=870 ;
+        server   vm50:80 weight=890 ;
+        server   vm51:80 weight=910 ;
+        server   vm52:80 weight=930 ;
+        server   vm53:80 weight=950 ;
+        server   vm54:80 weight=970 ;
+        server   vm55:80 weight=990 ;
+        server   vm56:80 weight=1010;
+        server   vm57:80 weight=1030;
+        server   vm58:80 weight=1050;
+        server   vm59:80 weight=1070;
+        server   vm60:80 weight=1090;
         #fair;
     }
 
