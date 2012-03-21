@@ -1,17 +1,15 @@
 #!/bin/bash
 
-max=4
+CONF=/usr/local/bin/run_si.conf
+source $CONF
 
 while true ; do
-
-num=$( ps -ef |grep siege |grep -v -e grep -e run_siege |wc -l )
-if [ $num -le $max ]; then
-    siege -c 300 -d 1 http://localhost:8080/html/sleep5.php &
-fi
-sleep 10
-
+    curr=$( ps -ef |grep siege |grep -v grep |wc -l )
+    if [ $num -gt $curr ]; then
+        nohup siege -c 300 -d 1 http://localhost:8080/html/sleep5.php &
+    else
+        break
+    fi
+    sleep 2
 done
-
-
-
 
