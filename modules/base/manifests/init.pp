@@ -14,4 +14,8 @@ class base {
         ["NetworkManager", "bluez-*"]:
         ensure => purged;
     }
+    service {
+        "sendmail":
+        ensure => stopped;
+    }
 }
