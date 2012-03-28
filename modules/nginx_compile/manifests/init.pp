@@ -70,7 +70,8 @@ class nginx_compile {
         "/usr/local/nginx/conf/nginx.conf":
         require => Exec["compile"],
         #source => "puppet://$fileserver/nginx_compile/nginx/conf/nginx.conf";
-        content => template("nginx_compile/nginx.conf.erb");
+        content => template("nginx_compile/nginx.conf.erb"),
+        alias => "nginx.conf";
         "/etc/init.d/nginx":
         require => Exec["compile"],
         source => "puppet://$fileserver/nginx_compile/init/nginx";
@@ -79,7 +80,7 @@ class nginx_compile {
     service {
         ["nginx"]:
         require => Exec["compile"],
-        subscribe => File["/usr/local/nginx/conf/nginx.conf","/etc/init.d/nginx"],
+        subscribe => File["nginx.conf","/etc/init.d/nginx"],
         binary => "/usr/local/nginx/sbin/nginx",
         pattern => "nginx",
         start => "/usr/local/nginx/sbin/nginx",
