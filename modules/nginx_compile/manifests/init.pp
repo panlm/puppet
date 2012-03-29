@@ -92,4 +92,13 @@ class nginx_compile {
         ensure => running;
     }
 
+    cron {
+        empty_error_log:
+        ensure  => present,
+        command => "/bin/cp /dev/null /usr/local/nginx/logs/error.log",
+        user => root,
+        minute => '0',
+        hour => '0';
+    }
+
 }

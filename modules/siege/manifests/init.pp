@@ -1,5 +1,6 @@
 class siege {
-    if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
+    #if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
+    if $hostname =~ /^vm[0-9]$/ {
         file {
             "/usr/local/bin/run_si.sh":
             source => "puppet://$fileserver/siege/run_si.sh",
@@ -26,6 +27,14 @@ class siege {
             ensure  => absent;
         }
     } else {
+        file {
+            "/usr/local/bin/run_si.sh":
+            ensure => absent;
+        }
+        file {
+            "/usr/local/bin/run_si.conf":
+            ensure => absent;
+        }
         cron {
             run_si_10mins:
             ensure  => absent;
