@@ -77,21 +77,6 @@ class nginx_compile {
         source => "puppet://$fileserver/nginx_compile/init/nginx";
     }
 
-    service {
-        ["nginx"]:
-        require => Exec["compile"],
-        subscribe => File["nginx.conf","/etc/init.d/nginx"],
-        binary => "/usr/local/nginx/sbin/nginx",
-        pattern => "nginx",
-        start => "/usr/local/nginx/sbin/nginx",
-        stop => "/usr/local/nginx/sbin/nginx -s stop",
-        restart => "/usr/local/nginx/sbin/nginx -s reload",
-        #hasrestart => false,
-        #hasstatus => true,
-        #enable => true,
-        ensure => running;
-    }
-
     cron {
         empty_error_log:
         ensure  => present,
@@ -100,5 +85,35 @@ class nginx_compile {
         minute => '0',
         hour => '0';
     }
+
+    if $hostname =~ /^vm[2-9]$/ {
+        service {
+            ["nginx"]:
+            require => Exec["compile"],
+            subscribe => File["nginx.conf","/etc/init.d/nginx"],
+            binary => "/usr/local/nginx/sbin/nginx",
+            pattern => "nginx",
+            start => "/usr/local/nginx/sbin/nginx",
+            stop => "/usr/local/nginx/sbin/nginx -s stop",
+            restart => "/usr/local/nginx/sbin/nginx -s reload",
+            #hasrestart => false,
+            #hasstatus => true,
+            #enable => true,
+            ensure => running;
+        }
+    } else {
+        service {
+            ["nginx"]:
+            require => Exec["compile"],
+            #subscribe => File["nginx.conf","/etc/init.d/nginx"],
+            binary => "/usr/local/nginx/sbin/nginx",
+            pattern => "nginx",
+            start => "/usr/local/nginx/sbin/nginx",
+            stop => "/usr/local/nginx/sbin/nginx -s stop",
+            restart => "/usr/local/nginx/sbin/nginx -s reload",
+            ensure => stopped;
+        }
+    }
+
 
 }
