@@ -12,10 +12,12 @@ class snmp {
         "/etc/snmp/iostat.sh":
         require => Package["net-snmp","sysstat"],
         mode => 0755,
-        source => "puppet://$fileserver/snmp/iostat.sh";
+        source => "puppet://$fileserver/snmp/iostat.sh",
+        alias => "iostat.sh";
     }
     cron {
         cron_run_per_min:
+        require => File["iostat.sh"],
         command => "/etc/snmp/iostat.sh >/etc/snmp/iostat.sh.log 2>&1",
         user => root;
     }

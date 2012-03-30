@@ -22,7 +22,7 @@ class siege {
         cron {
             run_si_10mins:
             ensure  => present,
-            require => File['run_si.sh','run_si.conf'],
+            require => File['run_si.sh','run_si.conf','siegerc'],
             command => "/usr/local/bin/run_si.sh >>/usr/local/bin/run_si.sh.log 2>&1",
             user => root,
             minute => '*/10';

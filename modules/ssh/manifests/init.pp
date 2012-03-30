@@ -1,30 +1,26 @@
 class ssh {
-    #package {
-    #    "openssh-server":
-    #    ensure => installed;
-    #}
     file {
         "/root/.ssh":
         ensure => directory,
-        mode => 700;
+        mode => 700,
+        alias => ".ssh";
     }
     file {
         "/root/.ssh/authorized_keys":
-        require => File["/root/.ssh"],
+        require => File[".ssh"],
         source => "puppet://$fileserver/ssh/authorized_keys";
     }
-    #file {
-    #    "/etc/ssh/sshd_config":
-    #    require => Package["openssh-server"],
-    #    mode => 600,
-    #    source => "puppet://$fileserver/ssh/sshd_config";
-    #}
+    file {
+        "/etc/ssh/sshd_config":
+        source => "puppet://$fileserver/ssh/sshd_config",
+        mode => 600,
+        alias => "sshd_config";
+    }
     service {
         ["sshd"]:
-    #    require => Package["openssh-server"],
-    #    subscribe => File["/etc/ssh/sshd_config"],
-    #    hasrestart => true,
-    #    hasstatus => true,
+        subscribe => File["sshd_config"],
+        hasrestart => true,
+        hasstatus => true,
         ensure => running;
     }
 }
