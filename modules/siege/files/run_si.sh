@@ -6,7 +6,7 @@ source $CONF
 while true ; do
     curr=$( ps -ef |grep siege |grep -v grep |wc -l )
     if [ $num -gt $curr ]; then
-        nohup siege -c 300 -d 1 http://localhost:8080/html/sleep5.php >/dev/null 2>&1 &
+        nohup siege http://localhost:8080/html/sleep5.php >/dev/null 2>&1 &
     else
         break
     fi

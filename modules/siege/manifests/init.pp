@@ -2,6 +2,12 @@ class siege {
     #if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
     if $hostname =~ /^vm[0-9]$/ {
         file {
+            "/root/.siegerc":
+            source => "puppet://$fileserver/siege/siegerc",
+            alias => 'siegerc',
+            mode => 0755;
+        }
+        file {
             "/usr/local/bin/run_si.sh":
             source => "puppet://$fileserver/siege/run_si.sh",
             alias => 'run_si.sh',
@@ -27,6 +33,10 @@ class siege {
             ensure  => absent;
         }
     } else {
+        file {
+            "/root/.siegerc":
+            ensure => absent;
+        }
         file {
             "/usr/local/bin/run_si.sh":
             ensure => absent;
