@@ -208,7 +208,7 @@ delay = 1
 # a run-away mess on an unattended siege. The default value is 1024
 # ex: failures = 50
 #
-failures = 1000
+failures = 0
 
 #
 # Internet simulation. If true, siege clients will hit

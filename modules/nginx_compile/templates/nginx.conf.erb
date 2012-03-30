@@ -33,16 +33,7 @@ http {
     #gzip  on;
 
     upstream  backend  {
-        #server   vm0:80;
-        #server   vm1:80;
-        #server   vm2:80;
-        #server   vm3:80;
-        #server   vm4:80;
-        #server   vm5:80 weight=50;
-        #server    vm6:80 weight=10  ;
-        #server    vm7:80 weight=30  ;
-        #server    vm8:80 weight=50  ;
-        #server    vm9:80 weight=70  ;
+        fair;
         server   vm10:80 ;
         server   vm11:80 ;
         server   vm12:80 ;
@@ -56,7 +47,7 @@ http {
         server   vm20:80 ;
         server   vm21:80 ;
         server   vm22:80 ;
-#        server   vm23:80 weight=10;
+        server   vm23:80 ;
 #        server   vm24:80 weight=20;
 #        server   vm25:80 weight=30;
 #        server   vm26:80 weight=10;
@@ -176,7 +167,6 @@ http {
 #        server   vm140:80 weight=140 ;
 #        server   vm141:80 weight=141 ;
 #        server   vm142:80 weight=142 ;
-        fair;
     }
 
     server {
