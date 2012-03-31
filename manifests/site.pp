@@ -27,7 +27,6 @@ node default {
     include test_class
 }
 
-node vm0 { include base_node_class }
 node vm2 {
     include base
     include snmp
@@ -36,13 +35,20 @@ node vm2 {
     include sysctl
     include nginx_compile
     include siege
+    include ntp
 }
 
-case $hostname {
-    /^vm[3-9]$/: { include base_node_class }
-    /^vm[0-9]+$/: { include base_node_class }
-    default:    { include test_class }
-}
+node vm0 { include base_node_class }
+node /^vm3$/ inherits vm0 {}
+node /^vm[4-9]$/ inherits vm0 {}
+node /^vm[0-9][0-9]+$/ inherits vm0 {}
+
+# or
+#case $hostname {
+#    /^vm[3-9]$/: { include base_node_class }
+#    /^vm[0-9][0-9]+$/: { include base_node_class }
+#    default:    { include test_class }
+#}
 
 #import "modules.pp"
 

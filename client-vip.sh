@@ -36,3 +36,5 @@ puppet agent --test
 #service puppet start
 chkconfig puppet on
 
+reboot
+
