@@ -1,6 +1,5 @@
 class siege {
     if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
-    #if $hostname =~ /^vm[0-9]$/ {
         file {
             "/root/.siegerc":
             source => "puppet://$fileserver/siege/siegerc",
@@ -13,9 +12,15 @@ class siege {
             alias => 'run_si.sh',
             mode => 0755;
         }
+        #file {
+        #    "/usr/local/bin/run_si.conf":
+        #    source => "puppet://$fileserver/siege/run_si.conf",
+        #    alias => 'run_si.conf',
+        #    mode => 0644;
+        #}
         file {
             "/usr/local/bin/run_si.conf":
-            source => "puppet://$fileserver/siege/run_si.conf",
+            content => template("siege/run_si.conf.erb"),
             alias => 'run_si.conf',
             mode => 0644;
         }
@@ -27,7 +32,7 @@ class siege {
             user => root,
             minute => '*/10';
         }
-    } elsif $hostname == 'vm11' {
+    } elsif $hostname == 'vm21' {
         cron {
             run_si_10mins:
             ensure  => absent;
