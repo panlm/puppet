@@ -1,6 +1,11 @@
 
 #user  nobody;
-worker_processes <% if @hostname =~ /^(vm[0-9]|vm1[0-9])$/i %> 1000 <% else %> 200 <% end -%> ;
+
+<% if @hostname =~ /^(vm[0-9]|vm1[0-9])$/i %>
+worker_processes 1000
+<% else %>
+worker_processes 200
+<% end -%> ;
 
 #error_log  logs/error.log;
 #error_log  logs/error.log  notice;
@@ -34,6 +39,14 @@ http {
 
     upstream  backend  {
 #        fair;
+        server   vm2:80 weight=2 ;
+        server   vm3:80 weight=3 ;
+        server   vm4:80 weight=4 ;
+        server   vm5:80 weight=5 ;
+        server   vm6:80 weight=6 ;
+        server   vm7:80 weight=7 ;
+        server   vm8:80 weight=8 ;
+        server   vm9:80 weight=9 ;
         server   vm10:80 weight=10 ;
         server   vm11:80 weight=11 ;
         server   vm12:80 weight=12 ;

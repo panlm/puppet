@@ -1,6 +1,6 @@
 class siege {
-    #if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
-    if $hostname =~ /^vm[0-9]$/ {
+    if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
+    #if $hostname =~ /^vm[0-9]$/ {
         file {
             "/root/.siegerc":
             source => "puppet://$fileserver/siege/siegerc",
