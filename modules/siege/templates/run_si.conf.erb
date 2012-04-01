@@ -3,7 +3,9 @@ num=3
 <% elsif @hostname =~ /^vm1[0-9]$/i %>
 num=4
 <% elsif @hostname =~ /^vm2[0-9]$/i %>
-num=5
-<% else %>
+num=3
+<% elsif @hostname =~ /^vm3[0-9]$/i %>
 num=2
+<% else %>
+num=1
 <% end -%>

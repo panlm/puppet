@@ -86,7 +86,7 @@ class nginx_compile {
         hour => '0';
     }
 
-    if $hostname =~ /^(vm[2-9]|vm1[0-9])$/ {
+    if $hostname =~ /^(vm[2-9]|vm[123][0-9])$/ {
         service {
             ["nginx"]:
             require => Exec["compile"],

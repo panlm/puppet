@@ -1,5 +1,5 @@
 class siege {
-    if $hostname =~ /^(vm[0-9]|vm1[0-9])$/ {
+    if $hostname =~ /^(vm[0-9]|vm[123][0-9])$/ {
         file {
             "/root/.siegerc":
             source => "puppet://$fileserver/siege/siegerc",
@@ -32,7 +32,7 @@ class siege {
             user => root,
             minute => '*/10';
         }
-    } elsif $hostname == 'vm21' {
+    } elsif $hostname == 'vm41' {
         cron {
             run_si_10mins:
             ensure  => absent;
