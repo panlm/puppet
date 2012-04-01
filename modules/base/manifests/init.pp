@@ -16,6 +16,7 @@ class base {
     }
     service {
         "sendmail":
+        enable => false,
         ensure => stopped;
     }
 }
