@@ -1,10 +1,10 @@
 
 #user  nobody;
 
-<% if @hostname =~ /^(vm[0-9]|vm1[0-9])$/i %>
+<% if @hostname =~ /^(vm[0-9]|vm[123][0-9])$/i %>
 worker_processes 1000;
 <% else %>
-worker_processes 200;
+worker_processes 1000;
 <% end -%>
 
 #error_log  logs/error.log;
