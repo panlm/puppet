@@ -19,6 +19,7 @@ class base_node_class {
     include nginx_compile
     include siege
     include ntp
+    include network
 }
 
 # tell puppet on which client to run the class
@@ -27,7 +28,7 @@ node default {
     include test_class
 }
 
-node vm2 {
+node vm115 {
     include base
     include snmp
     include ssh
@@ -36,6 +37,7 @@ node vm2 {
     include nginx_compile
     include siege
     include ntp
+    include network
 }
 
 node vm0 { include base_node_class }
