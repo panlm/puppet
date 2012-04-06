@@ -118,8 +118,6 @@ http {
         server   vm58:80 weight=90 ;
         server   vm59:80 weight=90 ;
 
-<% if @ipaddress =~ /^172\.29\./ %>
-
         server   vm60:80 weight=110 ;
         server   vm61:80 weight=110 ;
         server   vm62:80 weight=110 ;
@@ -143,6 +141,7 @@ http {
         server   vm77:80 weight=190 ;
         server   vm78:80 weight=190 ;
         server   vm79:80 weight=190 ;
+<% if @ipaddress =~ /^172\.29\./ %>
 
         server   vm80:80 weight=210 ;
         server   vm81:80 weight=210 ;
