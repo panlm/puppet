@@ -86,7 +86,8 @@ class nginx_compile {
         hour => '0';
     }
 
-    if $hostname =~ /^(vm[2-9]|vm[123][0-9])$/ {
+#    if $hostname =~ /^(vm[2-9]|vm[123][0-9])$/ {
+    if $ipaddress =~ /^(172\.29\.249\.[2-9]|172\.29\.255\.[123][0-9]|172\.30\.249\.[2-9]|172\.29\.249\.[12][0-9])$/ {
         service {
             ["nginx"]:
             require => Exec["compile"],

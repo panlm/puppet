@@ -68,6 +68,19 @@ http {
 #        server   vm28:80 weight=120 ;
 #        server   vm29:80 weight=120 ;
 
+<% if @ipaddress =~ /172\.30\./i %>
+        server   vm30:80 weight=30 ;
+        server   vm31:80 weight=30 ;
+        server   vm32:80 weight=30 ;
+        server   vm33:80 weight=30 ;
+        server   vm34:80 weight=30 ;
+
+        server   vm35:80 weight=60 ;
+        server   vm36:80 weight=60 ;
+        server   vm37:80 weight=60 ;
+        server   vm38:80 weight=60 ;
+        server   vm39:80 weight=60 ;
+<% else %>
 #        server   vm30:80 weight=30 ;
 #        server   vm31:80 weight=30 ;
 #        server   vm32:80 weight=30 ;
@@ -79,6 +92,7 @@ http {
 #        server   vm37:80 weight=60 ;
 #        server   vm38:80 weight=60 ;
 #        server   vm39:80 weight=60 ;
+<% end -%>
 
         server   vm40:80 weight=10 ;
         server   vm41:80 weight=10 ;
