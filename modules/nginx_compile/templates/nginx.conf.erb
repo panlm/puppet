@@ -2,9 +2,9 @@
 #user  nobody;
 
 <% if @hostname =~ /^(vm[0-9]|vm[123][0-9])$/i %>
-worker_processes 1000;
+worker_processes 1500;
 <% else %>
-worker_processes 1000;
+worker_processes 1500;
 <% end -%>
 
 #error_log  logs/error.log;
@@ -42,33 +42,37 @@ http {
 #        server   vm2:80 weight=2 ;
 #        server   vm3:80 weight=3 ;
 #        server   vm4:80 weight=4 ;
-#        server   vm5:80 weight=5 ;
-#        server   vm6:80 weight=6 ;
-#        server   vm7:80 weight=7 ;
-#        server   vm8:80 weight=8 ;
-#        server   vm9:80 weight=9 ;
-#        server   vm10:80 weight=10 ;
-#        server   vm11:80 weight=11 ;
-#        server   vm12:80 weight=12 ;
-#        server   vm13:80 weight=13 ;
-#        server   vm14:80 weight=14 ;
-#        server   vm15:80 weight=15 ;
-#        server   vm16:80 weight=16 ;
-#        server   vm17:80 weight=17 ;
-#        server   vm18:80 weight=18 ;
-#        server   vm19:80 weight=19 ;
-#        server   vm20:80 weight=20 ;
-#        server   vm21:80 weight=20 ;
-#        server   vm22:80 weight=20 ;
-#        server   vm23:80 weight=20 ;
-#        server   vm24:80 weight=20 ;
-#        server   vm25:80 weight=120 ;
-#        server   vm26:80 weight=120 ;
-#        server   vm27:80 weight=120 ;
-#        server   vm28:80 weight=120 ;
-#        server   vm29:80 weight=120 ;
 
-<% if @ipaddress =~ /172\.30\./i %>
+        server   vm5:80 weight=1 ;
+        server   vm6:80 weight=1 ;
+        server   vm7:80 weight=1 ;
+        server   vm8:80 weight=1 ;
+        server   vm9:80 weight=1 ;
+
+        server   vm10:80 weight=10 ;
+        server   vm11:80 weight=10 ;
+        server   vm12:80 weight=10 ;
+        server   vm13:80 weight=10 ;
+        server   vm14:80 weight=10 ;
+
+        server   vm15:80 weight=20 ;
+        server   vm16:80 weight=20 ;
+        server   vm17:80 weight=20 ;
+        server   vm18:80 weight=20 ;
+        server   vm19:80 weight=20 ;
+
+        server   vm20:80 weight=40 ;
+        server   vm21:80 weight=40 ;
+        server   vm22:80 weight=40 ;
+        server   vm23:80 weight=40 ;
+        server   vm24:80 weight=40 ;
+
+        server   vm25:80 weight=50 ;
+        server   vm26:80 weight=50 ;
+        server   vm27:80 weight=50 ;
+        server   vm28:80 weight=50 ;
+        server   vm29:80 weight=50 ;
+
         server   vm30:80 weight=30 ;
         server   vm31:80 weight=30 ;
         server   vm32:80 weight=30 ;
@@ -80,43 +84,30 @@ http {
         server   vm37:80 weight=60 ;
         server   vm38:80 weight=60 ;
         server   vm39:80 weight=60 ;
-<% else %>
-#        server   vm30:80 weight=30 ;
-#        server   vm31:80 weight=30 ;
-#        server   vm32:80 weight=30 ;
-#        server   vm33:80 weight=30 ;
-#        server   vm34:80 weight=30 ;
 
-#        server   vm35:80 weight=60 ;
-#        server   vm36:80 weight=60 ;
-#        server   vm37:80 weight=60 ;
-#        server   vm38:80 weight=60 ;
-#        server   vm39:80 weight=60 ;
-<% end -%>
+        server   vm40:80 weight=810 ;
+        server   vm41:80 weight=810 ;
+        server   vm42:80 weight=810 ;
+        server   vm43:80 weight=810 ;
+        server   vm44:80 weight=810 ;
 
-        server   vm40:80 weight=10 ;
-        server   vm41:80 weight=10 ;
-        server   vm42:80 weight=10 ;
-        server   vm43:80 weight=10 ;
-        server   vm44:80 weight=10 ;
+        server   vm45:80 weight=830 ;
+        server   vm46:80 weight=830 ;
+        server   vm47:80 weight=830 ;
+        server   vm48:80 weight=830 ;
+        server   vm49:80 weight=830 ;
 
-        server   vm45:80 weight=30 ;
-        server   vm46:80 weight=30 ;
-        server   vm47:80 weight=30 ;
-        server   vm48:80 weight=30 ;
-        server   vm49:80 weight=30 ;
+        server   vm50:80 weight=860 ;
+        server   vm51:80 weight=860 ;
+        server   vm52:80 weight=860 ;
+        server   vm53:80 weight=860 ;
+        server   vm54:80 weight=860 ;
 
-        server   vm50:80 weight=60 ;
-        server   vm51:80 weight=60 ;
-        server   vm52:80 weight=60 ;
-        server   vm53:80 weight=60 ;
-        server   vm54:80 weight=60 ;
-
-        server   vm55:80 weight=90 ;
-        server   vm56:80 weight=90 ;
-        server   vm57:80 weight=90 ;
-        server   vm58:80 weight=90 ;
-        server   vm59:80 weight=90 ;
+        server   vm55:80 weight=890 ;
+        server   vm56:80 weight=890 ;
+        server   vm57:80 weight=890 ;
+        server   vm58:80 weight=890 ;
+        server   vm59:80 weight=890 ;
 
         server   vm60:80 weight=110 ;
         server   vm61:80 weight=110 ;
@@ -251,6 +242,41 @@ http {
         server   vm168:80 weight=630 ;
         server   vm169:80 weight=630 ;
 
+        server   vm170:80 weight=660 ;
+        server   vm171:80 weight=660 ;
+        server   vm172:80 weight=660 ;
+        server   vm173:80 weight=660 ;
+        server   vm174:80 weight=660 ;
+
+        server   vm175:80 weight=690 ;
+        server   vm176:80 weight=690 ;
+        server   vm177:80 weight=690 ;
+        server   vm178:80 weight=690 ;
+        server   vm179:80 weight=690 ;
+
+        server   vm180:80 weight=710 ;
+        server   vm181:80 weight=710 ;
+        server   vm182:80 weight=710 ;
+        server   vm183:80 weight=710 ;
+        server   vm184:80 weight=710 ;
+
+        server   vm185:80 weight=730 ;
+        server   vm186:80 weight=730 ;
+        server   vm187:80 weight=730 ;
+        server   vm188:80 weight=730 ;
+        server   vm189:80 weight=730 ;
+
+        server   vm190:80 weight=760 ;
+        server   vm191:80 weight=760 ;
+        server   vm192:80 weight=760 ;
+        server   vm193:80 weight=760 ;
+        server   vm194:80 weight=760 ;
+
+        server   vm195:80 weight=790 ;
+        server   vm196:80 weight=790 ;
+        server   vm197:80 weight=790 ;
+        server   vm198:80 weight=790 ;
+        server   vm199:80 weight=790 ;
 <% end -%>
     }
 

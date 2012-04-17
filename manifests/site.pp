@@ -41,8 +41,8 @@ node vm115 {
 }
 
 node vm0 { include base_node_class }
-node /^vm3$/ inherits vm0 {}
-node /^vm[4-9]$/ inherits vm0 {}
+node /^vm2$/ inherits vm0 {}
+node /^vm[3-9]$/ inherits vm0 {}
 node /^vm[0-9][0-9]+$/ inherits vm0 {}
 
 # or
