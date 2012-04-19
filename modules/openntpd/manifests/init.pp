@@ -28,7 +28,7 @@ class openntpd {
                 subscribe => File["openntpd-source-tgz"]
             }
 
-            exec { "./configure":
+            exec { "configure":
                 cwd     => "/usr/local/src/openntpd-$version",
                 require => Exec[untar-openntpd-source],
                 creates => "/usr/local/src/openntpd-$version/config.h",

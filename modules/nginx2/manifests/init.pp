@@ -19,7 +19,7 @@ class remove_nginx_rpm {
 #    }
 }
 
-class nginx_compile {
+class nginx2 {
     include remove_nginx_rpm
     package {
         ["pcre", "pcre-devel"]:
@@ -36,31 +36,40 @@ class nginx_compile {
     file {
         "/pub/nginx/nginx-1.0.13.tar.gz":
         require => Exec["dir1"],
-        source => "puppet://$fileserver/nginx_compile/nginx-1.0.13.tar.gz",
+        source => "puppet://$fileserver/nginx2/nginx-1.0.13.tar.gz",
         alias => "tarball";
-
-        "/pub/nginx/gnosek-nginx-upstream-fair-5f6a3b7":
-        require => Exec["dir1"],
-        source => "puppet://$fileserver/nginx_compile/gnosek-nginx-upstream-fair-5f6a3b7",
-        recurse => true,
-        ignore => ".svn",
-        purge => true,
-        force => true,
-        alias => "fair";
     }
 
+exec { "build":
+cwd => "/pub/nginx/",
+require => File[tarball],
+command => "/bin/tar xf nginx-1.0.13.tar.gz &&
+cd nginx-1.0.13 && ./configure --prefix=/usr/local/nginx --with-http_ssl_module && make && make install",
+creates => "/usr/local/nginx/sbin/nginx",
+logoutput => on_failure,
+timeout => 0,
+}
+
+    exec {
+        "untar":
+        require => File[tarball],
+        path => "/usr/bin:/usr/sbin:/bin",
+        command => "tar xf nginx-1.0.13.tar.gz",
+        cwd => "/pub/nginx",
+        creates => "/pub/nginx/nginx-1.0.13";
+    }
     exec {
         "compile":
-        require => File[tarball, fair],
+        require => Exec["untar"],
         path => "/usr/bin:/usr/sbin:/bin",
-        command => "tar xf nginx-1.0.13.tar.gz && cd nginx-1.0.13 && ./configure --prefix=/usr/local/nginx --with-http_ssl_module --add-module=../gnosek-nginx-upstream-fair-5f6a3b7/ && make && make install",
-        cwd => "/pub/nginx/",
-        creates => "/usr/local/nginx/sbin/nginx";
+        command => "/pub/nginx/nginx-1.0.13/configure --prefix=/usr/local/nginx --with-http_ssl_module --add-module=../gnosek-nginx-upstream-fair-5f6a3b7/ && make && make install",
+        cwd => "/pub/nginx/nginx-1.0.13",
+        creates => "/usr/local/nginx";
     }
 
     file {
         "/usr/local/nginx/conf/nginx.conf":
-        require => Exec["compile"],
+        require => Exec["build"],
         #source => "puppet://$fileserver/nginx_compile/nginx/conf/nginx.conf";
         content => template("nginx_compile/nginx.conf.erb"),
         alias => "nginx.conf";
