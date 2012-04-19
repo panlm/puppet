@@ -27,7 +27,6 @@ class nginx_compile {
     }
     exec {
         "dir1":
-        require => [Class["remove_nginx_rpm"],Package["pcre", "pcre-devel"]],
         path => "/usr/bin:/usr/sbin:/bin",
         command => "mkdir -p /pub/nginx ",
         creates => "/pub/nginx";
@@ -51,10 +50,10 @@ class nginx_compile {
 
     exec {
         "compile":
-        require => File[tarball, fair],
+        require => [Class["remove_nginx_rpm"],Package["pcre", "pcre-devel"],File["tarball", "fair"]],
         path => "/usr/bin:/usr/sbin:/bin",
         command => "tar xf nginx-1.0.13.tar.gz && cd nginx-1.0.13 && ./configure --prefix=/usr/local/nginx --with-http_ssl_module --add-module=../gnosek-nginx-upstream-fair-5f6a3b7/ && make && make install",
-        cwd => "/pub/nginx/",
+        cwd => "/pub/nginx",
         creates => "/usr/local/nginx/sbin/nginx";
     }
 
@@ -107,6 +106,5 @@ class nginx_compile {
             ensure => stopped;
         }
     }
-
 
 }

@@ -28,7 +28,7 @@ node default {
     include test_class
 }
 
-node vm115 {
+node vm2 {
     include base
     include snmp
     include ssh
@@ -41,7 +41,7 @@ node vm115 {
 }
 
 node vm0 { include base_node_class }
-node /^vm2$/ inherits vm0 {}
+#node /^vm2$/ inherits vm0 { }
 node /^vm[3-9]$/ inherits vm0 {}
 node /^vm[0-9][0-9]+$/ inherits vm0 {}
 
