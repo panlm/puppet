@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Prerequisites - BIOS, Boot Options, Partitioning</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Installation"
+HREF="mobile-guide-p1c3-installation.html"><LINK
+REL="PREVIOUS"
+TITLE="Related Documentation"
+HREF="mobile-guide-p1c3s1-related-howtos.html"><LINK
+REL="NEXT"
+TITLE="Linux Tools to Repartition a Hard Disk"
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s1-related-howtos.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p1c3s2-prerequisites-partitioning"
+></A
+>3.2. Prerequisites - BIOS, Boot Options, Partitioning</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN651"
+></A
+>3.2.1. BIOS</H2
+><P
+>&#13;   When starting a fresh installation you should try with standard
+   BIOS options. If something doesn't work you should try
+   to modify BIOS options. For example a well known trouble maker
+   is the Plug-and-Play - PnP option (which comes with different names).
+   See also the BIOS section in the hardware section below.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN654"
+></A
+>3.2.2. Boot Options</H2
+><P
+>&#13;   There are many boot options, which have effects on the behavior
+   of laptops, e.g. <B
+CLASS="command"
+>apm=on|off</B
+> and <B
+CLASS="command"
+>acpi=on|off</B
+>:
+   For details see 
+   <A
+HREF="http://tldp.org/HOWTO/BootPrompt-HOWTO.html"
+TARGET="_top"
+>BootPrompt-HOWTO</A
+>
+   and the Kernel documentation in
+   <TT
+CLASS="filename"
+>/usr/src/linux/Documentation/kernel-parameters.txt</TT
+>
+   .
+
+
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN661"
+></A
+>3.2.3. Partitioning</H2
+><P
+>&#13;   Partitioning can be done in a very sophisticated way. Currently I have
+   only some first thoughts. I assume that with laptops there are still
+   some reasons (e.g. updating the firmware of <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+>
+   cards and BIOS) to share Linux and Windows9x/NT. Depending on your needs
+   and the features of your laptop you could create the following
+   partitions:
+</P
+><P
+>&#13;
+<P
+></P
+><UL
+><LI
+><P
+>&#13;   BIOS, some current BIOSes use a separate partition, for instance COMPAQ
+   notebooks
+</P
+></LI
+><LI
+><P
+>&#13;   suspend to disk, some laptops support this feature
+</P
+></LI
+><LI
+><P
+>&#13;   swap space Linux
+</P
+></LI
+><LI
+><P
+>&#13;   swap space Windows9x/NT
+</P
+></LI
+><LI
+><P
+>&#13;   Linux base
+</P
+></LI
+><LI
+><P
+>&#13;   Linux <TT
+CLASS="filename"
+>/home</TT
+> for personal data (please consider an
+   encrypted partition for security reasons, for details about encryption
+   see the according chapter below) 
+</P
+></LI
+><LI
+><P
+>&#13;   common data between Linux and Windows9x/NT
+</P
+></LI
+><LI
+><P
+>&#13;   small (~32MB) boot partition for yaBoot (Linux/PPC boot loader), in HFS
+   <EM
+>MacOS Standard</EM
+> format.
+</P
+></LI
+></UL
+>
+
+</P
+><P
+>&#13;   Note this chapter isn't exhausting yet. Please read the appropriate HOWTOs
+   first, e.g. the
+   <A
+HREF="http://tldp.org/HOWTO/Partition/"
+TARGET="_top"
+>Partition-HOWTO</A
+>
+   .
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s1-related-howtos.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3s3-linux-tools-to-repartition.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Related Documentation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p1c3-installation.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Linux Tools to Repartition a Hard Disk</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

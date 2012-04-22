@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Card Readers for SD/MMC/Memory Stick</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Accessories: PCMCIA, USB and Other External Extensions"
+HREF="mobile-guide-p2c2-accessories.html"><LINK
+REL="PREVIOUS"
+TITLE="Memory Stick"
+HREF="mobile-guide-p2c2s1-memory-stick.html"><LINK
+REL="NEXT"
+TITLE="USB Devices"
+HREF="mobile-guide-p2c2s4-usb-devices.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c2s1-memory-stick.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. Accessories: PCMCIA, USB and Other External Extensions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c2s4-usb-devices.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c2s1-card-reader"
+></A
+>13.7. Card Readers for SD/MMC/Memory Stick</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3645"
+></A
+>13.7.1. External Readers</H2
+><P
+>&#13;   All external SD/MMC/CF-Card/Memory Stick readers are USB devices
+   and work fine with the <B
+CLASS="command"
+>usb-storage</B
+> module.
+   The only caveat which might occur is that you may have difficulties
+   to determine the device assignment. Just use <B
+CLASS="command"
+>dmesg</B
+>
+   after you have connected the reader. The command should show
+   a SCSI device like <TT
+CLASS="filename"
+>/dev/sda1</TT
+> assigned to
+   the USB drive.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN3651"
+></A
+>13.7.2. Internal Readers</H2
+><P
+>&#13;   Currently there are three kinds of devices available: USB, PCMCIA and
+   PCI devices.
+</P
+><P
+>&#13;   USB devices are seldom, but usually work out of the box. They behave
+   like the external readers mentioned above.
+   
+</P
+><P
+>&#13;   Some readers are PCMCIA/CardBus devices. Often such a reader is located
+   near the CardBus slot. The command <B
+CLASS="command"
+>cardctl ident</B
+>
+   will reveal these cards.
+</P
+><P
+>&#13;   For some laptops and notebooks a
+   <A
+HREF="http://projects.drzeus.cx/wbsd"
+TARGET="_top"
+>driver for the  Winbond's W83L518D and W83L519D SD/MMC card reader</A
+>
+   is available.
+   
+</P
+><P
+>&#13;   Some proprietary devices are not yet known to work with Linux. Except the
+   readers built into the SHARP Linux PDAs, but the driver is closed
+   source and available as a binary only for the ARM CPU.
+   
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2s1-memory-stick.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2s4-usb-devices.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Memory Stick</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c2-accessories.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>USB Devices</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>BIOS</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="Introduction"
+HREF="mobile-guide-p2c1s1-intro.html"><LINK
+REL="NEXT"
+TITLE="CPU"
+HREF="mobile-guide-p2c1s1-cpu.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s1-intro.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s1-cpu.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s1-bios"
+></A
+>12.2. BIOS</H1
+><P
+>&#13;   Before setting up any hardware you should have a look into the BIOS.
+   Often you may find a solution already there, e.g. options to set up 
+   the display,
+   APM or ACPI,
+   DMA,
+   IrDA,
+   PCMCIA,
+   sound,
+   SpeedStep,
+   and more.
+
+
+
+</P
+><P
+>&#13;   If you run into unresolvable trouble when configuring the hardware,
+   try a BIOS upgrade from the manufacturer. For this task you
+   usually need one of the Microsoft so-called operating systems. Or
+   at least a DOS disk or CD.
+</P
+><P
+>&#13;   Flashing BIOSes has become often quite complex as both DOS and floppies
+   are fading away. Things aren't any easier when running exclusively
+   GNU/Linux. Luckily, it is possible to 
+   <A
+HREF="http://freshrpms.net/docs/bios-flash/"
+TARGET="_top"
+>create a bootable CD-ROM</A
+>
+   with GNU/Linux, which enables one to actually flash a BIOS using a DOS utility
+   without requiring Windows, MS-DOS or a floppy drive.
+</P
+><P
+>&#13;   Some newer laptops e.g. ASUS M5200A are equipped with a BIOS, which
+   is able to update itself.
+</P
+><P
+>&#13;   The 
+   <A
+HREF="http://www.nenie.org/misc/flashbootcd.html"
+TARGET="_top"
+>Motherboard Flash Boot CD from Linux Mini HOWTO</A
+>
+   gives a short summary of how to create a boot disk to flash a BIOS on a PC,
+   from Linux (or another Unix) when one has no floppy drive and no access to a
+   DOS/Windows machine.
+</P
+><P
+>&#13;   <A
+HREF="http://www.linuxbios.org"
+TARGET="_top"
+>LinuxBIOS</A
+>
+   aims to replace the normal BIOS found on PCs, Alphas, and
+   other machines with a Linux kernel that can boot Linux from a cold
+   start. LinuxBIOS is primarily Linux - about 10 lines of patches to the
+   current Linux kernel.  Additionally, the startup code - about 500
+   lines of assembly and 5000 lines of C - executes 16 instructions to
+   get into 32-bit mode and then performs DRAM and other hardware
+   initialization required before Linux can take over. There are
+   even two reports about LinuxBIOS on laptops.
+</P
+><P
+>&#13;   Alternative approaches are
+   <A
+HREF="http://openbios.org/"
+TARGET="_top"
+>OpenBIOS</A
+>
+   and
+   <A
+HREF="http://freebios.sourceforge.net/"
+TARGET="_top"
+>FreeBIOS</A
+>.
+</P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN1749"
+></A
+>12.2.1. SMBios</H2
+><P
+>&#13;   <A
+HREF="http://www.dmtf.org/standards/dmi/"
+TARGET="_top"
+>Desktop Management Interface (DMI) Standards</A
+>
+   generate a standard framework for managing and tracking components in
+   a desktop pc, notebook or server. DMI was the first desktop management
+   standard. The DMI Home Page is a repository of all DMI-related information
+   from the specification to tools to support to the Product Registry of
+   DMI-certified products.
+</P
+><P
+>&#13;   <A
+HREF="http://www.nongnu.org/dmidecode/"
+TARGET="_top"
+>Dmidecode</A
+>
+   reports information about your system's hardware as described in
+   your system BIOS according to the SMBIOS/DMI standard (see a sample
+   output). This information typically includes system manufacturer, model
+   name, serial number, BIOS version, asset tag as well as a lot of other
+   details of varying level of interest and reliability depending on the
+   manufacturer. This will often include usage status for the CPU sockets,
+   expansion slots (e.g. AGP, PCI, ISA) and memory module slots, and the list
+   of I/O ports (e.g. serial, parallel, USB).
+</P
+><P
+>&#13;   There is also an alternative implementation of a DMI table decoder.
+   <A
+HREF="http://linux.dell.com/libsmbios/main/index.html"
+TARGET="_top"
+>Libsmbios</A
+>
+   is a cross-platform library intended to be used to obtain
+   common information available in a BIOS using a unified API. Currently, it
+   can programmatically access any information in the SMBIOS tables. It also
+   has the ability to obtain Dell system-specific information such as the
+   Dell System ID number, service tag, and asset tag. Future plans include
+   APIs for $PIR and mptable mapping. There is a C API for some of the more
+   commonly used functions, and example binaries to show off most of the
+   facilities.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s1-intro.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s1-cpu.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Introduction</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>CPU</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

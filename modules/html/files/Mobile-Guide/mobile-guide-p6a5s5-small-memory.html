@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Small Memory</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Dealing with Limited Resources or Tuning the System"
+HREF="mobile-guide-a5-limited-resources.html"><LINK
+REL="PREVIOUS"
+TITLE="Hard Disk Speed"
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"><LINK
+REL="NEXT"
+TITLE="Low CPU Speed"
+HREF="mobile-guide-p6a5s6-low-cpu-speed.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix E. Dealing with Limited Resources or Tuning the System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p6a5s6-low-cpu-speed.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p6a5s5-small-memory"
+></A
+>E.5. Small Memory</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5259"
+></A
+>E.5.1. Related Documentation</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Small-Memory/index.html"
+TARGET="_top"
+>Small-Memory-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Module-HOWTO/"
+TARGET="_top"
+>Module-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://tldp.org/HOWTO/Kerneld/"
+TARGET="_top"
+>Kerneld-HOWTO</A
+>
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN5272"
+></A
+>E.5.2. Techniques</H2
+><P
+>&#13;Check the memory usage with <B
+CLASS="command"
+>free</B
+> and <B
+CLASS="command"
+>top</B
+>.
+</P
+><P
+>&#13;   <A
+HREF="http://www.complang.tuwien.ac.at/ulrich/mergemem/"
+TARGET="_top"
+>Mergemem Project</A
+>
+   . Many programs contain <EM
+>memory areas of the same
+   content</EM
+> that remain undetected by the operating system.
+   Typically, these areas contain data that have been generated on startup
+   and remain unchanged for longer periods. With <B
+CLASS="command"
+>mergemem</B
+>
+   such areas are detected and shared. The sharing is performed on the
+   operating system level and is invisible to the user level programs.
+   <B
+CLASS="command"
+>mergemem</B
+> is particularily useful if you run many
+   instances of interpreters and emulators (like Java or Prolog) that keep
+   their code in private data areas. But also other programs can take
+   advantage albeit to a lesser degree.
+</P
+><P
+>&#13;   You may also reduce the <EM
+>kernel size</EM
+> as much as
+   possible by removing any feature which is not necessary for your needs
+   and by modularizing the kernel as much as possible.
+</P
+><P
+>&#13;   Also you may shutdown every service or <EM
+>daemon</EM
+> which
+   is not needed, e.g. <B
+CLASS="command"
+>lpd</B
+>, <B
+CLASS="command"
+>mountd</B
+>,
+   <B
+CLASS="command"
+>nfsd</B
+> and close some <EM
+>virtual
+   consoles</EM
+>. Please see
+   <A
+HREF="http://tldp.org/HOWTO/Small-Memory/"
+TARGET="_top"
+>Small-Memory-HOWTO</A
+>
+  for details.
+</P
+><P
+>&#13;   And of course use <EM
+>swap space</EM
+>, when possible.
+</P
+><P
+>&#13;   If possible you use the resources of another machine, for instance with
+   X11, VNC or even <B
+CLASS="command"
+>telnet</B
+>. For more information on
+   Virtual Network Computing (VNC), see 
+   <A
+HREF="http://www.realvnc.com/"
+TARGET="_top"
+>VNC</A
+>.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s4-harddisk-speed.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p6a5s6-low-cpu-speed.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Hard Disk Speed</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-a5-limited-resources.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Low CPU Speed</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

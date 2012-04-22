@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Dealing with Down Times (Cron Jobs)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Different Environments"
+HREF="mobile-guide-p5c1-different-environments.html"><LINK
+REL="PREVIOUS"
+TITLE="Theft Protection"
+HREF="mobile-guide-p5c1s6-theft-protection.html"><LINK
+REL="NEXT"
+TITLE="Mobile Printing"
+HREF="mobile-guide-p5c1s8-mobile-printing.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s6-theft-protection.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Different Environments</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p5c1s8-mobile-printing.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p5c1s7-dealing-with-down-times"
+></A
+>15.9. Dealing with Down Times (Cron Jobs)</H1
+><P
+>&#13;   A cron-like program that doesn't go by time: <B
+CLASS="command"
+>anacron</B
+>
+   (like "anac(h)ronistic") is a periodic command scheduler. It executes
+   commands at intervals specified in days. Unlike <B
+CLASS="command"
+>cron</B
+>,
+   it does not assume that the system is running continuously. It can
+   therefore be used to control the execution of daily, weekly and monthly
+   jobs (or anything with a period of n days), on systems that don't run 24
+   hours a day. When installed and configured properly,
+   <B
+CLASS="command"
+>anacron</B
+> will make sure that the commands are run at
+   the specified intervals as closely as machine-uptime permits.
+</P
+><P
+>&#13;   <A
+HREF="http://metalab.unc.edu/pub/Linux/system/daemons/cron"
+TARGET="_top"
+>hc-cron</A
+>
+   is a modified version of Paul
+   Vixie's widely used <B
+CLASS="command"
+>cron</B
+>
+   daemon. Like the original program it runs specified jobs at periodic
+   intervals. However, the original <B
+CLASS="command"
+>crond</B
+> relies on the
+   computer running continuously, otherwise jobs will be missed. This
+   problem is addressed by <B
+CLASS="command"
+>hc-cron</B
+>, that is indended for
+   use on <EM
+>home-computers</EM
+> that are typically turned off
+   several times a day; <B
+CLASS="command"
+>hc-cron</B
+> will remember the time
+   when it was shut down and catch up jobs that have occurred during down
+   time when it is started again. 
+
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s6-theft-protection.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1s8-mobile-printing.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Theft Protection</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p5c1-different-environments.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Mobile Printing</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

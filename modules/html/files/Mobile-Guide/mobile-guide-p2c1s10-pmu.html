@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Power Management Unit - PMU (PowerBook)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="ACPI"
+HREF="mobile-guide-p2c1s9-acpi.html"><LINK
+REL="NEXT"
+TITLE="Batteries"
+HREF="mobile-guide-p2c1s11-batteries.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s9-acpi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s11-batteries.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s10-pmu"
+></A
+>12.20. Power Management Unit - PMU (PowerBook)</H1
+><P
+>&#13;   PowerBooks don't support the <SPAN
+CLASS="acronym"
+>APM</SPAN
+> specification, but
+   they have a separate protocol for their PMU (Power Management Unit).
+   There is a free (GPL) daemon called <B
+CLASS="command"
+>pmud</B
+> that handles
+   power management; it can monitor the battery level, put the machine to
+   sleep, and set different levels of power consumption. It was written by
+   Stephan Leemburg.
+   
+   There is
+   also an older utility called <B
+CLASS="command"
+>snooze</B
+> available from
+   the same sites that just puts the PowerBook to sleep.
+   <A
+HREF="http://pbbuttons.berlios.de/"
+TARGET="_top"
+>PBButtons</A
+>
+   now includes the functionality of <B
+CLASS="command"
+>pmud</B
+>.
+</P
+><P
+>&#13;   Cron works fine on my laptop as I never shut it off completely. I only
+   put it to sleep. When it wakes up, the unexecuted
+   <B
+CLASS="command"
+>cron</B
+> jobs from the sleep period all run.
+</P
+><P
+>&#13;   This part is a courtesy of Steven G. Johnson.
+</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s9-acpi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s11-batteries.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>ACPI</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Batteries</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

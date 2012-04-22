@@ -1,0 +1,369 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Sound</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="Linux on the Road"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Hardware in Detail: CPU, Display, Keyboard, Sound and More"
+HREF="mobile-guide-p2c1-hardware-in-detail.html"><LINK
+REL="PREVIOUS"
+TITLE="LCD Display"
+HREF="mobile-guide-p2c1s4-lcd-display.html"><LINK
+REL="NEXT"
+TITLE="Keyboard"
+HREF="mobile-guide-p2c1s6-keyboard.html"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Linux on the Road: </TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s4-lcd-display.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Hardware in Detail: CPU, Display, Keyboard, Sound and More</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="mobile-guide-p2c1s6-keyboard.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="mobile-guide-p2c1s5-sound"
+></A
+>12.10. Sound</H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2162"
+></A
+>12.10.1. Linux Compatibility Check</H2
+><P
+>&#13;   The only way I know to check this, is to compile the different sound
+   drivers into the kernel and check whether they are detected or not. The
+   best way to do so, is to compile them as modules because it's easier to
+   load different parameters such as interrupts and IO ports this way. For the
+   2.2.x kernels, read 
+   <TT
+CLASS="filename"
+>/usr/src/linux/Documentation/sound/Introduction</TT
+>
+   by Wade Hampton. This document may help you get started with
+   sound. Also, you might try one of the commercial sound drivers mentionend
+   below. To check whether sound works or not you may try e.g.
+   <B
+CLASS="command"
+>xmms</B
+> and one of the sounds provided in
+   <TT
+CLASS="filename"
+>/usr/share/sounds</TT
+>.
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2168"
+></A
+>12.10.2. Related Documentation</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <A
+HREF="http://www.tldp.org/"
+TARGET="_top"
+>Sound-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.tldp.org/"
+TARGET="_top"
+>Visual-Bell-mini-HOWTO</A
+>
+</P
+></LI
+><LI
+><P
+>&#13;   You may find also some good sound HOWTOs at the
+   <A
+HREF="http://www.djcj.org/LAU/guide/"
+TARGET="_top"
+>Linux Audio Users Guide - LAU</A
+>
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2181"
+></A
+>12.10.3. Survey Sound Drivers</H2
+><P
+>&#13;
+<P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;   <SPAN
+CLASS="acronym"
+>ALSA</SPAN
+> 
+   <A
+HREF="http://www.alsa-project.org/"
+TARGET="_top"
+>Advanced Linux Sound Architecture</A
+>
+   . The Advanced Linux Sound Architecture aims to: be a
+   fully-modularized sound driver which supports kerneld/kmod, ensure
+   compatibility with most binary OSS/Lite applications, create an
+   <SPAN
+CLASS="acronym"
+>ALSA</SPAN
+> Library (C,C++) which covers the
+   <SPAN
+CLASS="acronym"
+>ALSA</SPAN
+> Kernel API for applications, and create
+   <SPAN
+CLASS="acronym"
+>ALSA</SPAN
+> Manager, an interactive configuration
+   program for the driver. With Kernel 2.6 these modules will
+   be part of the Linux Kernel.
+</P
+></LI
+><LI
+><P
+>&#13;   <A
+HREF="http://www.opensound.com/"
+TARGET="_top"
+><SPAN
+CLASS="acronym"
+>UNIX</SPAN
+> Sound System Lite / OSS</A
+>
+   provides commercial sound card drivers for most popular sound
+   cards under Linux. These drivers support digital audio, MIDI,
+   Synthesizers and mixers found on sound cards. These sound drivers
+   comply with the Open Sound System API specification. OSS provides
+   a user-friendly GUI which makes the installation of sound drivers
+   and configuration of sound cards very simple. OSS supports over
+   200 brand name sound cards. OSS drivers provide automatic sound
+   card detection, Plug-n-Play support, support for PCI audio
+   soundcards and support.
+</P
+></LI
+><LI
+><P
+>&#13;   As a last resort you may try the speaker module
+   <B
+CLASS="command"
+>pcsnd</B
+>, which tries to emulate a soundcard.
+</P
+></LI
+></OL
+>
+
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2199"
+></A
+>12.10.4. Additional Soundcards</H2
+><P
+>&#13;   <A
+HREF="http://www.digigram.com/products/VXpocket.html"
+TARGET="_top"
+>VXPocket</A
+>
+   looks like a finally medium2high-end soundcard solution for
+   onboardwise badly equipped laptops. Note: I didn't check
+   whether this is a <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> card or not.
+   <SPAN
+CLASS="acronym"
+>PCMCIA</SPAN
+> sound cards are probably not
+   supported.
+</P
+><P
+>&#13;   Also <SPAN
+CLASS="acronym"
+>USB</SPAN
+> may be an alternative.
+   Most USB audio devices are supported by recent kernels.
+   An example is Labtec Axis 712 Stereo Headset (headphones
+   and microphone) which works in full-duplex mode.
+   For more info about this and other Linux-compatible USB
+   audio devices see the
+   <A
+HREF="http://www.qbik.ch/usb/devices/"
+TARGET="_top"
+>USB Survey</A
+>
+   and my
+   <A
+HREF="http://tuxmobil.org/usb_linux.html"
+TARGET="_top"
+>Mobile USB Linux Hardware Survey</A
+>
+   .
+</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN2209"
+></A
+>12.10.5. External and Internal CD Drives</H2
+><P
+>&#13;   For playing CDs/DVDs from an external or internal CD/DVD drive,
+   see chapter 
+   <A
+HREF="mobile-guide-p2c1s21-cd-drive.html"
+>Section 12.32</A
+> CD/DVD Drive 
+   below.
+</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s4-lcd-display.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1s6-keyboard.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>LCD Display</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="mobile-guide-p2c1-hardware-in-detail.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Keyboard</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
