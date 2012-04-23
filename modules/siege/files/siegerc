@@ -130,7 +130,7 @@ connection = keep-alive
 # Default number of simulated  concurrent users
 # ex: concurrent = 25
 #
-concurrent = 250
+#concurrent = 250
 
 #
 # Default duration of the siege.  The right hand argument has
