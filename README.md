@@ -6,9 +6,11 @@ git push -u p master
 
 
 == example ==
+
 modify source code
-git svn rebase
+
 git commit -m 'comments' -a
+git svn rebase
 git svn dcommit 
 git pull puppet master
 git push
