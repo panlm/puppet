@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 
 HEAD="$(git symbolic-ref HEAD)" || exit 1
 
